@@ -206,6 +206,60 @@
                 transform: scaleX(1) rotate(0deg);
                 transition-delay: 0s, 0.4s, 0.8s;
             }
+
+
+            .live-border-container {
+                position: relative;
+                margin-bottom: 30px;
+            }
+            .live-border::before, .live-border::after, .live-border {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+            .live-border {
+                width: 200px;
+                height: 50px;
+                margin: auto;
+                background: url("../assets/img/more-info.png") no-repeat 50%/70% rgba(0, 0, 0, 0.1);
+                color: #9c0000;
+                box-shadow: inset 0 0 0 1px rgba(105, 202, 98, 0.5);
+            }
+            .live-border:hover {
+                filter: grayscale(50%);
+                -webkit-filter: grayscale(50%);
+                transition: 1s ease;
+            }
+            .live-border::before, .live-border::after {
+                content: "";
+                z-index: -1;
+                margin: -5%;
+                box-shadow: inset 0 0 0 2px;
+                animation: clipMe 8s linear infinite;
+            }
+            .live-border::before {
+                animation-delay: -4s;
+            }
+            .live-border:hover::after, .live-border:hover::before {
+                background-color: rgba(255, 0, 0, 0.3);
+            }
+
+            @keyframes clipMe {
+                0%, 100% {
+                    clip: rect(0px, 220px, 2px, 0px);
+                }
+                25% {
+                    clip: rect(0px, 2px, 70px, 0px);
+                }
+                50% {
+                    clip: rect(68px, 220px, 70px, 0px);
+                }
+                75% {
+                    clip: rect(0px, 220px, 70px, 218px);
+                }
+            }
         </style>
     </head>
     <body>
@@ -215,13 +269,12 @@
         <p style="text-align: center;">&#160;</p>
         <p style="text-align: center;"><span style="font-family: arial, helvetica, sans-serif;">DESCRIPTION/TEXT</span></p>
         <p style="text-align: center;">&#160;</p>
-        <div class="border-wrap border-wrap-2"><a href="LINK-URL"><strong>LINK-TEXT</strong></a></div>
+        <div class="live-border-container"><a href="#"><div class="live-border"></div></a></div>
+        <!--- <div class="border-wrap border-wrap-2"><a href="LINK-URL">LINK-TEXT</a></div> --->
         <p style="text-align: center;">&#160;</p>
         <div class="news-image border-wrap border-wrap-2"><a href="LINK-URL"><img src="IMAGE-URL" /></a></div>
-        <p style="text-align: center;">&#160;</p>
         <p style="text-align: center;"><em style="font-family: 'arial black', sans-serif; color: #9c0000;">SUB-TEXT - RED/BOLD</em></p>
         <p style="text-align: center;"><span style="font-family: 'arial black', sans-serif;">SUB-TEXT - BLACK/BOLD</span></p>
-        <p style="text-align: center;">&#160;</p>
         <p style="text-align: center;"><em class="marauder-red news-emphasis"><strong>CLOSING TEXT - STYLIZED</strong></em></p>
     </body>
 </html>
