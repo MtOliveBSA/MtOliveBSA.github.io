@@ -305,14 +305,9 @@ ul.icons li {
     background-size: contain !important;
 }
 
-
 .feature image:hover img {
     transform: rotateY(180deg);
-  }
-
-
-
-
+}
 
 .flip-card {
     background-color: transparent;
