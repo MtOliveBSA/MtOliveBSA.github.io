@@ -207,7 +207,7 @@
     width: 200px;
     height: 50px;
     margin: auto;
-    background: url("../images/more-info.png") no-repeat 50%/70% rgba(0, 0, 0, 0.1);
+    background: url("../../images/more-info.png") no-repeat 50%/70% rgba(0, 0, 0, 0.1);
     color: #9c0000;
     box-shadow: inset 0 0 0 1px rgba(105, 202, 98, 0.5);
 }
@@ -371,4 +371,27 @@ ul.icons li {
 .feature.right .flip-card-inner > .flip-card-back h1,
 .feature.right .flip-card-inner > .flip-card-back p {
     color: #000;
+}
+
+
+.feature .content > div.mobile-only {
+    margin-bottom: 30px;
+}
+.feature .content div.live-border-container{
+    position: sticky;
+}
+.feature .content .live-border {
+    position: relative;
+    left: 50%;
+    transform: translateX(-28%);
+}
+@media only screen and (max-width: 992px) {
+    .mobile-only {
+        display: flex;
+    }
+}
+@media only screen and (min-width: 992px) { 
+    .mobile-only {
+        display: none;
+    }
 }
