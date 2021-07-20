@@ -209,7 +209,7 @@
     margin: auto;
     background: url("../../images/more-info.png") no-repeat 50%/70% rgba(0, 0, 0, 0.1);
     color: #9c0000;
-    box-shadow: inset 0 0 0 1px rgba(105, 202, 98, 0.5);
+    box-shadow: inset 0 0 0 1px rgba(156, 0, 0, 0.5);
 }
 .live-border:hover {
     filter: grayscale(50%);
