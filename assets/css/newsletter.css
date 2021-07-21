@@ -279,6 +279,7 @@
     top: initial;
     right: initial;
     position: initial;
+    border-radius: 30px;
 }
 
 .feature .image:after {
