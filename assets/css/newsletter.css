@@ -246,8 +246,10 @@
 }
 
 /****************** Style for Newletter Specifically ******************/
-#header {
-    padding: 5em 0 16em 0;
+@media only screen and (max-width: 992px) {
+    #header {
+        padding: 5em 0 16em 0;
+    }
 }
 
 #header .logo {
