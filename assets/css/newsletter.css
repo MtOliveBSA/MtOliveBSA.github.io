@@ -246,6 +246,10 @@
 }
 
 /****************** Style for Newletter Specifically ******************/
+#header {
+    padding: 5em 0 13em 0;
+}
+
 #header .logo {
     background: #9c0000 url(../../images/mobsa-profile-badge-square.png) no-repeat;
     background-size: contain;
