@@ -6,6 +6,17 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-196216889-3"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-196216889-3');
+			gtag('config', 'G-SR4G5LEJP0');
+		</script>
+
 		<link rel="preconnect" href="https://fonts.gstatic.com" /> 
         <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Metal+Mania&family=Norican&family=Pirata+One&family=Trade+Winds&display=swap" rel="stylesheet">
 
@@ -182,5 +193,33 @@
 			<script src="../../assets/js/breakpoints.min.js"></script>
 			<script src="../../assets/js/util.js"></script>
 			<script src="../../assets/js/main.js"></script>
+			
+		<!--- Facebook Messager Plugin --->
+			<style>
+				@media only screen and (max-width: 768px) {
+					.fb-customerchat, .fb_dialog_mobile {
+						display: none;
+					}
+				}
+			</style>
+			<div id="fb-root"></div>
+			<script>
+			window.fbAsyncInit = function() {
+				FB.init({
+					xfbml	: true,
+					version	: 'v11.0'
+				});
+			};
+
+			(function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s); js.id = id;
+				js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>
+
+			<!-- Your Chat Plugin code -->
+			<div class="fb-customerchat" attribution="setup_tool" page_id="247961936069862"></div>
 	</body>
 </html>
