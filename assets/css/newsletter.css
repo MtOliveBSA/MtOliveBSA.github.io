@@ -8,6 +8,16 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Blazed';
+    src:  
+        /* url('../fonts/Back%20to%20Black%20Bold.woff2') format('woff2'), */
+        /* url('../fonts/Back%20to%20Black%20Bold.woff') format('woff'), */
+        url('../fonts/Blazed.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .fonts {
     font-family: 'Lobster', cursive;
     font-family: 'Metal Mania', cursive;
