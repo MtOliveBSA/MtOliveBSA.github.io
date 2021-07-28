@@ -412,3 +412,19 @@ ul.icons li {
         display: none;
     }
 }
+
+.slick-track {
+    display: flex;
+}
+
+.sponsor_roll {
+    background-color: #fff;
+}
+.sponsor_roll .slick-slide {
+    margin: auto 60px;
+    max-width: 95vw;
+}
+.sponsor_roll .slick-slide img {
+    margin: 0 auto;
+    object-fit: contain;
+}
