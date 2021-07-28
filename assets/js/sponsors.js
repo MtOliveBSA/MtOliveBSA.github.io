@@ -117,7 +117,7 @@ $(sponsors).each(function(i, r){
 $('.sponsor_roll').slick({
     autoplay: true,
     autoplaySpeed: 2000,
-    //arrows: false,
+    arrows: true,
     initialSlide: Math.floor(Math.random() * sponsors.length),
     variableWidth: true,
     centerMode: true,
