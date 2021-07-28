@@ -359,6 +359,8 @@ ul.icons li {
 .flip-card-front {
     background-color: #eaeaea;
     color: black;
+    display: flex;
+    justify-content: center;
 }
 
 .flip-card-back {
