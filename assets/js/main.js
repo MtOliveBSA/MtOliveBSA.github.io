@@ -33,15 +33,47 @@ $(document).ready(function () {
 	$.ajax({
 		url: "/newsletters/archive.json"
 	}).done(function(data){
-		debugger;
+		var num2month = ["","January","February","March","April","May","June","July","August","September","October","November","December"];
+		var root = $("li.archive");
+		data.each(function(year){
+			var yearEl = $('<li><a class="toggle" href="javascript:void(0);">' + year.year + '"</a></li>');
+			root.append(yearEl);
+			year.each(function(month){
+				var monthEl = $('<ul class="inner"> \
+									<a class="toggle" href="javascript:void(0);">' + num2month[month.month] + '</a> \
+									<ul class="inner"></ul> \
+								</ul>');
+				yearEl.append(monthEl);
+				month.articles.each(function(article){
+					if(article.active)
+						$('<li><a href="#">' + ( article.title ? article.title : article.date ) + '</a></li>').appendTo(monthEl);
+				})
+			})
+		})
+	});
+	
+	$('.toggle').click(function(e) {
+		e.preventDefault();
+
+		var $this = $(this);
+
+		if ($this.next().hasClass('show')) {
+			$this.next().removeClass('show');
+			$this.next().slideUp(350);
+		} else {
+			$this.parent().parent().find('li .inner').removeClass('show');
+			$this.parent().parent().find('li .inner').slideUp(350);
+			$this.next().toggleClass('show');
+			$this.next().slideToggle(350);
+		}
 	});
 	
 	var trigger = $('.hamburger'),
 		overlay = $('.overlay'),
 		isClosed = false;
 
-		trigger.click(function () {
-		hamburger_cross();      
+		trigger.click(function (){
+			hamburger_cross();      
 		});
 
 		function hamburger_cross() {
@@ -59,7 +91,11 @@ $(document).ready(function () {
 		}
 	}
 	
-	$('[data-toggle="offcanvas"]').click(function () {
+	$('[data-toggle="offcanvas"]').click(function (){
 			$('#wrapper').toggleClass('toggled');
-	});  
+	});
+
+	$(document).on('click', '.nav .dropdown-manual', function (e) {
+		e.stopPropagation();
+	});
 });

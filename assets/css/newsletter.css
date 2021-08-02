@@ -858,3 +858,31 @@ display: block;
 	background-color: rgba(250,250,250,.8);
 	z-index: 1;
 }
+
+ul.accordian {
+    list-style: none;
+    padding: 0;
+}
+ul.accordian .inner {
+    padding-left: 1em;
+    overflow: hidden;
+    display: none;
+}
+ul.accordian .inner.show {
+    /* display: block; */
+}
+ul.accordian li {
+    /* margin: 0.5em 0; */
+}
+ul.accordian li a.toggle {
+    width: 100%;
+    display: block;
+    background: rgba(0, 0, 0, 0.78);
+    color: #fefefe;
+    padding: 0.75em;
+    border-radius: 0.15em;
+    transition: background 0.3s ease;
+}
+ul.accordian li a.toggle:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
