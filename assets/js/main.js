@@ -34,7 +34,7 @@ $(document).ready(function () {
 		url: "/newsletters/archive.json"
 	}).done(function(data){
 		var num2month = ["","January","February","March","April","May","June","July","August","September","October","November","December"];
-		var root = $("li.archive");
+		var root = $("ul.archive");
 		data.each(function(year){
 			var yearEl = $('<li><a class="toggle" href="javascript:void(0);">' + year.year + '"</a></li>');
 			root.append(yearEl);
