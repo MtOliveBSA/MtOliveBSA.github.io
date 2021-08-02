@@ -2440,6 +2440,9 @@ input, select, textarea {
 	ul.icons {
 		cursor: default;
 	}
+		ul.icons a:hover {
+			text-decoration: none;
+		}
 
 		ul.icons li {
 			display: inline-block;
