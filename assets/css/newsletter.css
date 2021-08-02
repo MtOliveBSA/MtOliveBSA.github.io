@@ -859,6 +859,20 @@ display: block;
 	z-index: 1;
 }
 
+.sidebar-nav ul.archive li {
+	color: #fff;
+	background-color: #1a1a1a;
+}
+.sidebar-nav ul.archive li:hover,
+.sidebar-nav li.archive-root:hover {
+	color: #fff;
+	background-color: #9c0000;
+}
+.sidebar-nav li.archive-root:before,
+.sidebar-nav li.archive-root li:before {
+    background-color: #9c0000;
+}
+
 ul.accordian {
     list-style: none;
     padding: 0;
