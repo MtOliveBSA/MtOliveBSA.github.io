@@ -38,13 +38,13 @@ $(document).ready(function () {
 		$(data).each(function(i, year){
 			var yearEl = $('<li><a class="toggle" href="javascript:void(0);">' + year.year + '"</a></li>');
 			root.append(yearEl);
-			year.each(function(i, month){
+			$(year.months).each(function(i, month){
 				var monthEl = $('<ul class="inner"> \
 									<a class="toggle" href="javascript:void(0);">' + num2month[month.month] + '</a> \
 									<ul class="inner"></ul> \
 								</ul>');
 				yearEl.append(monthEl);
-				month.articles.each(function(i, article){
+				$(month.articles).each(function(i, article){
 					if(article.active)
 						$('<li><a href="#">' + ( article.title ? article.title : article.date ) + '</a></li>').appendTo(monthEl);
 				})
