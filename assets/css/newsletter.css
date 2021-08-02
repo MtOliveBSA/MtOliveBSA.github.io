@@ -592,6 +592,8 @@ display: none;
 	color: #ddd;
 	text-decoration: none;
 	padding: 10px 15px 10px 30px;    
+    font-weight: normal;
+    font-family: "Source Sans Pro", sans-serif;
 }
 
 .sidebar-nav li a:hover,
@@ -652,8 +654,11 @@ display: none;
 	top: 0;
 }
 /*Fontawesome icons*/
+.nav.sidebar-nav li a.free::before {
+
+}
 .nav.sidebar-nav li a::before {
-	/* font-family: 'Font Awesome 5 Free'; */
+	font-family: 'Font Awesome 5 Free';
 	/* content: "\f12e"; */
 	vertical-align: baseline;
 	display: inline-block;
@@ -661,6 +666,9 @@ display: none;
 	font-weight: 900;
     width: 35px;
     text-align: center;
+}
+.nav.sidebar-nav li a.fab::before {
+    font-family: 'Font Awesome 5 Brands';
 }
 a[href*="#home"]::before {
 content: "\f015" !important;

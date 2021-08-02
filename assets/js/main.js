@@ -29,6 +29,13 @@
 })(jQuery);
 
 $(document).ready(function () {
+	//populate archive
+	$.ajax({
+		url: "/newsletters/archive.json"
+	}).done(function(data){
+		debugger;
+	});
+	
 	var trigger = $('.hamburger'),
 		overlay = $('.overlay'),
 		isClosed = false;

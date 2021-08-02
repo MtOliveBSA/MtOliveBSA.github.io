@@ -1,8 +1,12 @@
-{
-    "2021": [
-        { "7": [
-            { "date" : "2021-07-30", "title": "", "active": true },
-            { "date" : "2021-07-21", "title": "", "active": true }
-        ] }
+[{
+    "year": "2021",
+    "months": [
+        { 
+            "month": "7",
+            "articles": [
+                { "date" : "2021-07-30", "title": "", "active": true },
+                { "date" : "2021-07-21", "title": "", "active": true }
+            ]
+        }
     ]
-}
+}]
