@@ -36,7 +36,7 @@ $(document).ready(function () {
 		var num2month = ["","January","February","March","April","May","June","July","August","September","October","November","December"];
 		var root = $("ul.archive");
 		$(data).each(function(i, year){
-			var yearEl = $('<li><a class="toggle" href="javascript:void(0);">' + year.year + '"</a></li>');
+			var yearEl = $('<li><a class="toggle" href="javascript:void(0);">' + year.year + '</a></li>');
 			root.append(yearEl);
 			$(year.months).each(function(i, month){
 				var monthEl = $('<ul class="inner"> \
@@ -49,23 +49,23 @@ $(document).ready(function () {
 						$('<li><a href="#">' + ( article.title ? article.title : article.date ) + '</a></li>').appendTo(monthEl);
 				})
 			})
-		})
-	});
+		});
+
+		$('.toggle').click(function(e) {
+			e.preventDefault();
 	
-	$('.toggle').click(function(e) {
-		e.preventDefault();
-
-		var $this = $(this);
-
-		if ($this.next().hasClass('show')) {
-			$this.next().removeClass('show');
-			$this.next().slideUp(350);
-		} else {
-			$this.parent().parent().find('li .inner').removeClass('show');
-			$this.parent().parent().find('li .inner').slideUp(350);
-			$this.next().toggleClass('show');
-			$this.next().slideToggle(350);
-		}
+			var $this = $(this);
+	
+			if ($this.next().hasClass('show')) {
+				$this.next().removeClass('show');
+				$this.next().slideUp(350);
+			} else {
+				$this.parent().parent().find('li .inner').removeClass('show');
+				$this.parent().parent().find('li .inner').slideUp(350);
+				$this.next().toggleClass('show');
+				$this.next().slideToggle(350);
+			}
+		});
 	});
 	
 	var trigger = $('.hamburger'),
