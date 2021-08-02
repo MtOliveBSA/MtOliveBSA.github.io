@@ -35,16 +35,16 @@ $(document).ready(function () {
 	}).done(function(data){
 		var num2month = ["","January","February","March","April","May","June","July","August","September","October","November","December"];
 		var root = $("ul.archive");
-		$(data).each(function(year){
+		$(data).each(function(i, year){
 			var yearEl = $('<li><a class="toggle" href="javascript:void(0);">' + year.year + '"</a></li>');
 			root.append(yearEl);
-			year.each(function(month){
+			year.each(function(i, month){
 				var monthEl = $('<ul class="inner"> \
 									<a class="toggle" href="javascript:void(0);">' + num2month[month.month] + '</a> \
 									<ul class="inner"></ul> \
 								</ul>');
 				yearEl.append(monthEl);
-				month.articles.each(function(article){
+				month.articles.each(function(i, article){
 					if(article.active)
 						$('<li><a href="#">' + ( article.title ? article.title : article.date ) + '</a></li>').appendTo(monthEl);
 				})
