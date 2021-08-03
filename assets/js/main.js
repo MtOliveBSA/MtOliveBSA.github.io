@@ -55,7 +55,7 @@ $(document).ready(function () {
 				var innerMonthList = $(monthEl.children().get(1));
 				$(month.articles).each(function(i, article){
 					if(article.active)
-						$('<li><a href="/newsletters/' + article.date.replace(/-/g,"") + '">' + ( article.title ? article.title : article.date ) + '</a></li>').appendTo(innerMonthList);
+						$('<li><a href="' + article.path + '">' + ( article.title ? article.title : article.date ) + '</a></li>').appendTo(innerMonthList);
 				})
 			})
 		});
