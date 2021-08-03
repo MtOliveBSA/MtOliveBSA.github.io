@@ -31,7 +31,7 @@
 $(document).ready(function () {
 	//populate archive
 	$.ajax({
-		url: "/newsletters/archive.json"
+		url: "../archive.json"
 	}).done(function(data){
 		var num2month = ["","January","February","March","April","May","June","July","August","September","October","November","December"];
 		var root = $("ul.archive");

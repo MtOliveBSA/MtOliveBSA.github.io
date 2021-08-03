@@ -26,6 +26,11 @@
     font-family: 'Trade Winds', cursive;
 }
 
+a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
 .marauder-red {
     color: #9c0000;
 }

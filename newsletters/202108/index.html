@@ -122,45 +122,12 @@
 							</section>
 						</div>
 
-						<footer class="major container medium">
-							<h3>Want to stay up to date?</h3>
-							<ul class="actions special">
-								<li><a target="_blank" href="https://www.leaguelineup.com/emaillist.asp?url=mojbsa" class="button">Subscribe</a></li>
-							</ul>
-							<h3>Got news?</h3>
-							<ul class="actions special">
-								<li><a target="_blank" href="mailto:news@mtolivebsa.com" class="button">Tell us about it!</a></li>
-							</ul>					
-						</footer>
+						<div id="article-footer"></div>
 
 					</div>
 
 				<!-- Footer -->
-					<div id="footer">
-						<div class="container medium">
-
-							<header class="major last">
-								<h2>Questions or comments?</h2>
-							</header>
-
-							<p>Follow us or send us a message: <a target="_blank" href="mailto:news@mtolivebsa.com">news@mtolivebsa.com</a></p>
-
-							<ul class="icons">
-								<li><a target="_blank" href="https://leaguelineup.mtolivebsa.com" class="icon brands fa-LeagueLineup"><span class="label">LeagueLineup</span></a></li>
-								<li><a target="_blank" href="https://sportssignup.mtolivebsa.com" class="icon brands fa-SportsSignUp"><span class="label">SportsSignUp</span></a></li>
-								<li><a target="_blank" href="https://facebook.mtolivebsa.com" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a target="_blank" href="https://instagram.mtolivebsa.com" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a target="_blank" href="https://twitter.mtolivebsa.com" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a target="_blank" href="https://youtube.mtolivebsa.com" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
-								<li><a target="_blank" href="https://squadlocker.mtolivebsa.com" class="brands fas fa-tshirt"></a></li>
-							</ul>
-
-							<ul class="copyright">
-								<li>&copy; Mt Olive Baseball & Softball Association. All rights reserved.</li>
-							</ul>
-
-						</div>
-					</div>
+					<div id="footer"></div>
 				</div>
 			</div>
 
@@ -176,7 +143,9 @@
 
 			<script>
 				$(function(){
-					$("#navbar-menu").load("../../assets/templates/newsletter-menu.html"); 
+					$("#navbar-menu").load("../../assets/templates/newsletter-menu.html");
+					$("#article-footer").load("../../assets/templates/newsletter-article-footer.html"); 
+					$("#footer").load("../../assets/templates/newsletter-footer.html"); 
 				});
 			</script>
 
