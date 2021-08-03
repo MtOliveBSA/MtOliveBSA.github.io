@@ -29,6 +29,10 @@
 })(jQuery);
 
 $(document).ready(function () {
+	$("#navbar-menu").load("../../assets/templates/newsletter-menu.html");
+	$("#article-footer").load("../../assets/templates/newsletter-article-footer.html"); 
+	$("#footer").load("../../assets/templates/newsletter-footer.html"); 
+	
 	//populate archive
 	$.ajax({
 		url: "../archive.json"
