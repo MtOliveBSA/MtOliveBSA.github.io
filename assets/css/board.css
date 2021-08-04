@@ -1,6 +1,16 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Raleway:200,700|Source+Sans+Pro:300,600,300italic,600italic");
 
+@font-face {
+    font-family: 'Back to Black Bold';
+    src:  
+        url('../fonts/Back%20to%20Black%20Bold.woff2') format('woff2'), 
+        url('../fonts/Back%20to%20Black%20Bold.woff') format('woff'),
+        url('../fonts/Back%20to%20Black%20Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /*
 	Solid State by HTML5 UP
 	html5up.net | @ajlkn
@@ -3375,7 +3385,12 @@ input, select, textarea {
 /* Banner */
 
 	#banner {
-		padding: 10em 0 4.75em 0 ;
+		padding: 1em 0 8.75em 0 ;
+        background-color: #2e3141;
+        background-image: linear-gradient(to top, rgba(70, 70, 71, 0.8), rgba(14, 15, 20, 0.8)), url(../../images/bg.jpg);
+        background-size: auto, cover;
+        background-position: center, center;
+        margin-bottom: -6.5em;
 	}
 
 		#banner .inner {
@@ -3461,13 +3476,11 @@ input, select, textarea {
 		@media screen and (max-width: 1280px) {
 
 			#banner {
-				padding: 7em 0 8.25em 0 ;
+				padding: 1em 0 8.25em 0 ;
 				background-color: #2e3141;
-				background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
-				background-size: auto,
- cover;
-				background-position: center,
- center;
+				background-image: linear-gradient(to top, rgba(70, 70, 71, 0.8), rgba(14, 15, 20, 0.8)), url("../../images/bg.jpg");
+				background-size: auto, cover;
+				background-position: center, center;
 				margin-bottom: -6.5em;
 			}
 
@@ -3476,7 +3489,7 @@ input, select, textarea {
 		@media screen and (max-width: 980px) {
 
 			#banner {
-				padding: 12em 3em 12.375em 3em ;
+				padding: 1em 3em 12.375em 3em ;
 				margin-bottom: -4.75em;
 			}
 
@@ -3489,7 +3502,7 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			#banner {
-				padding: 5em 2em 4.25em 2em ;
+				padding: 1em 2em 4.25em 2em ;
 				margin-bottom: -2.5em;
 			}
 
@@ -4079,4 +4092,39 @@ input, select, textarea {
 }
 .wrapper.spotlight.style2 .contact > a > i {
     margin: 0 0 0 1em;
+}
+
+.marauder-red {
+    color: #9c0000;
+}
+
+#banner h2 {
+    color: #9c0000;
+    font-size: 3.5em; 
+    font-family: 'Metal Mania', cursive;
+}
+
+.stroked {
+    font-weight: bold;
+    font-style: italic;
+}
+
+@supports (-webkit-text-stroke: 0.001em #9c0000) {
+    .stroked {
+        -webkit-text-stroke: 0.001em #9c0000; 
+        -webkit-text-fill-color: #d8a056;
+    }
+
+    @media screen and (max-width: 992px) {
+        .stroked {
+            font-size: xxx-large;
+            -webkit-text-stroke: 0.02em #9c0000;
+        }
+    }
+
+    @-moz-document url-prefix() {
+        .stroked {
+            -webkit-text-stroke: 0.03em #9c0000;
+        }
+    }
 }
