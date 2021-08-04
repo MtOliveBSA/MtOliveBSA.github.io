@@ -1,0 +1,43 @@
+{
+    "const": {
+        "defaultContactPhoto": "images/nophoto.gif",
+        "signaturePhoto": "https://app1.sportssignup.com/Files/GetEncoded?Id=70503562384e453476557441725a3266476b6b2b6a773d3d"
+    },
+    "links": {
+        "leaguelineup": "//leaguelineup.mtolivebsa.com",
+        "facebook": "//facebook.mtolivebsa.com",
+        "instagram": "//instagram.mtolivebsa.com",
+        "twitter": "//twitter.mtolivebsa.com",
+        "youtube": "//youtube.mtolivebsa.com",
+
+        "gravatar": "https://en.gravatar.com/mtolivebsa",
+        "wordpress-me": "https://wordpress.com/me",
+        "github": "https://github.com/MtOliveBSA/League.git",
+        "zapier": "https://zapier.com/app/zaps --> as user: mobsa.webmaster@gmail.com"
+    },
+    "boardMembers": [
+        { "active": 1, "id":  0, "name":"Ryan Cahili",         "role":"President",                             "phone":"973-668-3221", "email":"rcahilimobsa@gmail.com",           "photo":"" },
+        { "active": 1, "id":  1, "name":"Michael Mancini",     "role":"Immediate Past President",              "phone":"973-666-1308", "email":"michael.mancini555@gmail.com",     "photo":"" },
+        { "active": 1, "id":  2, "name":"Keith Koller",        "role":"Vice President - Baseball",             "phone":"201-803-7684", "email":"kkoller10@icloud.com",             "photo":"" },
+        { "active": 1, "id":  3, "name":"Tom Zaycek",          "role":"Vice President - Softball",             "phone":"201-600-0683", "email":"mistertom1@optonline.net",         "photo":"" },
+        { "active": 1, "id":  4, "name":"Shawn Collins",       "role":"Secretary",                             "phone":"917-620-3919", "email":"Shawn.collins52@yahoo.com",        "photo":"" },
+        { "active": 1, "id":  5, "name":"Cliff Burns",         "role":"Player Agent",                          "phone":"973-975-9088", "email":"cliffordburns@hotmail.com",        "photo":"" },
+        { "active": 1, "id":  6, "name":"Scott Klein",         "role":"Treasurer",                             "phone":"973-534-7710", "email":"mobsatreasurer13@gmail.com",       "photo":"" },
+        { "active": 1, "id":  7, "name":"Jimmy Kay",           "role":"Equipment Director",                    "phone":"908-914-8067", "email":"jbo1mets@aol.com",                 "photo":"" },
+        { "active": 1, "id":  8, "name":"Dean Taylor",         "role":"Webmaster",                             "phone":"716-863-6231", "email":"dean.p.taylor@gmail.com",          "photo":"" },
+        { "active": 1, "id":  9, "name":"Ryan Bush",           "role":"Head Grounds Keeper / Fields Director", "phone":"973-960-4792", "email":"rybush8@yahoo.com",                "photo":"" },
+        { "active": 1, "id": 10, "name":"Travis Chamberland",  "role":"Sponsorship Director",                  "phone":"551-502-8404", "email":"travischamberland@yahoo.com",      "photo":"" },
+        { "active": 1, "id": 13, "name":"Lauren Fitgerald",    "role":"Concessions Director",                  "phone":"804-201-8116", "email":"lauren.fitzgerald@momcomplex.com", "photo":"" },
+        { "active": 1, "id": 14, "name":"Jill Sacco",          "role":"Activities Director",                   "phone":"973-757-7399", "email":"jisacco@microsoft.com",           "photo":"" },
+        { "active": 1, "id": 15, "name":"Rich Wroblewski",     "role":"Activities Director",                   "phone":"862-266-1785", "email":"richwrobo@gmail.com",      "photo":"" },
+        { "active": 1, "id": 16, "name":"John McBride",        "role":"Publicity Director",                    "phone":"917-224-7054", "email":"jmcbride@waste-industries.com",    "photo":"" },
+        { "active": 1, "id": 17, "name":"Mike Borozan",        "role":"Umpire In Chief",                       "phone":"201-787-1500", "email":"mborozan@optimum.net",             "photo":"" }
+    ],
+    "contacts": {
+        "president": 0,
+        "baseball": 2,
+        "softball": 3,
+        "playerAgent": 5,
+        "webmaster": 8
+    }
+}
