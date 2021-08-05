@@ -1,10 +1,18 @@
 $(document).ready(function () {
-	$("#navbar-menu").load("../../assets/templates/newsletter-menu.html");
+	//$("#navbar-menu").load("../../assets/templates/newsletter-menu.html");
 	$("#article-footer").load("../../assets/templates/newsletter-article-footer.html"); 
 	$("#footer").load("../../assets/templates/newsletter-footer.html");
 
-	if($.inFrame()){
-		$("ul.sidebar-nav a").attr("target", "_parent");
+	if(!$.inFrame()){
+		$("#navbar-menu").load("../../assets/templates/newsletter-menu.html");
+	} else {
+		$.ajax({ type: "GET",   
+			url: "../../assets/templates/newsletter-menu.html",   
+			success : function(menu){
+				$('#navbar-menu').append(menu);
+				$("ul.sidebar-nav a").attr("target", "_parent");
+			}
+		});
 	}
 
 	if(document.location.host === "leaguelineup.com" 
