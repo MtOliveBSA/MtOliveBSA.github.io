@@ -102,7 +102,14 @@
                 var body = document.body,
                 html = document.documentElement;
                 var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
-                parent.postMessage({ height: body.scrollHeight }, "https://www.leaguelineup.com");
+                console.debug({
+                    "body.scrollHeight": body.scrollHeight, 
+                    "body.offsetHeight": body.offsetHeight, 
+                    "html.clientHeight": html.clientHeight, 
+                    "html.scrollHeight": html.scrollHeight, 
+                    "html.offsetHeight": html.offsetHeight
+                });
+                parent.postMessage({ height: height }, "https://www.leaguelineup.com");
             });
 
             // start observing a DOM node
