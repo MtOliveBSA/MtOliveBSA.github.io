@@ -98,7 +98,7 @@
                         html = document.documentElement;
                         var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
                         parent.postMessage({ height: height }, "https://www.leaguelineup.com");
-                    }, 0);
+                    }, 5000);
                 });
 
                 $("#footer").load("../assets/templates/newsletter-footer.html");
