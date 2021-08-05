@@ -1,4 +1,4 @@
-if(!roContainer)
+if(typeof roContainer === "undefined")
     roContainer = document.body;
 
 function notifyResize(){
