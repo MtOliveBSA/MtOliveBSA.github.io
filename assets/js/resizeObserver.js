@@ -1,5 +1,4 @@
-// create an Observer instance
-const resizeObserver = new ResizeObserver( entries => {
+function notifyResize(){
     var body = document.body,
     html = document.documentElement;
 
@@ -13,8 +12,14 @@ const resizeObserver = new ResizeObserver( entries => {
     };
     
     parent.postMessage(height, "https://www.leaguelineup.com");
+}
+// create an Observer instance
+const resizeObserver = new ResizeObserver( entries => {
+    notifyResize();
 });
 
 // start observing a DOM node
-if($.inFrame())
+if($.inFrame()){
     resizeObserver.observe(document.body);
+    notifyResize();
+}
