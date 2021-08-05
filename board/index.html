@@ -96,7 +96,10 @@
 
                 $("#footer").load("../assets/templates/newsletter-footer.html");
 
-                parent.postMessage({ height: document.body.clientHeight }, "https://www.leaguelineup.com");
+                var body = document.body,
+                html = document.documentElement;
+                var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
+                parent.postMessage({ height: height }, "https://www.leaguelineup.com");
             });
 
             window.addEventListener("message", (event) => {
