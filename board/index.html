@@ -97,14 +97,19 @@
                 $("#footer").load("../assets/templates/newsletter-footer.html");
             });
 
-            $(window).load(function(){
+            // create an Observer instance
+            const resizeObserver = new ResizeObserver( entries => {
                 var body = document.body,
                 html = document.documentElement;
                 var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
                 parent.postMessage({ height: height }, "https://www.leaguelineup.com");
             });
-            
-            window.addEventListener("message", (event) => {
+
+            // start observing a DOM node
+            resizeObserver.observe(document.body);
+                
+
+            window.addEventListener("message", event => {
                 // IMPORTANT: check the origin of the data!
                 if (event.origin !== "https://www.leaguelineup.com") 
                     return;
