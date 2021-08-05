@@ -24,7 +24,7 @@
         { "active": 1, "id":  5, "name":"Cliff Burns",         "role":"Player Agent",                          "phone":"973-975-9088", "email":"cliffordburns@hotmail.com",        "photo":"" },
         { "active": 1, "id":  6, "name":"Scott Klein",         "role":"Treasurer",                             "phone":"973-534-7710", "email":"mobsatreasurer13@gmail.com",       "photo":"" },
         { "active": 1, "id":  7, "name":"Jimmy Kay",           "role":"Equipment Director",                    "phone":"908-914-8067", "email":"jbo1mets@aol.com",                 "photo":"" },
-        { "active": 1, "id":  8, "name":"Dean Taylor",         "role":"Webmaster",                             "phone":"716-863-6231", "email":"dean.p.taylor@gmail.com",          "photo":"" },
+        { "active": 1, "id":  8, "name":"Dean Taylor",         "role":"Web & Technology Director",             "phone":"716-863-6231", "email":"dean.p.taylor@gmail.com",          "photo":"" },
         { "active": 1, "id":  9, "name":"Ryan Bush",           "role":"Head Grounds Keeper / Fields Director", "phone":"973-960-4792", "email":"rybush8@yahoo.com",                "photo":"" },
         { "active": 1, "id": 10, "name":"Travis Chamberland",  "role":"Sponsorship Director",                  "phone":"551-502-8404", "email":"travischamberland@yahoo.com",      "photo":"" },
         { "active": 1, "id": 13, "name":"Lauren Fitgerald",    "role":"Concessions Director",                  "phone":"804-201-8116", "email":"lauren.fitzgerald@momcomplex.com", "photo":"" },
