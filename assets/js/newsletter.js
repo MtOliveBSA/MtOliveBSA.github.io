@@ -3,6 +3,10 @@ $(document).ready(function () {
 	$("#article-footer").load("../../assets/templates/newsletter-article-footer.html"); 
 	$("#footer").load("../../assets/templates/newsletter-footer.html");
 
+	if($.inFrame()){
+		$("ul.sidebar-nav a").attr("target", "_parent");
+	}
+
 	if(document.location.host === "leaguelineup.com" 
 		|| document.location.host === "mtolivebsa.github.io" 
 		|| document.location.host === "mobasa.sportssignup.com")
