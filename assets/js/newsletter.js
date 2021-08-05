@@ -1,7 +1,17 @@
 $(document).ready(function () {
 	$("#navbar-menu").load("../../assets/templates/newsletter-menu.html");
 	$("#article-footer").load("../../assets/templates/newsletter-article-footer.html"); 
-	$("#footer").load("../../assets/templates/newsletter-footer.html"); 
+	$("#footer").load("../../assets/templates/newsletter-footer.html");
+
+	if(document.location.host === "leaguelineup.com" 
+		|| document.location.host === "mtolivebsa.github.io" 
+		|| document.location.host === "mobasa.sportssignup.com")
+		$.ajax({ type: "GET",   
+			url: "../../assets/templates/facebook-messenger.html",   
+			success : function(fbPlugin){
+				$('body').append(fbPlugin);
+			}
+		});
 	
 	//populate archive
 	$.ajax({

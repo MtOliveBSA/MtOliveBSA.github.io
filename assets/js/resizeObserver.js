@@ -15,14 +15,6 @@ const resizeObserver = new ResizeObserver( entries => {
     parent.postMessage(height, "https://www.leaguelineup.com");
 });
 
-function inFrame () {
-    try {
-        return window.self !== window.top;
-    } catch (e) {
-        return true;
-    }
-}
-
 // start observing a DOM node
-if(inFrame())
+if($.inFrame())
     resizeObserver.observe(document.body);
