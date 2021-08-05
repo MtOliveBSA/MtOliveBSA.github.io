@@ -1,6 +1,6 @@
 //last updated 2021-07-28
 $.ajax({
-	url: "../sponsors.json"
+	url: "../../assets/data/sponsors.json"
 }).done(function(sponsors){
 	//Add sponsor carousel
 	$("<div class=\"sponsor_roll\"></div>").appendTo($("#sponsor_roll_container"));
