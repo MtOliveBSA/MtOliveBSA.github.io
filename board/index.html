@@ -97,15 +97,14 @@
                 $("#footer").load("../assets/templates/newsletter-footer.html"); 
             });
 
-            window.addEventListener('message', event => {
+            window.addEventListener("message", (event) => {
                 // IMPORTANT: check the origin of the data!
                 debugger;
-                if (!event.origin.startsWith('https://www.leaguelineup.com')) { 
+                if (!event.origin.startsWith("https://www.leaguelineup.com")) 
                     return;
-                } else {
-                    console.log(event.data);
-                } 
-            }); 
+                
+                event.source.postMessage("yeeeeet!", event.origin);
+            }, false); 
         </script>
     </body>
 </html>
