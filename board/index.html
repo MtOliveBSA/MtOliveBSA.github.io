@@ -103,7 +103,8 @@
                     return;
                 
                 event.source.postMessage("yeeeeet!", event.origin);
-            }, false); 
+            }, false);
+            parent.postMessage({ height: document.getElementById('content').clientHeight }, "https://www.leaguelineup.com");
         </script>
     </body>
 </html>
