@@ -15,7 +15,7 @@ function notifyResize(){
 }
 // create an Observer instance
 const resizeObserver = new ResizeObserver( entries => {
-    notifyResize();
+    setTimeout(notifyResize(), 0);
 });
 
 // start observing a DOM node
