@@ -1,4 +1,5 @@
-var roContainer = $("#page-wrapper")[0] || document.body;
+if(!roContainer)
+    roContainer = document.body;
 
 function notifyResize(){
     var body = document.body,
