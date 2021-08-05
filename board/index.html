@@ -98,7 +98,8 @@
             });
 
             window.addEventListener('message', event => {
-                // IMPORTANT: check the origin of the data! 
+                // IMPORTANT: check the origin of the data!
+                debugger;
                 if (!event.origin.startsWith('https://www.leaguelineup.com')) { 
                     return;
                 } else {
