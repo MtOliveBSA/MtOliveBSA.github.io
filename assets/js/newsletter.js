@@ -81,7 +81,7 @@ $(document).ready(function () {
 	}
 	
 	$('[data-toggle="offcanvas"]').click(function (){
-			$('#wrapper').toggleClass('toggled');
+			$('#page-wrapper').toggleClass('toggled');
 	});
 
 	$(document).on('click', '.nav .dropdown-manual', function (e) {

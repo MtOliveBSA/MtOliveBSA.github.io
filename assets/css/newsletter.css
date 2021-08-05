@@ -463,7 +463,7 @@ html { height: 100%;}
 /*           Wrappers            */
 /*-------------------------------*/
 
-#wrapper {
+#page-wrapper {
 	padding-left: 0;
 	-webkit-transition: all 0.5s ease;
 	-moz-transition: all 0.5s ease;
@@ -471,7 +471,7 @@ html { height: 100%;}
 	transition: all 0.5s ease;
 }
 
-#wrapper.toggled {
+#page-wrapper.toggled {
 	padding-left: 220px;
 }
 
@@ -494,7 +494,7 @@ html { height: 100%;}
 display: none;
 }
 
-#wrapper.toggled #sidebar-wrapper {
+#page-wrapper.toggled #sidebar-wrapper {
 	width: 220px;
 }
 
@@ -502,7 +502,7 @@ display: none;
 	width: 100%;
 }
 
-#wrapper.toggled #page-content-wrapper {
+#page-wrapper.toggled #page-content-wrapper {
 	position: absolute;
 	margin-right: -220px;
 }

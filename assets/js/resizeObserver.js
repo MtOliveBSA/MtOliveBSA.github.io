@@ -1,9 +1,13 @@
+var roContainer = $("#page-wrapper")[0] || document.body;
+
 function notifyResize(){
     var body = document.body,
     html = document.documentElement;
 
     var height = {
-        "max": Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight ),
+        "max": Math.max( roContainer.scrollHeight, roContainer.offsetHeight, body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight ),
+        "roContainer.scrollHeight": roContainer.scrollHeight, 
+        "roContainer.offsetHeight": roContainer.offsetHeight, 
         "body.scrollHeight": body.scrollHeight, 
         "body.offsetHeight": body.offsetHeight, 
         "html.clientHeight": html.clientHeight, 
@@ -20,6 +24,6 @@ const resizeObserver = new ResizeObserver( entries => {
 
 // start observing a DOM node
 if($.inFrame()){
-    resizeObserver.observe(document.body);
+    resizeObserver.observe(roContainer);
     notifyResize();
 }
