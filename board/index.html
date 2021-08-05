@@ -94,7 +94,9 @@
                     });
                 });
 
-                $("#footer").load("../assets/templates/newsletter-footer.html"); 
+                $("#footer").load("../assets/templates/newsletter-footer.html");
+                
+                parent.postMessage({ height: document.getElementById('content').clientHeight }, "https://www.leaguelineup.com");
             });
 
             window.addEventListener("message", (event) => {
@@ -104,7 +106,6 @@
                 
                 event.source.postMessage("yeeeeet!", event.origin);
             }, false);
-            parent.postMessage({ height: document.getElementById('content').clientHeight }, "https://www.leaguelineup.com");
         </script>
     </body>
 </html>
