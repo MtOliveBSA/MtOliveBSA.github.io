@@ -143,7 +143,8 @@ input, select, textarea {
 				font-size: 13pt;
 			}
 
-            header.major p {
+            header.major p,
+            .wrapper.spotlight .content p {
 				font-size: 1.25em;
 			}
 
@@ -160,7 +161,8 @@ input, select, textarea {
 				padding: 3em 0;
 			}
 
-				header.major p {
+				header.major p,
+                .wrapper.spotlight .content p {
 					font-size: 1.15em;
 				}
 
@@ -193,7 +195,8 @@ input, select, textarea {
 					display: none;
 				}
 
-				header.major p {
+				header.major p,
+                .wrapper.spotlight .content p {
 					font-size: 0.8em;
 				}
 
