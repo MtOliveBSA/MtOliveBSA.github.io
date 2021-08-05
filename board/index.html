@@ -96,6 +96,15 @@
 
                 $("#footer").load("../assets/templates/newsletter-footer.html"); 
             });
+
+            window.addEventListener('message', event => {
+                // IMPORTANT: check the origin of the data! 
+                if (!event.origin.startsWith('//leaguelineup.com')) { 
+                    return;
+                } else {
+                    console.log(event.data);
+                } 
+            }); 
         </script>
     </body>
 </html>
