@@ -4354,3 +4354,94 @@ header.major {
         }
     }
 }
+/*
+.wrapper.spotlight .inner > img {
+    -moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, -moz-filter 0.25s ease;
+    -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease, -webkit-filter 0.25s ease;
+    -ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease, -ms-filter 0.25s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease, filter 0.25s ease;
+    -moz-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    -moz-transition-delay: 1s;
+    -webkit-transition-delay: 1s;
+    -ms-transition-delay: 1s;
+    transition-delay: 1s;
+    -moz-filter: blur(0);
+    -webkit-filter: blur(0);
+    -ms-filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+}
+
+body.is-preload .wrapper.spotlight .inner > img {
+    opacity: 0;
+    -moz-transform: translateX(0.25em);
+    -webkit-transform: translateX(0.25em);
+    -ms-transform: translateX(0.25em);
+    transform: translateX(0.25em);
+    -moz-filter: blur(2px);
+    -webkit-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+}
+
+.wrapper.spotlight .inner .content {
+    -moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, -moz-filter 0.25s ease;
+    -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease, -webkit-filter 0.25s ease;
+    -ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease, -ms-filter 0.25s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease, filter 0.25s ease;
+    -moz-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    -moz-transition-delay: 0.65s;
+    -webkit-transition-delay: 0.65s;
+    -ms-transition-delay: 0.65s;
+    transition-delay: 0.65s;
+    -moz-filter: blur(0);
+    -webkit-filter: blur(0);
+    -ms-filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+}
+
+body.is-preload .wrapper.spotlight .inner .content {
+    opacity: 0;
+    -moz-transform: translateX(0.25em);
+    -webkit-transform: translateX(0.25em);
+    -ms-transform: translateX(0.25em);
+    transform: translateX(0.25em);
+    -moz-filter: blur(2px);
+    -webkit-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+}
+*/
+
+.image {
+    opacity: 0;
+    transform: scale(0.75);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .image {
+    transition: opacity 2s ease, transform 2s ease;
+  }
+}
+
+.image-transition {
+    opacity: 1;
+    transform: none;
+}
+
+/* playing with animations */
+@keyframes wipe-enter {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 0.5;
+	}
+}

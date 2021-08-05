@@ -60,7 +60,7 @@
                         if (i % 2 === 1) spotlight.addClass("alt");
 
                         var inner = $("<div class='inner'/>").appendTo(spotlight);
-                        $("<img class='image' src='" + ( c.photo ? c.photo : result.const.defaultContactPhoto ) + "'/>").appendTo(inner);
+                        var image = $("<img class='image' src='" + ( c.photo ? c.photo : result.const.defaultContactPhoto ) + "'/>").appendTo(inner);
                         
                         var content = $("<div class='content'/>").appendTo(inner);
                         $("<h2 class='major'>" + c.name + "</h2>").appendTo(content);
@@ -74,13 +74,28 @@
                             if(c.email) $("<p class='contact'><a href='mailto:" + c.email + "?subject=MOBSA'>" + c.email + "<i class='far fa-envelope'/></a></p>").appendTo(content);
                             if(c.phone) $("<p class='contact'><a href='tel:" + c.phone + "'>" + c.phone + "<i class='fas fa-phone'/></a></p>").appendTo(content);
                         }
+
+                        // Remove the transition class
+                        image.removeClass('image-transition');
+
+                        // Create the observer, same as before:
+                        var observer = new IntersectionObserver(entries => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    image.addClass('image-transition');
+                                    return;
+                                }
+
+                                image.removeClass('image-transition');
+                            });
+                        });
+                        
+                        observer.observe(inner[0]);
                     });
                 });
 
                 $("#footer").load("../assets/templates/newsletter-footer.html"); 
             });
         </script>
-
-
     </body>
 </html>
