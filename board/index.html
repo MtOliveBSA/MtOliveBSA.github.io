@@ -100,7 +100,7 @@
             window.addEventListener("message", (event) => {
                 // IMPORTANT: check the origin of the data!
                 debugger;
-                if (!event.origin.startsWith("https://www.leaguelineup.com")) 
+                if (event.origin !== "https://www.leaguelineup.com") 
                     return;
                 
                 event.source.postMessage("yeeeeet!", event.origin);
