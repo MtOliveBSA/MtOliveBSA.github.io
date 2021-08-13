@@ -10,10 +10,14 @@
 
 @font-face {
     font-family: 'Blazed';
-    src:  
-        /* url('../fonts/Back%20to%20Black%20Bold.woff2') format('woff2'), */
-        /* url('../fonts/Back%20to%20Black%20Bold.woff') format('woff'), */
-        url('../fonts/Blazed.ttf') format('truetype');
+    src: url('../fonts/Blazed.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PaintDrops';
+    src: url('../fonts/PaintDropsRegular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
