@@ -25,7 +25,7 @@
         { "active": 1, "id":  7, "name":"Rob Kucenski",        "role":"Treasurer",                                  "phone":"201-400-8928", "email":"bobby2772@yahoo.com",               "photo":"" },
         { "active": 1, "id":  8, "name":"John McBride",        "role":"Publicity Director / Travel Coordinator",    "phone":"917-224-7054", "email":"jmcbride@waste-industries.com",     "photo":"" },
         { "active": 1, "id":  9, "name":"Jimmy Kay",           "role":"Equipment Director",                         "phone":"908-914-8067", "email":"jbo1mets@aol.com",                  "photo":"" },
-        { "active": 1, "id": 10, "name":"Dean Taylor",         "role":"Web & Technology Director",                  "phone":"716-863-6231", "email":"dean.taylor@mtolivebsa.com",        "photo":"images/Dean-Taylor.jpg" },
+        { "active": 1, "id": 10, "name":"Dean Taylor",         "role":"Web & Technology Director",                  "phone":"716-863-6231", "email":"dean.taylor@mtolivebsa.com",        "photo":"images/Dean-Taylor.png" },
         { "active": 1, "id": 11, "name":"Corey Huber",         "role":"Facilities Director",                        "phone":"914-799-4774", "email":"corey.huber@gmail.com",             "photo":"" },
         { "active": 1, "id": 12, "name":"Travis Chamberland",  "role":"Sponsorship Director",                       "phone":"551-502-8404", "email":"travischamberland@yahoo.com",       "photo":"" },
         { "active": 1, "id": 13, "name":"Lauren Fitgerald",    "role":"Concessions Director",                       "phone":"804-201-8116", "email":"lauren.fitzgerald@momcomplex.com",  "photo":"" },
