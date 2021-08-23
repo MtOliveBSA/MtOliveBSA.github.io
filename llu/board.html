@@ -61,7 +61,7 @@
                         if (i % 2 === 1) spotlight.addClass("alt");
 
                         var inner = $("<div class='inner'/>").appendTo(spotlight);
-                        var image = $("<img class='image' src='" + ( c.photo ? c.photo : result.const.defaultContactPhoto ) + "'/>").appendTo(inner);
+                        var image = $("<img class='image shine' src='" + ( c.photo ? c.photo : result.const.defaultContactPhoto ) + "'/>").appendTo(inner);
                         
                         var content = $("<div class='content'/>").appendTo(inner);
                         $("<h2 class='major'>" + c.name + "</h2>").appendTo(content);
