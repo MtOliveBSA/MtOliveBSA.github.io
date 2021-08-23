@@ -4020,7 +4020,7 @@ header.major {
 				}
 
 				.wrapper.spotlight:nth-child(2n - 1) .image {
-					margin: 0 0 2em 2em;
+					margin: 1em 3em 1em 3em;
 				}
 		}
 
@@ -4058,9 +4058,11 @@ header.major {
 					width: 19em;
 					margin: 0 1.75em 2em 0;
 				}
-
+				
+				.spotlight.style1 > .inner > img,
+            	.spotlight.style2 > .inner > img,
 				.wrapper.spotlight:nth-child(2n - 1) .image {
-					margin: 0 0 2em 1.75em;
+					margin: 0 1em 2em 1.75em;
 				}
 
 		}
