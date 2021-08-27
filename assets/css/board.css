@@ -4299,6 +4299,10 @@ header.major {
 
   
 /* Custom Styles */
+h2.major > a:hover {
+	color: #000 !important;
+}
+
 .wrapper.spotlight:first-child:before {
     top: 0;
     box-shadow: none;
