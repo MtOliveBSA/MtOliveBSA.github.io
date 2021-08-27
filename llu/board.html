@@ -61,19 +61,19 @@
                         if (i % 2 === 1) spotlight.addClass("alt");
 
                         var inner = $("<div class='inner'/>").appendTo(spotlight);
-                        //var profile = $("<a href='directorinfo.asp?url=mojbsa&id=" + c.id + "'/>").appendTo(inner);
+                        //var profile = $("<a href='directorinfo.asp?url=mojbsa&id=" + c.id + "' target='_parent'/>").appendTo(inner);
                         var image = $("<img class='image' src='" + ( c.photo ? c.photo : result.const.defaultContactPhoto ) + "'/>").appendTo(inner);
                         
                         var content = $("<div class='content'/>").appendTo(inner);
-                        $("<h2 class='major'><a href='directorinfo.asp?url=mojbsa&id=" + c.id + "'>" + c.name + "</a></h2>").appendTo(content);
+                        $("<h2 class='major'><a href='directorinfo.asp?url=mojbsa&id=" + c.id + "' target='_parent'>" + c.name + "</a></h2>").appendTo(content);
 
                         var role = $("<p>" + c.role + "</p>").appendTo(content);
                         
                         if( i%2 ) {
-                            $("<p class='contact'><a href='contactform.asp?url=mojbsa&id=" + c.id + "&l=1'><i class='far fa-envelope'/>E-Mail</a></p>").appendTo(content);
+                            $("<p class='contact'><a href='contactform.asp?url=mojbsa&id=" + c.id + "&l=1' target='_parent'><i class='far fa-envelope'/>E-Mail</a></p>").appendTo(content);
                             if(c.phone) $("<p class='contact'><a href='tel:" + c.phone + "'><i class='fas fa-phone'/>" + c.phone + "</a></p>").appendTo(content);
                         } else {
-                            $("<p class='contact'><a href='contactform.asp?url=mojbsa&id=" + c.id + "&l=1'>E-Mail<i class='far fa-envelope'/></a></p>").appendTo(content);
+                            $("<p class='contact'><a href='contactform.asp?url=mojbsa&id=" + c.id + "&l=1' target='_parent'>E-Mail<i class='far fa-envelope'/></a></p>").appendTo(content);
                             if(c.phone) $("<p class='contact'><a href='tel:" + c.phone + "'>" + c.phone + "<i class='fas fa-phone'/></a></p>").appendTo(content);
                         }
 
