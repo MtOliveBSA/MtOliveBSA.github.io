@@ -33,7 +33,7 @@
         { "active": 1, "id": 285416, "order": 15, "name":"Corey Huber",         "role":"Facilities Director",                                "phone":"914-799-4774", "email":"corey.huber@gmail.com",             "org-email": "",                                  "photo":"images/C-Huber.png" },
         { "active": 1, "id": 285413, "order": 16, "name":"Jimmy Kay",           "role":"Equipment Director",                                 "phone":"908-914-8067", "email":"jbo1mets@aol.com",                  "org-email": "",                                  "photo":"" },
         { "active": 1, "id": 302085, "order": 17, "name":"Mike Borozan",        "role":"Umpire In Chief",                                    "phone":"201-787-1500", "email":"mborozan@optimum.net",              "org-email": "",                                  "photo":"" },
-        { "active": 1, "id": 567946, "order": 50, "name":"Michael Mancini",     "role":"Honorary Member",                                    "phone":"973-666-1308", "email":"michael.mancini555@gmail.com",      "org-email": "",                                  "photo":"" }
+        { "active": 1, "id": 567946, "order": 50, "name":"Michael Mancini",     "role":"Honorary Member",                                    "phone":"973-666-1308", "email":"michael.mancini555@gmail.com",      "org-email": "",                                  "photo":"images/M-Mancini.jpg" }
     ],
     "boardMembersArchive": {
         "2020": [
