@@ -31,7 +31,7 @@
 }
 
 a:hover {
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -97,6 +97,11 @@ a:hover {
 
 .news-emphasis {
     font-size: xx-large; 
+    font-family: 'Metal Mania', cursive;
+}
+
+.news-emphasis-large {
+    font-size: x-large; 
     font-family: 'Metal Mania', cursive;
 }
 
@@ -422,6 +427,9 @@ ul.icons li {
     position: relative;
     left: 50%;
     transform: translateX(-28%);
+}
+.feature .content a:hover {
+    color: #a3a3a3;
 }
 @media only screen and (max-width: 768px) {
     .mobile-only {
