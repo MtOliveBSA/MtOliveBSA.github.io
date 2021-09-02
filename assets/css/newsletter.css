@@ -448,6 +448,7 @@ ul.icons li {
 .sponsor_roll .slick-slide img {
     margin: 0 auto;
     object-fit: contain;
+    width: -webkit-fill-available;
 }
 
 
