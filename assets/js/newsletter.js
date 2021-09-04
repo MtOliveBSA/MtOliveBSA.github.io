@@ -6,6 +6,8 @@ $(document).ready(function () {
 	if(!$.inFrame()){
 		$("#navbar-menu").load("../../assets/templates/newsletter-menu.html");
 	} else {
+		$(".account-links").remove();  //destroy duplicate account/unsubscribe links
+
 		$.ajax({ type: "GET",   
 			url: "../../assets/templates/newsletter-menu.html",   
 			success : function(menu){
