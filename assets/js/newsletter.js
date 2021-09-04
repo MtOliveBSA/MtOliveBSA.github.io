@@ -1,13 +1,13 @@
 $(document).ready(function () {
 	//$("#navbar-menu").load("../../assets/templates/newsletter-menu.html");
-	$("#article-footer").load("../../assets/templates/newsletter-article-footer.html"); 
+	$("#article-footer").load("../../assets/templates/newsletter-article-footer.html");
+	$("ul.account-links").load("../../assets/templates/newsletter-account-links.html");
 	$("#footer").load("../../assets/templates/newsletter-footer.html");
 
 	if(!$.inFrame()){
 		$("#navbar-menu").load("../../assets/templates/newsletter-menu.html");
 	} else {
-		$(".account-links").remove();  //destroy duplicate account/unsubscribe links
-
+		//$(".account-links").remove();  //destroy duplicate account/unsubscribe links
 		$.ajax({ type: "GET",   
 			url: "../../assets/templates/newsletter-menu.html",   
 			success : function(menu){
