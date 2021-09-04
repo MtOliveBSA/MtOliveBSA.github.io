@@ -1,10 +1,9 @@
 $(document).ready(function () {
 	//$("#navbar-menu").load("../../assets/templates/newsletter-menu.html");
-	$("#article-footer").load("../../assets/templates/newsletter-article-footer.html", function(){
+	$("#article-footer").load("../../assets/templates/newsletter-article-footer.html");
+	$("#footer").load("../../assets/templates/newsletter-footer.html", function(){
 		$("#account-links").load("../../assets/templates/newsletter-account-links.html");
 	});
-	
-	$("#footer").load("../../assets/templates/newsletter-footer.html");
 
 	if(!$.inFrame()){
 		$("#navbar-menu").load("../../assets/templates/newsletter-menu.html");
