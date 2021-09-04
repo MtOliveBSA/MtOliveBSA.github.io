@@ -1,7 +1,7 @@
 $(document).ready(function () {
 	//$("#navbar-menu").load("../../assets/templates/newsletter-menu.html");
 	$("#article-footer").load("../../assets/templates/newsletter-article-footer.html", function(){
-		$("ul.account-links").load("../../assets/templates/newsletter-account-links.html");
+		$("#account-links").load("../../assets/templates/newsletter-account-links.html");
 	});
 	
 	$("#footer").load("../../assets/templates/newsletter-footer.html");
