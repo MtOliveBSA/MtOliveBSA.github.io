@@ -15,7 +15,7 @@ function notifyResize(){
         "html.scrollHeight": html.scrollHeight, 
         "html.offsetHeight": html.offsetHeight
     };
-
+debugger;
     if(document.referrer == "https://www.leaguelineup.com")
         parent.postMessage(height, "https://www.leaguelineup.com");
     else if(document.referrer == "https://mobasa.sportssignup.com/")
