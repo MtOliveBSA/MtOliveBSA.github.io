@@ -1,0 +1,130 @@
+@font-face {
+    font-family: 'Back to Black Bold';
+    src:  
+        url('../fonts/Back%20to%20Black%20Bold.woff2') format('woff2'), 
+        url('../fonts/Back%20to%20Black%20Bold.woff') format('woff'),
+        url('../fonts/Back%20to%20Black%20Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Blazed';
+    src: url('../fonts/Blazed.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PaintDrops';
+    src: url('../fonts/PaintDropsRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.fonts {
+    font-family: 'Lobster', cursive;
+    font-family: 'Metal Mania', cursive;
+    font-family: 'Norican', cursive;
+    font-family: 'Pirata One', cursive;
+    font-family: 'Trade Winds', cursive;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.marauder-red {
+    color: #9c0000;
+}
+
+.fancy-title {
+    color: #9c0000;
+    font-size: 48pt; 
+    font-family: 'Back to Black Bold';
+}
+
+.news-header {    
+    color: #9c0000;
+    font-size: 48pt; 
+    font-family: 'Metal Mania', cursive;
+}
+
+.news-image {
+    width: 100%;
+}
+
+.news-image img {
+    border-radius: 30px; 
+    margin: auto;
+}
+
+.news-header-stroked {
+    font-weight: bold;
+    font-style: italic;
+}
+
+@supports (-webkit-text-stroke: 0.001em #9c0000) {
+    .news-header-stroked {
+        -webkit-text-stroke: 0.001em #9c0000; 
+        -webkit-text-fill-color: #d8a056;
+    }
+
+    @media screen and (max-width: 992px) {
+        .news-header-stroked {
+            font-size: xxx-large;
+            -webkit-text-stroke: 0.02em #9c0000;
+        }
+    }
+
+    @-moz-document url-prefix() {
+        .news-header-stroked {
+            -webkit-text-stroke: 0.03em #9c0000;
+        }
+    }
+}
+
+.fire {
+    font-family: 'Blazed';
+    background: #ED8E13;
+    background: -webkit-linear-gradient(to right, #ED8E13 0%, #F01815 100%);
+    background: -moz-linear-gradient(to right, #ED8E13 0%, #F01815 100%);
+    background: linear-gradient(to right, #ED8E13 0%, #F01815 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.news-emphasis {
+    font-size: xx-large; 
+    font-family: 'Metal Mania', cursive;
+}
+
+.news-emphasis-large {
+    font-size: x-large; 
+    font-family: 'Metal Mania', cursive;
+}
+
+.blink_me {
+    animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+.hover-color img {
+    filter: grayscale(0%);
+    filter: gray;
+    -webkit-filter: grayscale(0%);
+    filter: none;
+    -webkit-transition: all 1s ease;
+}
+
+.hover-color img:hover{
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    transition: 1s ease;
+}
