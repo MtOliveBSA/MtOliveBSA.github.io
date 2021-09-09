@@ -72,7 +72,7 @@
 }
 @media only screen and (max-width: 992px) {
     #hero {
-        width: 99vw;
+        width: 100%;
         margin: auto;
     }
 
@@ -125,11 +125,13 @@
     }
 }   
 
+/*
 @media (max-width: 992px){
     #slick-content {
         width: 100vw;
     }
 }
+*/
 
 .slick-list {
     margin: auto;
