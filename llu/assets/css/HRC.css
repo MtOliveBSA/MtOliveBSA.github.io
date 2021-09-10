@@ -213,6 +213,9 @@
 }
 
 @media screen and (max-width: 980px) {
+    #hero .col-lg-4:not(first-child) {
+        display: none;
+    }
 
     .wrapper {
         margin: 4.75em 0;
@@ -248,6 +251,9 @@
 }
 
 @media screen and (max-width: 736px) {
+    #hero .col-lg-4:not(first-child) {
+        display: none;
+    }
 
     .wrapper {
         margin: 2.5em 0;
@@ -289,6 +295,9 @@
 }
 
 @media screen and (max-width: 480px) {
+    #hero .col-lg-4:not(first-child) {
+        display: none;
+    }
 
     .wrapper.spotlight .inner {
         display: block;
@@ -303,7 +312,10 @@
 }
 
 @media screen and (max-width: 360px) {
-
+    #hero .col-lg-4:not(first-child) {
+        display: none;
+    }
+    
     .wrapper .inner {
         padding: 2em 1.5em 0.1em 1.5em ;
     }
