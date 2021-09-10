@@ -3584,6 +3584,7 @@ header.major {
         background-size: auto, cover;
         background-position: center, center;
         margin-bottom: -6.5em;
+		border-radius: 30px;
 	}
 
 		#banner .inner {
