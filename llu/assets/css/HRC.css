@@ -213,7 +213,7 @@
 }
 
 @media screen and (max-width: 980px) {
-    #hero .col-lg-4:not(first-child) {
+    #hero > .row > div.col-lg-4 + div.col-lg-4 {
         display: none;
     }
 
@@ -251,7 +251,7 @@
 }
 
 @media screen and (max-width: 736px) {
-    #hero .col-lg-4:not(first-child) {
+    #hero > .row > div.col-lg-4 + div.col-lg-4 {
         display: none;
     }
 
@@ -295,7 +295,7 @@
 }
 
 @media screen and (max-width: 480px) {
-    #hero .col-lg-4:not(first-child) {
+    #hero > .row > div.col-lg-4 + div.col-lg-4 {
         display: none;
     }
 
@@ -312,10 +312,10 @@
 }
 
 @media screen and (max-width: 360px) {
-    #hero .col-lg-4:not(first-child) {
+    #hero > .row > div.col-lg-4 + div.col-lg-4 {
         display: none;
     }
-    
+
     .wrapper .inner {
         padding: 2em 1.5em 0.1em 1.5em ;
     }
