@@ -106,8 +106,14 @@
     margin-top: var(--bs-gutter-y);
 }
 
+#hero .col-lg-1,
 #hero .col-lg-4 {
     text-align: center;
+}
+
+#hero .col-lg-1 > img {
+    max-height: 300px;
+    object-fit: contain;
 }
 
 #hero .col-lg-4 > img {
