@@ -22,6 +22,20 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Pieces Of Eight';
+    src: url('../fonts/Pieces%20of%20Eight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Adventure';
+    src: url('../fonts/Adventure.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .fonts {
     font-family: 'Lobster', cursive;
     font-family: 'Metal Mania', cursive;
@@ -63,6 +77,13 @@ a:hover {
 .news-header-stroked {
     font-weight: bold;
     font-style: italic;
+}
+
+.highlight-win {
+    font-family: 'Pieces of Eight';
+    font-size:x-large; 
+    color:green; 
+    padding-left:10px; 
 }
 
 @supports (-webkit-text-stroke: 0.001em #9c0000) {
@@ -921,3 +942,4 @@ ul.accordian li a.toggle {
 ul.accordian li a.toggle:hover {
     background: rgba(0, 0, 0, 0.9);
 }
+
