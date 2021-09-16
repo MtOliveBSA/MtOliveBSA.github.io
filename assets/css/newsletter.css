@@ -422,11 +422,14 @@ ul.icons li {
 }
 .feature .content div.live-border-container{
     position: sticky;
+    margin: auto;
 }
 .feature .content .live-border {
     position: relative;
+    /*
     left: 50%;
     transform: translateX(-28%);
+    */
 }
 .feature .content a:hover {
     color: #a3a3a3;
