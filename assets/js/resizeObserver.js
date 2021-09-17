@@ -22,7 +22,7 @@ function notifyResize(){
         parent.postMessage(height, "https://mobasa.sportssignup.com/");
     else if(document.referrer == "http://mobasa.sportssignup.com/")
         parent.postMessage(height, "http://mobasa.sportssignup.com/");
-    else if(document.referrer == "https://mtolivebsa.github.io/newsletters/index.html")
+    else if(document.referrer == "https://mtolivebsa.github.io/newsletters/index.html?ref=ssu")
         parent.postMessage(height, "http://mobasa.sportssignup.com/");
     else if(document.referrer == "https://mtolivebsa.github.io/newsletters/index.html?ref=llu")
         parent.postMessage(height, "http://www.leaguelineup.com/");
