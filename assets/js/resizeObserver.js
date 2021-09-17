@@ -16,16 +16,15 @@ function notifyResize(){
         "html.offsetHeight": html.offsetHeight
     };
 
-    if(document.referrer == "https://www.leaguelineup.com/")
+    if(document.referrer == "https://www.leaguelineup.com/" || document.referrer == "https://mtolivebsa.github.io/newsletters/index.html?ref=llu")
         parent.postMessage(height, "https://www.leaguelineup.com/");
-    else if(document.referrer == "https://mobasa.sportssignup.com/")
+    else if(document.referrer == "https://mtolivebsa.github.io/newsletters/index.html?ref=ssu"){
         parent.postMessage(height, "https://mobasa.sportssignup.com/");
-    else if(document.referrer == "http://mobasa.sportssignup.com/")
         parent.postMessage(height, "http://mobasa.sportssignup.com/");
-    else if(document.referrer == "https://mtolivebsa.github.io/newsletters/index.html?ref=ssu")
+    } else if(document.referrer == "https://mobasa.sportssignup.com/" || document.referrer == "http://mobasa.sportssignup.com/"){
         parent.postMessage(height, "https://mobasa.sportssignup.com/");
-    else if(document.referrer == "https://mtolivebsa.github.io/newsletters/index.html?ref=llu")
-        parent.postMessage(height, "https://www.leaguelineup.com/");
+        parent.postMessage(height, "http://mobasa.sportssignup.com/");
+    }
 }
 // create an Observer instance
 const resizeObserver = new ResizeObserver( entries => {
