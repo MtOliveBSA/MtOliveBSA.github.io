@@ -323,9 +323,7 @@ a:hover {
 
 #header .fancy-subtitle {
     color: #fff;
-    /*font-family: 'Metal Mania', cursive;*/
-    font-family: 'Pieces of Eight';
-    font-size: xxx-large;
+    font-family: 'Metal Mania', cursive;
 }
 
 .feature .image img {
@@ -424,9 +422,11 @@ ul.icons li {
     transform: translateY(-50%);
 }
 
+/*
 .flip-card-back > div > h1 {
     font-family: 'Pieces of Eight';
 }
+*/
 
 .feature.left .flip-card-inner > .flip-card-back {
     background-color: #9c0000;
@@ -442,7 +442,6 @@ ul.icons li {
 .feature.right .flip-card-inner > .flip-card-back p {
     color: #000;
 }
-
 
 .feature .content > div.mobile-only {
     margin-bottom: 30px;
