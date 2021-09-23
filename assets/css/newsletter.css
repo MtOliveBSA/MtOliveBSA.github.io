@@ -323,7 +323,9 @@ a:hover {
 
 #header .fancy-subtitle {
     color: #fff;
-    font-family: 'Metal Mania', cursive;
+    /*font-family: 'Metal Mania', cursive;*/
+    font-family: 'Pieces of Eight';
+    font-size: xxx-large;
 }
 
 .feature .image img {
@@ -420,6 +422,10 @@ ul.icons li {
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+}
+
+.flip-card-back > div > h1 {
+    font-family: 'Pieces of Eight';
 }
 
 .feature.left .flip-card-inner > .flip-card-back {
