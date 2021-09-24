@@ -409,7 +409,8 @@ ul.icons li {
         font-size: x-large;
     }
 }
-.flip-card-video .flip-card-front > video {
+.flip-card-video .flip-card-front > video,
+.flip-card-video .flip-card-front > iframe {
     width: 100%;
     height: 100%;
 }
