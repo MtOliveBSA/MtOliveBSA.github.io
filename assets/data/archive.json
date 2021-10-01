@@ -2,6 +2,12 @@
     "year": "2021",
     "months": [
         { 
+            "month": "10",
+            "articles": [
+                { "date" : "2021-10-01", "path":"../20211001/", "title": "", "active": true }
+            ]
+        },
+        { 
             "month": "9",
             "articles": [
                 { "date" : "2021-09-24", "path":"../20210924/", "title": "", "active": true },

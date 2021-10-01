@@ -395,7 +395,7 @@ ul.icons li {
     transform: rotateY(180deg);
 }
 
-.flip-card-video:hover .flip-card-inner {
+.flip-card-video-no-flip:hover .flip-card-inner {
     transform: none;
 }
 .flip-card-video .flip-card-front > span {
