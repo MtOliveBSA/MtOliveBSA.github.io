@@ -87,6 +87,14 @@ a:hover {
     padding-left:10px;
     white-space:nowrap
 }
+.highlight-loss {
+    font-family: 'Pieces of Eight';
+    font-size:x-large; 
+    font-weight: bold;
+    color:#9c0000; 
+    padding-left:10px;
+    white-space:nowrap
+}
 
 @supports (-webkit-text-stroke: 0.001em #9c0000) {
     .news-header-stroked {
