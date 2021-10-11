@@ -165,7 +165,24 @@
 											<span>Click to watch the highlight reel!</span>
 											
 											<span style="background-color: #000; z-index:9999; width:100%; height:2em;">Click to watch the highlight reel!</span>
-											<iframe src="https://www.youtube.com/embed/kBLO3ehnbFY?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&fs=0&modestbranding=1&origin=mtolivebsa.github.io"></iframe>
+											<!--- <iframe src="https://www.youtube.com/embed/kBLO3ehnbFY?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&fs=0&modestbranding=1&origin=mtolivebsa.github.io"></iframe> --->
+											<iframe 
+												id="travel-softball-embedded-video"
+												type="text/html" 
+												allowtransparency="true"
+												height="100%"
+												width="100%"
+												preload="metadata"
+												gesture="media"
+												allow="encrypted-media"
+												frameborder="0"
+												classname="autoplay-iframe"
+												src="about:blank"></iframe>
+											<script>
+												var iframe = document.getElementById("travel-softball-embedded-video");
+												var videoId = "kBLO3ehnbFY";
+												iframe.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&version=3&html5=1&hd=1&controls=0&loop=1&playlist=" + videoId + "&playsinline=1&rel=0&showinfo=0&modestbranding=1&related=0&enablejsapi=1&origin=" + window.location.hostname;
+											</script>
 											
 											<!---
 											<video autoplay muted loop>
