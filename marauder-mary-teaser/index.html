@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Mt Olive Baseball & Softball Association - Coming Soon!</title>
+		<link rel="icon" type="image/png" href="../images/mobsa-logo.png" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y5R07DXNMM"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-196216889-4');
+			gtag('config', 'G-Y5R07DXNMM');
+			gtag('config', 'G-93CPQEFQRR'); //Global Aggr GitHub
+		</script>
+
+		<link rel="preconnect" href="https://fonts.gstatic.com" /> 
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Metal+Mania&family=Norican&family=Pirata+One&family=Trade+Winds&family=Bungee+Inline&display=swap" rel="stylesheet"/>
+		
+		<style>
+			@font-face {
+				font-family: 'Pieces Of Eight';
+				src: url('../fonts/Pieces%20of%20Eight.ttf') format('truetype');
+				font-weight: normal;
+				font-style: normal;
+			}
+
+			.announce {
+				font-family: 'Pieces of Eight';
+				font-size:xxx-large; 
+				font-weight: bold;
+				color:#9c0000;
+			}
+		</style>
+	</head>
+	<body style="background-color:#010001;">
+		<div style="width:100%;text-align: center;position: absolute;top: 50%;transform: translateY(-50%);">
+			<div class="announce">Marauder Mary - Coming Soon!</div>
+			<video id="teaser-video" controls autoplay style="width:75%; margin:auto;">
+				<!--- <source type="video/webm" src="./media/Mount Olive Marauders Fall 2021 12U Softball Voorhees Highlights-(360p).webm" /> --->
+				<source type="video/mp4" src="./video-1.mp4" />
+				<img src="./Maurader-Mary.png" />
+			</video>
+		</div>
+
+		<script>
+			var myvid = document.getElementById('teaser-video');
+			var myvids = [
+				"./video-1.mp4", 
+				"./video-2.mp4",
+				"./video-3.mp4",
+				"./video-4.mp4",
+				"./video-5.mp4"
+			];
+			var activeVideo = 0;
+			myvid.addEventListener('ended', function(e) {
+				// update the new active video index
+				activeVideo = (++activeVideo) % myvids.length;
+
+				// update the video source and play
+				myvid.src = myvids[activeVideo];
+				myvid.play();
+			});
+		</script>
+    </body>
+    </html>
