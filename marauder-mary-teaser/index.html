@@ -47,6 +47,7 @@
 			</video>
 		</div>
 
+		<script src="../assets/js/jquery.min.js"></script>
 		<script>
 			var myvid = document.getElementById('teaser-video');
 			var myvids = [
@@ -57,13 +58,20 @@
 				"./video-5.mp4"
 			];
 			var activeVideo = 0;
+			myvid.addEventListener('play', function(e) {
+				$(this).parent().fadeIn();
+			});
 			myvid.addEventListener('ended', function(e) {
-				// update the new active video index
-				activeVideo = (++activeVideo) % myvids.length;
+				$(this).parent().fadeOut();
 
-				// update the video source and play
-				myvid.src = myvids[activeVideo];
-				myvid.play();
+				setTimeout(function(){
+					// update the new active video index
+					activeVideo = (++activeVideo) % myvids.length;
+
+					// update the video source and play
+					myvid.src = myvids[activeVideo];
+					myvid.play();
+				}, 1000);
 			});
 		</script>
     </body>
