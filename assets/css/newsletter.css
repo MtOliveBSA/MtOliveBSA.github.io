@@ -85,7 +85,7 @@ a:hover {
     font-weight: bold;
     color:green; 
     padding-left:10px;
-    white-space:nowrap
+    white-space:nowrap;
 }
 .highlight-loss {
     font-family: 'Pieces of Eight';
@@ -93,7 +93,17 @@ a:hover {
     font-weight: bold;
     color:#9c0000; 
     padding-left:10px;
-    white-space:nowrap
+    white-space:nowrap;
+}
+.highlight-split {
+    font-family: 'Pieces of Eight';
+    font-size:x-large; 
+    font-weight: bold;
+    padding-left:10px;
+    white-space:nowrap;
+    background: -webkit-linear-gradient(left, green, #9c0000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 @supports (-webkit-text-stroke: 0.001em #9c0000) {
