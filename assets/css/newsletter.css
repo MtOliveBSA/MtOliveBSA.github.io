@@ -451,6 +451,10 @@ ul.icons li {
     justify-content: center;
 }
 
+.flip-card-front-blend > img {
+    mix-blend-mode: multiply;
+}
+
 .flip-card-back {
     background-color: #2980b9;
     color: white;
