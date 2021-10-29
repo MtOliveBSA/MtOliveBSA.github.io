@@ -65,15 +65,6 @@ a:hover {
     font-family: 'Metal Mania', cursive;
 }
 
-.news-image {
-    width: 100%;
-}
-
-.news-image img {
-    border-radius: 30px; 
-    margin: auto;
-}
-
 .news-header-stroked {
     font-weight: bold;
     font-style: italic;
@@ -199,3 +190,16 @@ a:hover {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+#info-container .info-col {
+    width:33%;
+    display:inline-block;
+    vertical-align:top;
+}
+
+    @media screen and (max-width: 992px) {
+        #info-container .info-col {
+            width:100%;
+            display:block;
+        }
+    }
