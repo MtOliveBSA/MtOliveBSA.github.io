@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Mt Olive Baseball & Softball Association - Turkey Trot, Toss & Tourney Countdown!</title>
+		<link rel="icon" type="image/png" href="../images/mobsa-logo.png" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y5R07DXNMM"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-196216889-4');
+			gtag('config', 'G-Y5R07DXNMM');
+			gtag('config', 'G-93CPQEFQRR'); //Global Aggr GitHub
+		</script>
+
+		<link rel="preconnect" href="https://fonts.gstatic.com" /> 
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Metal+Mania&family=Norican&family=Pirata+One&family=Trade+Winds&family=Bungee+Inline&display=swap" rel="stylesheet"/>
+
+		<link rel="stylesheet" href="../assets/lib/bootstrap-4.6.0/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="../assets/css/newsletter.css" />
+	</head>
+	<body class="is-preload">
+        <!-- Display the countdown timer in an element -->
+        <div style="width:100%; text-align: center;">
+            <p id="timer" class="highlight-loss" style="font-size:xxx-large;"></p>
+        </div>
+
+        <script>
+            // Set the date we're counting down to
+            var countDownDate = new Date("Nov 28, 2021 09:30:00").getTime();
+
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="demo"
+            document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("timer").innerHTML = "EXPIRED";
+            }
+            }, 1000);
+        </script>
+    </body>
+</html>
