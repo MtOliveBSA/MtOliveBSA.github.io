@@ -4,6 +4,8 @@
         { 
             "month": "11",
             "articles": [
+                { "date" : "2021-11-19", "path":"../20211119/", "title": "", "active": true },
+                { "date" : "2021-11-12", "path":"../20211112/", "title": "", "active": true },
                 { "date" : "2021-11-05", "path":"../20211105/", "title": "", "active": true }
             ]
         },
