@@ -398,3 +398,18 @@
         }
     }
 /********** END Social Media Links **********/
+
+
+/********** News Carousel **********/
+.news_roll .ll-widget-left .newsitem-wp {
+    padding: 0;
+}
+
+/* @media only screen and (max-width: 992px) {} */
+
+@media only screen and (min-width: 992px) { 
+    .news_roll .slick-slide {
+        margin: 0 auto;
+    }
+}
+/********** END News Carousel **********/
