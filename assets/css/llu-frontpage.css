@@ -405,6 +405,10 @@
 }
 
 /********** Sponsor Carousel **********/
+#sponsor_roll_container {
+    display: flex;
+}
+
 .sponsor_roll {
     background-color: #fff;
 }
