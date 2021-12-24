@@ -400,6 +400,24 @@
 /********** END Social Media Links **********/
 
 
+.slick-track {
+    display: flex;
+}
+
+/********** Sponsor Carousel **********/
+.sponsor_roll {
+    background-color: #fff;
+}
+.sponsor_roll .slick-slide {
+    margin: auto 60px;
+    max-width: 95vw;
+}
+.sponsor_roll .slick-slide img {
+    margin: 0 auto;
+    object-fit: contain;
+}
+/********** END Sponsor Carousel **********/
+
 /********** News Carousel **********/
 .news_roll .ll-widget-left .newsitem-wp {
     padding: 0;
