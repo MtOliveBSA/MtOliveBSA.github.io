@@ -406,7 +406,7 @@
 
 /********** Sponsor Carousel **********/
 #sponsor_roll_container {
-    display: flex;
+    display: inline-block;
     width: 100%;
 }
 
