@@ -404,6 +404,10 @@
     display: flex;
 }
 
+.slick-slider {
+    position: unset;
+}
+
 /********** Sponsor Carousel **********/
 .sponsor_roll {
     background-color: #fff;
