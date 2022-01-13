@@ -203,3 +203,37 @@ a:hover {
             display:block;
         }
     }
+
+
+.form-headline {
+    font-size:xxx-large;
+    color:#9c0000;
+    font-family:'Pieces of Eight';
+    text-decoration:underline;
+}
+
+.form-title {
+    font-size:xxx-large;
+    color:#9c0000;
+    font-family:'Pieces of Eight';
+}
+
+.form-header {
+    font-size:xx-large;
+    color:#9c0000;
+    font-family:'Pieces of Eight';
+}
+
+@media screen and (max-width: 992px) {
+    .form-headline {
+        font-size:xx-large;
+    }
+    
+    .form-title {
+        font-size:xx-large;
+    }
+    
+    .form-header {
+        font-size:x-large;
+    }
+}
