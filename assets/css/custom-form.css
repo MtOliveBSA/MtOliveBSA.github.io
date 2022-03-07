@@ -237,3 +237,10 @@ a:hover {
         font-size:x-large;
     }
 }
+
+
+/**************************************************************/
+.radio {
+    float: left;
+    margin-right: 15px;
+}
