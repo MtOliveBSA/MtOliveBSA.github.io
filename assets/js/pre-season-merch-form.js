@@ -23,7 +23,10 @@ var config = {
                 subTotal += 5;
         });
 
+        //$(config.subTotal).prop("disabled", false);
         $(config.subTotal).val("$" + subTotal);
+        $(config.subTotal).next().val(subTotal)
+        //$(config.subTotal).prop("disabled", true);
     }
 };
 
@@ -32,6 +35,12 @@ config.subTotal = $("input", $(".control-label").filter(function(idx){
     return $(this).html() == "Sub-Total:";
 }).parent());
 $(config.subTotal).val("$0").prop("disabled", true);
+
+//Re-enable sub-total on submission
+//$("input[type='Submit']").click(function(){
+//    $(config.subTotal).prop("disabled", false);
+//});
+
 
 //Purchase Fields
 $(".control-label").filter(function(idx){
