@@ -23,7 +23,9 @@ var config = {
                 subTotal += 5;
         });
 
+        $(config.subTotal).prop("disabled", false);
         $(config.subTotal).val("$" + subTotal);
+        $(config.subTotal).prop("disabled", true);
     }
 };
 
