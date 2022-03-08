@@ -247,11 +247,12 @@ a:hover {
 
 .merch-images-container {
     text-align: center;
-    /*display: inline;*/
+    display: inline-block;
+    width: 100%;
 }
 
 .mag-container {
-    width: 40%;
+    width: 50%;
     float: left;
     margin-bottom: 20px;
 }
@@ -298,13 +299,13 @@ a:hover {
 /************ Magnifier v2 ***************/
 .wrap {
     max-width: 250px;
-    position: relative;
+    /*position: relative;*/
     /*
-    display: inline-grid;
     margin: 80px auto;
     padding: 10px 20px;
     border: tomato 7px solid;
     */
+    /* width: 50%; */
   }
   
   .magnifierRentgen {
