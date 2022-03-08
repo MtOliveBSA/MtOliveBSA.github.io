@@ -249,7 +249,7 @@ a:hover {
     text-align: center;
     margin: 15px;
     height: 250px;
-    display: flex;
+    /*display: flex;*/
 }
 
 .mag-container {
