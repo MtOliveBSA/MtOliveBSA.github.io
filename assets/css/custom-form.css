@@ -299,8 +299,8 @@ a:hover {
 /************ Magnifier v2 ***************/
 .wrap {
     max-width: 200px;
-    max-height: 200px;
     position: relative;
+    vertical-align: middle;
     /*
     display: inline-grid;
     margin: 80px auto;
