@@ -26,22 +26,21 @@ var config = {
         });
 
         //$(config.subTotal).prop("disabled", false);
-        $(config.subTotalText).html("Sub-Total: $" + subTotal);
-        $(config.subTotal).val("$" + subTotal);
+        //$(config.subTotalText).html("Sub-Total: $" + subTotal);
+        $(config.subTotal).val("$" + subTotal).change();
         //$(config.subTotal).prop("disabled", true);
     }
 };
 
 //Sub-Total
-config.subTotalText = $("strong").filter(function(){
-    return $(this).html() == "Sub-Total: $0"; 
- });
-config.subTotalParent = $(".control-label").filter(function(idx){
+//config.subTotalText = $("strong").filter(function(){
+//    return $(this).html() == "Sub-Total: $0"; 
+// });
+config.subTotal = $("input", $(".control-label").filter(function(idx){
     return $(this).html() == "Sub-Total:";
-}).parent();
-config.subTotal = $("input", config.subTotalParent);
+}).parent());
 //$(config.subTotalParent).hide();
-//$(config.subTotal).val("$0").prop("disabled", true);
+$(config.subTotal).val("$0").prop("disabled", true);
 
 /*
 var submitBtn = $("input[type='Submit']");
