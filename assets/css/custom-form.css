@@ -247,12 +247,13 @@ a:hover {
 
 .merch-images-container {
     text-align: center;
-    margin-bottom: 20px;
+    margin-top: 15px;
 }
 
 .mag-container {
     width: 50%;
     float: left;
+    margin-bottom: 20px;
 }
 
 /*
