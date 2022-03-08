@@ -8,6 +8,7 @@ var config = {
         { "type": "batBag", "price": 60, "purchaseFlg": false, "personalizeFlg": false },
     ],
 
+    subTotalParent: null,
     subTotal: null,
     subTotalText: null,
     purchaseSelects: [],
@@ -35,10 +36,11 @@ var config = {
 config.subTotalText = $("strong").filter(function(){
     return $(this).html() == "Sub-Total: $$SUB-TOTAL$$"; 
  });
-config.subTotal = $("input", $(".control-label").filter(function(idx){
+config.subTotalParent = $(".control-label").filter(function(idx){
     return $(this).html() == "Sub-Total:";
-}).parent());
-$(config.subTotal).hide();
+}).parent();
+config.subTotal = $("input", config.subTotalParent);
+$(config.subTotalParent).hide();
 //$(config.subTotal).val("$0").prop("disabled", true);
 
 /*
