@@ -244,3 +244,47 @@ a:hover {
     float: left;
     margin-right: 15px;
 }
+
+.merch-images-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.merch-images-container img {
+    max-height: 200px;
+    max-width: 200px;
+    margin-right: 50px;
+    display: inline-block;
+}
+
+/********** Magnifier **********/
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .magnify-wrapper {
+    position: relative;
+    max-height: 50vh;
+  }
+  .magnify-wrapper img {
+    max-height: inherit;
+  }
+  .magnify-wrapper #large-img {
+    background: url("https://mtolivebsa.github.io/images/merch/20211127_161201.png") no-repeat #fff;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 5px 10px -2px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    position: absolute;
+    border: 4px solid #efefef;
+    z-index: 99;
+    border-radius: 100%;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .magnify-wrapper:hover #large-img, .magnify-wrapper:active #large-img {
+    opacity: 1;
+  }
