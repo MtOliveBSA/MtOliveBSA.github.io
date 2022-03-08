@@ -26,7 +26,7 @@ var config = {
         });
 
         //$(config.subTotal).prop("disabled", false);
-        $(config.subTotalText).html("$Sub-Total: $" + subTotal);
+        $(config.subTotalText).html("Sub-Total: $" + subTotal);
         $(config.subTotal).val("$" + subTotal);
         //$(config.subTotal).prop("disabled", true);
     }
@@ -34,13 +34,13 @@ var config = {
 
 //Sub-Total
 config.subTotalText = $("strong").filter(function(){
-    return $(this).html() == "Sub-Total: $$SUB-TOTAL$$"; 
+    return $(this).html() == "Sub-Total: $0"; 
  });
 config.subTotalParent = $(".control-label").filter(function(idx){
     return $(this).html() == "Sub-Total:";
 }).parent();
 config.subTotal = $("input", config.subTotalParent);
-$(config.subTotalParent).hide();
+//$(config.subTotalParent).hide();
 //$(config.subTotal).val("$0").prop("disabled", true);
 
 /*
