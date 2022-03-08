@@ -106,3 +106,6 @@ $(".control-label").filter(function(idx){
 		}
 	});
 });
+
+//Clean BR from Merch Image Containers
+$(".merch-images-container br").destroy();
