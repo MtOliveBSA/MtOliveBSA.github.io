@@ -9,6 +9,7 @@ var config = {
     ],
 
     subTotal: null,
+    subTotalText: null,
     purchaseSelects: [],
     personalizationSelects: [],
 
@@ -23,25 +24,31 @@ var config = {
                 subTotal += 5;
         });
 
-        $(config.subTotal).prop("disabled", false);
+        //$(config.subTotal).prop("disabled", false);
+        $(config.subTotalText).html("$Sub-Total: $" + subTotal);
         $(config.subTotal).val("$" + subTotal);
-        $(config.subTotal).prop("disabled", true);
+        //$(config.subTotal).prop("disabled", true);
     }
 };
 
 //Sub-Total
+config.subTotalText = $("strong").filter(function(){
+    return $(this).html() == "Sub-Total: $$SUB-TOTAL$$"; 
+ });
 config.subTotal = $("input", $(".control-label").filter(function(idx){
     return $(this).html() == "Sub-Total:";
 }).parent());
-$(config.subTotal).val("$0").prop("disabled", true);
+$(config.subTotal).hide();
+//$(config.subTotal).val("$0").prop("disabled", true);
 
+/*
 var submitBtn = $("input[type='Submit']");
 var _origSubmitFunc = submitBtn.click;
 submitBtn.click(function(){
     $(config.subTotal).val("$0").prop("disabled", false);
     _origSubmitFunc();
 });
-
+*/
 
 //Purchase Fields
 $(".control-label").filter(function(idx){
