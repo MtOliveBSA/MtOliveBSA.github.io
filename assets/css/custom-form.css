@@ -302,7 +302,7 @@ a:hover {
 .wrap {
     max-width: 250px;
     position: relative;
-    display: inline-flex;
+    /*display: inline-flex;*/
     /*
     margin: 80px auto;
     padding: 10px 20px;
