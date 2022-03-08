@@ -247,7 +247,7 @@ a:hover {
 
 .merch-images-container {
     text-align: center;
-    display: inline;
+    /*display: inline;*/
 }
 
 .mag-container {
@@ -299,8 +299,7 @@ a:hover {
 .wrap {
     max-width: 250px;
     position: relative;
-    display: inline-grid;
-    /*
+    /*display: inline-grid;
     margin: 80px auto;
     padding: 10px 20px;
     border: tomato 7px solid;
