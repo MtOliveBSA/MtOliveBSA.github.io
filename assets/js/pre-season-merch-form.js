@@ -8,9 +8,7 @@ var config = {
         { "type": "batBag", "price": 60, "purchaseFlg": false, "personalizeFlg": false },
     ],
 
-    subTotalParent: null,
     subTotal: null,
-    subTotalText: null,
     purchaseSelects: [],
     personalizationSelects: [],
 
@@ -25,31 +23,22 @@ var config = {
                 subTotal += 5;
         });
 
-        //$(config.subTotal).prop("disabled", false);
-        //$(config.subTotalText).html("Sub-Total: $" + subTotal);
         $(config.subTotal).val("$" + subTotal).change();
-        //$(config.subTotal).prop("disabled", true);
     }
 };
 
-//Sub-Total
-//config.subTotalText = $("strong").filter(function(){
-//    return $(this).html() == "Sub-Total: $0"; 
-// });
+//Setup Sub-Total Calc
 config.subTotal = $("input", $(".control-label").filter(function(idx){
     return $(this).html() == "Sub-Total:";
-}).parent());
-//$(config.subTotalParent).hide();
+}).parent()).get(0);
 $(config.subTotal).val("$0").prop("disabled", true);
 
-/*
-var submitBtn = $("input[type='Submit']");
-var _origSubmitFunc = submitBtn.click;
-submitBtn.click(function(){
-    $(config.subTotal).val("$0").prop("disabled", false);
-    _origSubmitFunc();
+//Re-Enable Field Prior to Submit so form submission works for sub-total value
+$('form').submit(function(e) {
+    $(':disabled').each(function(e) {
+        $(this).removeAttr('disabled');
+    })
 });
-*/
 
 //Purchase Fields
 $(".control-label").filter(function(idx){
