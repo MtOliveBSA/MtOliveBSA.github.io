@@ -247,6 +247,7 @@ a:hover {
 
 .merch-images-container {
     text-align: center;
+    /*
     margin: 15px;
     height: 250px;
     /*display: flex;*/
@@ -301,6 +302,7 @@ a:hover {
 .wrap {
     max-width: 250px;
     position: relative;
+    display: inline-flex;
     /*
     margin: 80px auto;
     padding: 10px 20px;
