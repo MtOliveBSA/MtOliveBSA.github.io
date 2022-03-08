@@ -247,8 +247,9 @@ a:hover {
 
 .merch-images-container {
     text-align: center;
-    margin-top: 15px;
+    margin: 15px;
     height: 250px;
+    display: flex;
 }
 
 .mag-container {
