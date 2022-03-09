@@ -261,7 +261,7 @@ a:hover {
 .wrap {
     max-width: 200px;
     position: relative;
-    vertical-align: middle;
+    margin: auto;
   }
   
   .magnifierRentgen {
