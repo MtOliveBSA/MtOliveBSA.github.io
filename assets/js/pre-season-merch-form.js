@@ -186,3 +186,6 @@ $.fn.magnifierRentgen = function() {
 };
 
 $(".div").magnifierRentgen();
+
+//do an initial calc in case this is a page reload
+config.recalc();
