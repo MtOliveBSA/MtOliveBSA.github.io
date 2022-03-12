@@ -64,7 +64,9 @@ $(".control-label").filter(function(idx){
 
 		if(!next.hasClass("form-group") || endFound){
 			fields.push(next);
-			next.hide();
+			if(!yesSelected){
+                next.hide();
+            }
 			next = null;
 			break;
 		}
