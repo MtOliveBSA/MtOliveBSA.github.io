@@ -1,5 +1,3 @@
-console.debug("Loading from override....");
-
 var config = {
     items: [
         { "type": "sweatshirt", "price": 35, "purchaseFlg": false, "personalizeFlg": false },
@@ -37,7 +35,7 @@ $(config.subTotal).val("$0").prop("disabled", true);
 
 //Re-Enable Field Prior to Submit so form submission works for sub-total value
 $('form').submit(function(e) {
-    //config.recalc();
+    config.recalc();
     $(':disabled').each(function(e) {
         $(this).removeAttr('disabled');
     })
@@ -51,11 +49,13 @@ $(".control-label").filter(function(idx){
     config.purchaseSelects.push(select);
 
 	var fields = [];
-	debugger;
+    var yesSelected = ( $("select", o).val() == "Yes" );
 	var next = $(o).next();
 	while(next != null) {
 		fields.push(next);
-		next.hide();
+		if(!yesSelected){
+            next.hide();
+        }
 		
 		next = $(next).next();
 		var endFound = $("label", next).filter(function(){
@@ -95,8 +95,11 @@ $(".control-label").filter(function(idx){
 
     var lastName = $(o).next();
     var number = $(o).next().next();
-    lastName.hide();
-    number.hide();
+
+    if(select.val() != "Yes"){
+        lastName.hide();
+        number.hide();
+    }
     
 	select.change(function(){
 		if(this.value == "Yes"){
