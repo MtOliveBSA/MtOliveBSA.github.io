@@ -119,6 +119,8 @@ $(".control-label").filter(function(idx){
 //Clean BR from Merch Image Containers
 $(".merch-images-container br").remove();
 
+//do an initial calc in case this is a page reload
+config.recalc();
 
 
 $.fn.magnifierRentgen = function() {
@@ -186,6 +188,3 @@ $.fn.magnifierRentgen = function() {
 };
 
 $(".div").magnifierRentgen();
-
-//do an initial calc in case this is a page reload
-config.recalc();
