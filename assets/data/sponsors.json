@@ -5,11 +5,6 @@
 		"img": "//my.llfiles.com/00073674/alstede_farms_310x100.png"
 	},
 	{
-		"href": "http://www.arkadiapest.com",
-		"name": "Arkadia - Eco Pest Control",
-		"img": "//my.llfiles.com/00073674/arkadia-badge-logo-blue_140x150_whitebg.png"
-	},
-	{
 		"href": "http://www.ashleyfarmsonline.com",
 		"name": "Ashley Farms",
 		"img": "//my.llfiles.com/00073674/ashley_farms_256x149.jpg"
@@ -18,6 +13,21 @@
 		"href": "http://www.brandasitaliangrill.com/",
 		"name": "Branda's Italian Grill",
 		"img": "//my.llfiles.com/00073674/brandas_242x175.png"
+	},
+	{
+		"href": "https://www.bubbakoos.com/location/mountolivenj",
+		"name": "Bubbakoo's Burritos",
+		"img": "//my.llfiles.com/00073674/Bubbakoos_215x215.png"
+	},
+	{
+		"href": "http://www.centenaryuniversity.edu/",
+		"name": "Centenary University",
+		"img": "//my.llfiles.com/00073674/Centenary_University_258x126.jpg"
+	},
+	{
+		"href": "http://www.dezineline.com/",
+		"name": "Dezline Line",
+		"img": "//my.llfiles.com/00073674/Dezine_Line_900x300.jpg"
 	},
 	{
 		"href": "http://DTA-Auto.com",
@@ -40,24 +50,14 @@
 		"img": "//my.llfiles.com/00073674/epicure_banner_497x175.png"
 	},
 	{
-		"href": "http://www.flandersbagels.com/",
-		"name": "Flanders Bagels",
-		"img": "//my.llfiles.com/00073674/flanders_bagels_243x150.png"
-	},
-	{
 		"href": "http:////gjkeller.com/",
 		"name": "George J Keller & Sons",
 		"img": "//my.llfiles.com/00073674/george_j_kelller_banner_679x60.jpg"
 	},
 	{
-		"href": "https://www.homelight.com/budd-lake-nj/sell-house-fast",
-		"name": "HomeLight",
-		"img": "//my.llfiles.com/00073674/HomeLight_294x58.jpg"
-	},
-	{
-		"href": "http://www.facebook.com/HomeworxPlus-102816011286318/",
-		"name": "HomeworxPlus",
-		"img": "//my.llfiles.com/00073674/HomeworxPlus_banner_394x150.png"
+		"href": "http://www.goddardschool.com/schools/nj/flanders/flanders",
+		"name": "The Goddard School",
+		"img": "//my.llfiles.com/00073674/Goddard_728x170.png"
 	},
 	{
 		"href": "http://honestheatingcooling.com/",
@@ -68,11 +68,6 @@
 		"href": "http:////www.keypointmtg.com/",
 		"name": "Keypoint Mortgage",
 		"img": "//my.llfiles.com/00073674/keypoint_mortgage_banner_434x100.png"
-	},
-	{
-		"href": "http:////maximumhealthpt.com",
-		"name": "Maximum Health Physical Therapy",
-		"img": "//my.llfiles.com/00073674/maximum_health_physical_therapy_272x80_whitebg.png"
 	},
 	{
 		"href": "http://www.mcdonalds.com/us/en-us/location/nj/mount-olive/30-international-dr-south/27786.html",
@@ -98,31 +93,6 @@
 		"href": "http://www.ptmcorp.net",
 		"name": "Prime Time Mortgage",
 		"img": "//my.llfiles.com/00073674/PTMC_LOGO_2021_162x150.jpg"
-	},
-	{
-		"href": "http:////www.facebook.com/withsportsinmind/?rf=156774454363392",
-		"name": "R&S Sports",
-		"img": "//my.llfiles.com/00073674/rs_sports_224x150.jpg"
-	},
-	{
-		"href": "http://www.flandersritas.com",
-		"name": "Rita's Italian Ice",
-		"img": "//my.llfiles.com/00073674/ritaslogo_171x150.jpg"
-	},
-	{
-		"href": "http:////ashawlofhope.org/",
-		"name": "Shawl of Hope",
-		"img": "//my.llfiles.com/00073674/shawl_of_hope_146x150.png"
-	},
-	{
-		"href": "http:////steelmack.com/",
-		"name": "Steelmack Landscaping Contractors",
-		"img": "//my.llfiles.com/00073674/steelmack_272x150.jpg"
-	},
-	{
-		"href": "http:////sundaeicecreamparlor.wixsite.com/sundaes",
-		"name": "Sundaes",
-		"img": "//my.llfiles.com/00073674/sundaes_banner_496x150_whitebg.png"
 	},
 	{
 		"href": "http://www.lawleonard.com/",
