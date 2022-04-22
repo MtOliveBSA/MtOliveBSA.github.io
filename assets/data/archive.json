@@ -5,6 +5,7 @@
             { 
                 "month": "4",
                 "articles": [
+                    { "date" : "2022-04-22", "path":"../20220422/", "title": "", "active": true },
                     { "date" : "2022-04-15", "path":"../20220415/", "title": "", "active": true }
                 ]
             },
