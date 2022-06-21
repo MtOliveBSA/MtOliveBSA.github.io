@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Mt Olive Baseball & Softball Association - Heart of the Babe 2021</title>
+		<link rel="icon" type="image/png" href="/images/mobsa-logo.png" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y5R07DXNMM"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-196216889-4');
+			gtag('config', 'G-Y5R07DXNMM');
+            gtag('config', 'G-93CPQEFQRR'); //Global Aggr GitHub
+		</script>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" /> 
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Metal+Mania&family=Norican&family=Pirata+One&family=Trade+Winds&display=swap" rel="stylesheet"/>
+
+        <link rel="stylesheet" href="../assets/lib/bootstrap-4.6.0/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/css/tether.min.css"/>
+
+        <link rel="stylesheet" href="../assets/css/board.css" />
+        <link rel="stylesheet" href="../assets/css/sidebar-nav.css" />
+        <link rel="stylesheet" href="./assets/css/HOTB.css" />
+    </head>
+    <body class="is-preload">
+        <div id="page-wrapper">
+            <!-- Sidebar -->
+			<div id="navbar-menu"></div>
+
+			<div id="page-content-wrapper">
+				<button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+					<span class="hamb-top"></span>
+					<span class="hamb-middle"></span>
+					<span class="hamb-bottom"></span>
+				</button>
+
+                <div class="content-container">
+                    <!--- HEADER CONTENT --->
+                    <div id="hero">
+                        <div class="row align-items-center">
+                            <div class="col-lg-4">
+                                <a href="https://www.baberuthleague.org"><img class="img-responsive center-block d-block mx-auto logo-2" src="https://my.llfiles.com/00073674/BRLJ70THANNIVLOGO.png" alt="Babe Ruth Home"></a>
+                            </div>
+                            <div class="col-lg-4">
+                                <img class="img-responsive center-block d-block mx-auto logo-1" src="https://my.llfiles.com/00073674/HOTBLOGOKO.png" alt="heart of the babe">
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="about-text">
+                                <p>Heart of the Babe is a national program that provides an opportunity to recognize and celebrate special players who embody the values and qualities of the legendary Babe Ruth and of the Babe Ruth League Organization.  The criteria for choosing winning players focuses on one stand-out characteristic representing the essence of the Heart of the Babe: </p>
+                                <p class="emphasis">Determination and Never Giving Up!</p>
+                                <p>The HOTB recognition program is not a popularity contest nor a platform to showcase the best athlete on a team, nor even the season MVP…unless of course, he or she demonstrates by their actions and attitude, that very special characteristic of</p>
+                                <p class="emphasis">“Never Giving Up.”</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="custom-content"></div>
+                    <!-- Footer -->
+                    <div id="footer"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scripts -->
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../assets/lib/bootstrap-4.6.0/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.min.js"></script>
+
+        <script src="../assets/js/browser.min.js"></script>
+        <script src="../assets/js/breakpoints.min.js"></script>
+        <script src="../assets/js/util.js"></script>
+        <script src="../assets/js/main.js"></script>
+        <script src="../assets/js/hotb.js"></script>
+        <script src="../assets/js/resizeObserver.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                //Clear custom-content element
+            $("#custom-content").html("");
+
+            var result = {
+            "const": {
+                "defaultContactPhoto": "https://my.llfiles.com/00073674/nophoto.gif"
+            },
+                "members": [
+                    { 'name': 'Joey Bilotta', 'teamName': 'ETGI', 'team': 'BRK01', 'number': '21', 'description': 'Always gives 100% - is quiet but always plays hard and shows a great attitude', "photo": "" },
+                    { 'name': 'Owen Fenn', 'teamName': 'DICK\'S SPORTING GOODS', 'team': 'BRK02', 'number': '', 'description': '', "photo": "" },
+                    { 'name': 'Miles Thomas', 'teamName': 'MT OLIVE FAMILY DENTAL', 'team': 'BRK03', 'number': '10', 'description': 'Coach Faron Moser and Assistant Coach David Hoy nominate #10 Miles Thomas from the Mt. Olive Dental green team for the \"HEART OF THE BABE\" opportunity. Miles has grown as a player by understanding the basic fundamentals of hitting, fielding, throwing, and running as well as a person breaking out of his shy shell, to be a leader amongst his teammates. Miles has a love and passion for baseball. He was always the first to show up for practice and games and encouraged his teammates to pick up a ball and throw with him. Both Coach Moser and Coach Hoy witnessed Miles\' growth with his willingness to play any position and/or bat anywhere in the lineup. He respects the game and plays hard. Any coach would be lucky to have him on their roster.', "photo": "" },
+                    { 'name': 'Anderson Hipp', 'teamName': 'EPICURE FOODS CORP', 'team': 'BRK04', 'number': '', 'description': 'Anderson came a long way from the first practice we had. He was determined to get better and had a great attitude the whole time. He also took a few bumps and bruises throughout the way, but never let any of that deter him. He is a great young man with a bright future!!', "photo": "" },
+                    { 'name': 'Zachary Tyburski', 'teamName': 'KEYPOINT MORTGAGE', 'team': 'BRK05', 'number': '', 'description': '', "photo": "" },
+                    { 'name': 'Luciano Weeks', 'teamName': 'THUNDER ', 'team': 'BMN01', 'number': '8', 'description': '', "photo": "" },
+                    { 'name': 'Bryce Pieklo', 'teamName': 'YARD GOATS', 'team': 'BMN02', 'number': '9', 'description': 'We are nominating Bryce as hes shown perseverance and improvement all season long. He got hit in the helmet and face the very first game we played and didnt want to get back into the batters box to bat after this happened. He overcame his fears to get back in after a couple turbulent games. He showed determination and never gave up and now hops right in!', "photo": "" },
+                    { 'name': 'Romit Gurao', 'teamName': 'GRASSHOPPERS', 'team': 'BMN03', 'number': '3', 'description': 'In his first year of ever playing baseball, Romit has shown his determination to improve himself and has actually become one of the stars of our team. He was only one of two kids who volunteered to be a catcher at the start of the season. Every day worked hard to improve himself at the position. He is also the leader on our team in hits. He never complains. Always ready to play hard. All coaches are in agreement and happy to nominate Romit', "photo": "" },
+                    { 'name': 'Parker Bewalder', 'teamName': '8U GOLD TRAVEL', 'team': 'TRAVEL', 'number': '1', 'description': 'Parker is the most vocal and most competitive kid on the team. He takes things hard personally, but always supports his teammates no matter the score or situation. He has done everything the team and coaches have asked of him without complaint or questioning. He also has taken an absolute beating behind the plate and the most lumps in the batters box. He shakes it off every time, grits his teeth and stays in there - always fighting for his team. A \"never quit attitude\" through and through, which positively rubs off on his teammates. ', "photo": "images/player-profiles/HOTB/2021/HOTB-2021-Parker-Bewalder.jpg" },
+                    { 'name': 'Nicholas Popo', 'teamName': '8U RED TRAVEL', 'team': 'TRAVEL', 'number': '12', 'description': 'Nicholas made the jump straight into travel baseball. I think that sports have really allowed him to come out of his shell as he was initially a very shy and reserved kid. We learned very quickly, that Nicholas had the heart of a lion and he was determined to improve each and every day. As all new players do with adjusting to kid pitch, Nicholas did struggle a bit in the beginning of the year but he didn\'t let that stop him. He persevered, he worked and allowed us to coach him. I wish every team could have 11 or 12 Nicholas Popo\'s on their team, he is all heart and always positive. As a coaching staff, we couldn\'t be proud of the strides that Nicholas has made this year because he always pushed himself to be the best that he could be. All his hard work is now paying off for him as he ascended in the batting order and has become a very consistent pitcher for us at a time when we needed him the most.', "photo": "" },
+                    { 'name': 'Antonio Rodriguez', 'teamName': '9U TRAVEL', 'team': 'TRAVEL', 'number': '', 'description': '', "photo": "images/player-profiles/HOTB/2021/HOTB-2021-Antonio-Rodriguez.jpg" },
+                    { 'name': 'Maximus Roberson ', 'teamName': '10U TRAVEL', 'team': 'TRAVEL', 'number': '99', 'description': '', "photo": "images/player-profiles/HOTB/2021/HOTB-2021-Maximus-Roberson.jpg" },
+                    { 'name': 'Max Yudoff', 'teamName': '10U TRAVEL', 'team': 'TRAVEL', 'number': '14', 'description': '', "photo": "images/player-profiles/HOTB/2021/HOTB-2021-Max-Yudoff.jpg" },
+                    { 'name': 'Justin Kay', 'teamName': '10U TRAVEL', 'team': 'TRAVEL', 'number': '2', 'description': '', "photo": "images/player-profiles/HOTB/2021/HOTB-2021-Justin-Kay.jpg" },
+                    { 'name': 'Josh Arturi', 'teamName': 'YANKEES', 'team': 'BMJ01', 'number': '', 'description': 'Josh is always trying his best. He plays any position asked of him. He cheers on his fellow players and never puts anyone down. He even gives advice to other players to try to improve their game. He always has a smile on his face and truly loves the game!!', "photo": "" },
+                    { 'name': 'Adam Sweeney', 'teamName': 'FLANDERS BAGEL', 'team': 'BR01', 'number': '', 'description': 'Adam comes to every game and every practice with integrity, sportsmanship and kindness. He has not said or portrayed one negative thing this season. Between his \"yes coach\" or \"can you help me understand that more coach\" that\'s the ideal baseball player I want on my team. Adam shows the courtesy and kindness to everyone on the team, every coach and most of all is an outstanding young man that I couldn\'t be more proud that our paths have crossed. Truly deserved and honored to be able to do this for him. ', "photo": "" },
+                    { 'name': 'Luke Carter', 'teamName': '11U TRAVEL', 'team': 'TRAVEL', 'number': '15', 'description': 'Gives 100% effort on the field and off. An all around teammate ', "photo": "" },
+                    { 'name': 'Max Koller', 'teamName': '12U TRAVEL', 'team': 'TRAVEL', 'number': '10', 'description': '', "photo": "images/player-profiles/HOTB/2021/HOTB-2021-Max-Koller.jpg" },
+                    //{ 'name': '', 'teamName': 'SOFTBALL ROOKIES', 'team': 'GRK', 'number': '', 'description': '', "photo": "" },
+                    { 'name': 'Colette Silkensen', 'teamName': 'SOFTBALL ROOKIES', 'team': 'GRK', 'number': '', 'description': 'Colette has shown great determination to constantly improve as a player throughout this season. Her drive to play her best every time is unquestionable and she has made great strides in her performance throughout the season.', "photo": "" },
+                    { 'name': 'Farrah Flood', 'teamName': '8U TRAVEL', 'team': 'TRAVEL', 'number': '8', 'description': 'I am nominating her because she is the perfect combination of hard worker and great attitude, plays whatever position I ask her to do and has really improved this year due to all her hard work.', "photo": "" },
+                    { 'name': 'Samantha Quinn', 'teamName': '10U TRAVEL', 'team': 'TRAVEL', 'number': '', 'description': 'Samantha is the definition of a kid with heart. She is the hardest working player on our team. Samantha is usually the first to practice and last to leave. She gives it 100% all of the time and will do anything and everything a coach asks. Samantha\'s work ethic has translated to her skill set. All of her hard work is paying off.', "photo": "" },
+                    { 'name': 'Austin Gomertz', 'teamName': 'ETGI ', 'team': 'BFR1', 'number': '7', 'description': 'Austin deserves this award because he never gave up. Whether allergies or super bad weather, he always tried his hardest no matter what and by the end of the year was able to hit a pitched ball. Great attitude.', "photo": "" },
+                    { 'name': 'Anthony Battaglino', 'teamName': 'ASHLEY FARMS', 'team': 'BFR2', 'number': '', 'description': '', "photo": "images/player-profiles/HOTB/2021/HOTB-2021-Anthony-Battaglino.jpg" },
+                    { 'name': 'Jackson Sanford', 'teamName': 'RITAS', 'team': 'BFR3', 'number': '', 'description': '', "photo": "images/player-profiles/HOTB/2021/HOTB-2021-Jackson-Sanford.jpg" },
+                    { 'name': 'Gavin McColligan', 'teamName': 'STEELMACK', 'team': 'BFR4', 'number': '30', 'description': 'Started the year not knowing how to throw hit or field. Was always disappointed when he missed the ball but tried his hardest. He was the spirit of the team always laughing and cheering everyone else on. Now he can throw hit and field the ball like no other.', "photo": "images/player-profiles/HOTB/2021/HOTB-2021-Gavin-McColligan.jpg" },
+                    { 'name': 'Joseph Liddell', 'teamName': 'KEYPOINT MORTGAGE', 'team': 'BFR5', 'number': '', 'description': 'Near perfect attendance, great attitude, always listening to the coach and attentive whether it be practice or a game, passion for the game.', "photo": "" },
+                    { 'name': 'Hudson Schriever', 'teamName': 'MT OLIVE FAMILY DENTAL', 'team': 'BFR6', 'number': '5', 'description': 'Hudson was one of the youngest players that I had on my team and when we first started coaching him, he didn\'t know whether he hit left-handed or right-handed. What impressed me the most is that he never got down on himself and always gave it his best effort, even when it didn\'t feel natural to him. He was constantly engaged in practices and games always wanting to make the play and hit the ball. He didn\'t get discouraged when he had to hit off the tee and we consistently worked with him. By the end of the season, not only did he not hit off the tee anymore but he was getting hits batting both left handed and right handed. He\'s been a pure pleasure to coach and he has a very bright future ahead of him because of his love for the sport, willingness to learn and never giving up.', "photo": "" },
+                    { 'name': 'Ella Wijatyk', 'teamName': 'SOFTBALL FARMS', 'team': 'GFM01', 'number': '6', 'description': 'Ella always puts 100% out on the field. She always has her hustle throttle turned all the way up and always does it with a smile. She\'s going to do well in the MO softball program through the years and I look forward to seeing her grow as a player and teammate alongside my daughter.', "photo": "images/player-profiles/HOTB/2021/HOTB-2021-Ella-Wijatyk.jpg" },
+                    { 'name': 'Alia Malik', 'teamName': 'SOFTBALL FARMS', 'team': 'GFM02', 'number': '7', 'description': 'Alia was our most improved player. She started having never played before and by the end of the season she was throwing, catching and hitting off the pitch! She was the first kid to run out in the field and eager to bat when we were in the dugout. She was helpful with her younger teammates and very coachable in the field. She developed a love for the game and will do excellent in the future.', "photo": "" },
+                    //{ 'name': '', 'teamName': 'SOFTBALL FARMS', 'team': 'GFM03', 'number': '', 'description': '', "photo": "" },
+                    { 'name': 'Sarah Hendricks', 'teamName': 'SOFTBALL MINORS', 'team': 'GMN', 'number': ' #10', 'description': 'Sarah came into the season with little to no experience. She was the smallest girl on the team. Was struggling to find her role. One day she came up to me and asked if she could try catching. I said absolutely give it you\'re best. After the game I asked what she thought she said I like it. So next game she caught again. And again. And by the end of the season she was catching every game and double headers. I\'m the playoffs she took a foul ball to the mask and it shook her. She took a minute got a drink and wiped her tears and went right back to catching. She\'s a brave little girl who was detained to carve out her role on this team and she more than did that. In addition Sarah took all the feedback. Never missed a practice or game. Always hustled. Great teammate.', "photo": "" },
+                    { 'name': 'Gina Ciccarella', 'teamName': 'SOFTBALL MINORS', 'team': 'GMN', 'number': '3', 'description': 'Gina established herself as the confident yet humble leader of our team this year. Gina lead by example and earned the respect of her teammates who looked to her. While bringing an impressive and diverse skill set to the table, it was Gina\'s focus on playing the game the right way, her positive outlook no matter the situation, and her ability to keep her cool in times of adversity / mental toughness that got the attention of the team and coaches. She was a pleasure to coach and we wish her much success!' }
+                ]
+            };
+
+            var _shuffleArray = function (array) {
+                for (var i = array.length - 1; i > 0; i--) {
+                    var j = Math.floor(Math.random() * (i + 1));
+                    var temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+            }
+            _shuffleArray(result.members);
+
+            var wrapper = $("#custom-content");
+            $( result.members ).each(function(i, c){
+                var spotlight = $("<section class='wrapper spotlight'/>").appendTo(wrapper);
+                if (i % 2 === 1) spotlight.addClass("alt");
+                spotlight.addClass((i % 2 === 0) ? "style1" : "style2");
+
+                var inner = $("<div class='inner'/>").appendTo(spotlight);
+                $("<img src='" + ( c.photo ? c.photo : result.const.defaultContactPhoto ) + "'/>").appendTo(inner);
+                
+                var content = $("<div class='content'/>").appendTo(inner);
+                $("<h2 class='major'>" + c.name + "</h2>").appendTo(content);
+
+                $("<p>" + (c.number? ("#" + c.number + " - ") : "") + c.team + " - " + c.teamName + "</p>").appendTo(content);
+                if(c.description) $("<p>" + c.description + "</p>").appendTo(content);
+            });
+
+            //$("#footer").load("../assets/templates/newsletter-footer.html");
+            });
+        </script>
+    </body>
+</html>
