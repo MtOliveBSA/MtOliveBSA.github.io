@@ -4,9 +4,7 @@ var config = {
 };
 
 //Setup Division calc
-config.division = $("input", $(".control-label").filter(function(idx){
-    return $(this).html() == "Division:";
-}).parent()).get(0);
+config.division = $("#select10 select").get(0);
 $(config.division).prop("disabled", true);
 
 //Re-Enable Field Prior to Submit so form submission works for sub-total value
