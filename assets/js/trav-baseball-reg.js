@@ -74,8 +74,8 @@ var config = {
             $(config.division).val("9U");
         else if(config.dates.inRange(date, config.dates.convert("2014-04-30"), config.dates.convert("2015-04-30")))
             $(config.division).val("8U");
-        else if(config.dates.inRange(date, config.dates.convert("2015-04-30"), config.dates.convert("2016-04-30")))
-            $(config.division).val("7U");
+        //else if(config.dates.inRange(date, config.dates.convert("2015-04-30"), config.dates.convert("2016-04-30")))
+        //    $(config.division).val("7U");
         else
             $(config.division).val("-");
     }
