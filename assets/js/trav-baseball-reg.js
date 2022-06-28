@@ -64,17 +64,17 @@ var config = {
 
         var date = new Date([config.selects.year.value, config.selects.month.value, config.selects.day.value].join("-"));
     
-        if(config.dates.inRange(date, config.dates.convert("2009-05-01"), config.dates.convert("2010-05-01")))
+        if(config.dates.inRange(date, config.dates.convert("2010-04-30"), config.dates.convert("2011-04-30")))
             $(config.division).val("12U");
-        else if(config.dates.inRange(date, config.dates.convert("2010-05-01"), config.dates.convert("2011-05-01")))
+        else if(config.dates.inRange(date, config.dates.convert("2011-04-30"), config.dates.convert("2012-04-30")))
             $(config.division).val("11U");
-        else if(config.dates.inRange(date, config.dates.convert("2011-05-01"), config.dates.convert("2012-05-01")))
+        else if(config.dates.inRange(date, config.dates.convert("2012-04-30"), config.dates.convert("2013-04-30")))
             $(config.division).val("10U");
-        else if(config.dates.inRange(date, config.dates.convert("2012-05-01"), config.dates.convert("2013-05-01")))
+        else if(config.dates.inRange(date, config.dates.convert("2013-04-30"), config.dates.convert("2014-04-30")))
             $(config.division).val("9U");
-        else if(config.dates.inRange(date, config.dates.convert("2013-05-01"), config.dates.convert("2014-05-01")))
+        else if(config.dates.inRange(date, config.dates.convert("2014-04-30"), config.dates.convert("2015-04-30")))
             $(config.division).val("8U");
-        else if(config.dates.inRange(date, config.dates.convert("2014-05-01"), config.dates.convert("2015-05-01")))
+        else if(config.dates.inRange(date, config.dates.convert("2015-04-30"), config.dates.convert("2016-04-30")))
             $(config.division).val("7U");
         else
             $(config.division).val("-");
