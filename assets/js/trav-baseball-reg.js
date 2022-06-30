@@ -62,7 +62,7 @@ var config = {
             || config.selects.day.value == "0" )
             return false;
 
-        var date = new Date([config.selects.year.value, config.selects.month.value, config.selects.day.value].join("-"));
+        var date = new Date([config.selects.year.value, config.selects.month.value, config.selects.day.value].join("/"));
     
         if(config.dates.inRange(date, config.dates.convert("2009-04-30"), config.dates.convert("2010-04-30")))
             $(config.division).val("12U");
