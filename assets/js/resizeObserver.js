@@ -24,6 +24,8 @@ function notifyResize(){
     } else if(document.referrer == "https://mobasa.sportssignup.com/" || document.referrer == "http://mobasa.sportssignup.com/"){
         parent.postMessage(height, "https://mobasa.sportssignup.com/");
         parent.postMessage(height, "http://mobasa.sportssignup.com/");
+    } else if(document.referrer == "https://mtolivebsa.sportsengine-prelive.com/"){
+        parent.postMessage(height, "https://mtolivebsa.sportsengine-prelive.com/");
     }
 }
 // create an Observer instance
