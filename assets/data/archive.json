@@ -3,6 +3,13 @@
         "year": "2022",
         "months": [
             { 
+                "month": "9",
+                "articles": [
+                    { "date" : "2022-09-27", "path":"../20220927/", "title": "", "active": true },
+                    { "date" : "2022-09-12", "path":"../20220912/", "title": "", "active": true }
+                ]
+            },
+            { 
                 "month": "7",
                 "articles": [
                     { "date" : "2022-07-28", "path":"../20220728/", "title": "", "active": true },
