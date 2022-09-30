@@ -287,3 +287,10 @@ a:hover {
 #leaugeverbiage2 u > li { display: grid; }
 #leaugeverbiage2 ul { list-style:none; }
 #leaugeverbiage2 ul > li { display: grid; }
+
+.image-preview-container { display: inline; width: 100%; }
+.image-preview-list-container { display: inline-block; width: 20%; }
+.image-preview-list-container a:hover { cursor:pointer; }
+.image-preview-list-container img { width: 95%; margin: auto; }
+.image-main-display { display: inline-block; width: 79%; }
+.image-main-display img { width: 100%; }
