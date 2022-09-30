@@ -1,3 +1,4 @@
+/*
 var config = {
     items: [
         { "type": "small", "price": 35, "purchaseFlg": false, "personalizeFlg": false },
@@ -111,12 +112,12 @@ $(".control-label").filter(function(idx){
 		}
 	});
 });
-
+*/
 //Clean BR from Merch Image Containers
 $(".merch-images-container br").remove();
 
 //do an initial calc in case this is a page reload
-config.recalc();
+//config.recalc();
 
 
 $.fn.magnifierRentgen = function() {
