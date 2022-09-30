@@ -292,5 +292,5 @@ a:hover {
 .image-preview-list-container { display: inline-block; width: 20%; }
 .image-preview-list-container a:hover { cursor:pointer; }
 .image-preview-list-container img { width: 95%; margin: auto; }
-.image-main-display { display: inline-block; width: 79%; }
+.image-main-display { display: inline-block; width: 79%; vertical-align: top; }
 .image-main-display img { width: 100%; }
