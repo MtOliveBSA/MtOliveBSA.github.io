@@ -294,3 +294,8 @@ a:hover {
 .image-preview-list-container img { width: 95%; margin: auto; }
 .image-main-display { display: inline-block; width: 80%; vertical-align: top; padding-top: 18px; }
 .image-main-display img { width: 100%; max-height: 800px; object-fit: contain; }
+
+@media screen and (max-width: 992px) {
+    .image-preview-list-container { display: inline-block; width: 100%; }
+    .image-main-display { display: none; }
+}
