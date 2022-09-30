@@ -282,3 +282,6 @@ a:hover {
     transform: scale(1.4);
     display: none;
   }
+
+#leaugeverbiage2 ul { list-style:none; }
+#leaugeverbiage2 ul > li { display: flex; }
