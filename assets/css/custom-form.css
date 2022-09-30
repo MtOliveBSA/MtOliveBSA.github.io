@@ -284,9 +284,9 @@ a:hover {
   }
 
 #leaugeverbiage2 u { list-style:none; }
-/*#leaugeverbiage2 u > li { display: grid; }*/
+#leaugeverbiage2 u > li { display: grid; }
 #leaugeverbiage2 ul { list-style:none; }
-/*#leaugeverbiage2 ul > li { display: grid; }*/
+#leaugeverbiage2 ul > li { display: grid; }
 
 .image-preview-container { display: inline; width: 100%; }
 .image-preview-list-container { display: inline-block; width: 15%; }
