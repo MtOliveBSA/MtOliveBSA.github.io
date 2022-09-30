@@ -284,6 +284,6 @@ a:hover {
   }
 
 #leaugeverbiage2 u { list-style:none; }
-#leaugeverbiage2 u > li { display: flex; }
+#leaugeverbiage2 u > li { display: grid; }
 #leaugeverbiage2 ul { list-style:none; }
-#leaugeverbiage2 ul > li { display: flex; }
+#leaugeverbiage2 ul > li { display: grid; }
