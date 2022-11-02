@@ -3,6 +3,12 @@
         "year": "2022",
         "months": [
             { 
+                "month": "11",
+                "articles": [
+                    { "date" : "2022-11-02", "path":"../20221102/", "title": "", "active": true }
+                ]
+            },
+            { 
                 "month": "10",
                 "articles": [
                     { "date" : "2022-10-06", "path":"../20221006/", "title": "", "active": true }
