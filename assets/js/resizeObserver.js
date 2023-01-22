@@ -27,8 +27,8 @@ function notifyResize(){
     } else if(document.referrer == "https://mtolivebsa.github.io/newsletters/index.html?ref=se"){
         parent.postMessage(height, "https://mtolivebsa.sportsengine-prelive.com/");
         parent.postMessage(height, "http://mtolivebsa.sportsengine-prelive.com/");
-        parent.postMessage(height, "https://mtolivebsa.sportsengine.com/");
-        parent.postMessage(height, "http://mtolivebsa.sportsengine.com/");
+        parent.postMessage(height, "https://mtolivebsa.sportngin.com/");
+        parent.postMessage(height, "http://mtolivebsa.sportngin.com/");
     } else if(document.referrer == "https://mtolivebsa.sportsengine-prelive.com/" || document.referrer == "https://mtolivebsa.sportngin.com/"){
         parent.postMessage(height, "https://mtolivebsa.sportsengine-prelive.com/");
         parent.postMessage(height, "https://mtolivebsa.sportngin.com/");
