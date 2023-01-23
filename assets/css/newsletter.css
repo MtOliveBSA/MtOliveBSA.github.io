@@ -451,6 +451,14 @@ ul.icons li {
     background: rgba(224, 224, 224, 0.15) url(images/SportsSignUpPlay_mono.png) no-repeat !important;
     background-size: contain !important;
 }
+#footer ul.icons .fa-SportsEngine {
+    background: transparent url(images/SportsEngine_mono.png) no-repeat;
+    background-size: contain !important;
+}
+#footer ul.icons .fa-SportsEngine:hover {
+    background: rgba(224, 224, 224, 0.15) url(images/SportsEngine_mono.png) no-repeat !important;
+    background-size: contain !important;
+}
 
 .feature image:hover img {
     transform: rotateY(180deg);
