@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Mt Olive Baseball & Softball Association - Board Members</title>
+		<link rel="icon" type="image/png" href="/images/mobsa-logo.png" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y5R07DXNMM"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-196216889-4');
+			gtag('config', 'G-Y5R07DXNMM');
+            gtag('config', 'G-93CPQEFQRR'); //Global Aggr GitHub
+		</script>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" /> 
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Metal+Mania&family=Norican&family=Pirata+One&family=Trade+Winds&display=swap" rel="stylesheet"/>
+
+        <link rel="stylesheet" href="../assets/css/board.css" />
+    </head>
+    <body class="is-preload">
+        <div id="page-wrapper">
+            <section id="banner">
+                <div class="inner">
+                    <div class="logo">
+                        <!--- <span class="icon logo-img"></span> --->
+                        <!--- <span class="fancy-title stroked">Mt Olive BSA Board Members</span> --->
+                    </div>
+                    <h2 class="stroked">Mt. Olive BSA Board Members</h2>
+                    <p>Meet our team - the crew that keeps the ship on course</p>
+                </div>
+            </section>
+            <section id="wrapper"></section>
+            <!-- Footer -->
+			<div id="footer"></div>
+        </div>
+    <!-- Scripts -->
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../assets/js/browser.min.js"></script>
+		<script src="../assets/js/breakpoints.min.js"></script>
+        <script src="../assets/js/util.js"></script>
+		<script src="../assets/js/main.js"></script>
+        <script src="../assets/js/resizeObserver.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $.ajax({
+                    url: "../assets/data/org-data.json"
+                })
+                .fail(function(e,e1,e2,e3){
+                    console.error("Retrieval of org data failed");
+                })
+                .done(function(result){
+                    var wrapper = $("#wrapper");
+                    $( result.boardMembers ).each(function(i, c){
+                        var spotlight = $("<section class='wrapper spotlight " + ( i%2 ? "style1":"style2" ) + "'/>").appendTo(wrapper);
+                        if (i % 2 === 1) spotlight.addClass("alt");
+
+                        var inner = $("<div class='inner'/>").appendTo(spotlight);
+                        //var profile = $("<a href='//www.leaguelineup.com/directorinfo.asp?url=mojbsa&id=" + c.id + "' target='_parent'/>").appendTo(inner);
+                        var image = $("<img class='image' src='" + ( c.photo ? c.photo : result.const.defaultContactPhoto ) + "'/>").appendTo(inner);
+                        
+                        var content = $("<div class='content'/>").appendTo(inner);
+                        $("<h2 class='major'><a href='//www.leaguelineup.com/directorinfo.asp?url=mojbsa&id=" + c.id + "' target='_parent'>" + c.name + "</a></h2>").appendTo(content);
+
+                        var role = $("<p>" + c.role + "</p>").appendTo(content);
+                        
+                        if( i%2 ) {
+                            $("<p class='contact'><a href='//www.leaguelineup.com/contactform.asp?url=mojbsa&id=" + c.id + "&l=1' target='_parent'><i class='far fa-envelope'/>E-Mail</a></p>").appendTo(content);
+                            if(c.phone) $("<p class='contact'><a href='tel:" + c.phone + "'><i class='fas fa-phone'/>" + c.phone + "</a></p>").appendTo(content);
+                        } else {
+                            $("<p class='contact'><a href='//www.leaguelineup.com/contactform.asp?url=mojbsa&id=" + c.id + "&l=1' target='_parent'>E-Mail<i class='far fa-envelope'/></a></p>").appendTo(content);
+                            if(c.phone) $("<p class='contact'><a href='tel:" + c.phone + "'>" + c.phone + "<i class='fas fa-phone'/></a></p>").appendTo(content);
+                        }
+
+                        // Remove the transition class
+                        image.removeClass('image-transition');
+
+                        // Create the observer, same as before:
+                        var observer = new IntersectionObserver(entries => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    image.addClass('image-transition');
+                                    return;
+                                }
+
+                                image.removeClass('image-transition');
+                            });
+                        });
+                        
+                        observer.observe(inner[0]);
+                    });
+                });
+
+                $("#footer").load("../assets/templates/newsletter-footer.html");
+            });
+        </script>
+    </body>
+</html>

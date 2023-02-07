@@ -1,0 +1,217 @@
+#footer {
+    margin-top: 0;
+}
+
+.marauder-red {
+    color: #9c0000;
+}
+
+.news-header {    
+    color: #9c0000;
+    font-size: 72pt; 
+    font-family: 'Metal Mania', cursive;
+    line-height: 1em;
+}
+.news-header-alt {    
+    color: #d8a056;
+}
+
+.news-header-stroked {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.grayscale { filter: grayscale(100%); }
+
+@supports (-webkit-text-stroke: 0.001em #9c0000) {
+    .news-header-stroked {
+        -webkit-text-stroke: 0.001em #9c0000; 
+        -webkit-text-fill-color: #d8a056;
+    }
+    .news-header-stroked-alt {
+        -webkit-text-stroke: 0.03em #d8a056; 
+        -webkit-text-fill-color: #9c0000;
+    }
+
+    @media screen and (max-width: 992px) {
+        .news-header-stroked {
+            font-size: xxx-large;
+            -webkit-text-stroke: 0.02em #9c0000;
+        }
+        .news-header-stroked-alt {
+            font-size: xxx-large;
+            -webkit-text-stroke: 0.02em #d8a056;
+        }
+    }
+
+    @-moz-document url-prefix() {
+        .news-header-stroked {
+            -webkit-text-stroke: 0.03em #9c0000;
+        }
+        .news-header-stroked-alt {
+            -webkit-text-stroke: 0.03em #d8a056;
+        }
+    }
+}
+
+.news-emphasis {
+    font-size: xx-large; 
+    font-family: 'Metal Mania', cursive;
+}
+
+.newsitem {
+    margin-top: 0;
+}
+
+#hero {
+    background-image: url(https://my.llfiles.com/00073674/WOC_headerbg.jpg);
+    background-size: cover;
+    border-radius: 30px;
+    padding: 10px 0; 
+    width: 100%;
+}
+@media only screen and (max-width: 992px) {
+    #hero {
+        width: 100%;
+        margin: auto;
+    }
+
+    .img-col-r {
+        display: none;
+    }
+}
+
+#hero .row {
+    width: 100%;
+    padding: 0 10px;
+}
+
+#hero .align-items-center {
+    align-items: center !important;
+}
+
+#hero .row {
+    /* --bs-gutter-x: 1.5rem; */
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-left: calc(var(--bs-gutter-x) / -2);
+}
+
+#hero .row > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    margin-top: var(--bs-gutter-y);
+}
+
+#hero .col-lg-4 {
+    text-align: center;
+}
+
+#hero .col-lg-4 > img {
+    max-height: 200px;
+    object-fit: contain;
+}
+
+@media (min-width: 992px){
+    #hero .col-lg-4 {
+        flex: 0 0 auto;
+        width: 33.3333333333%;
+    }
+}   
+
+/*
+@media (max-width: 992px){
+    #slick-content {
+        width: 100vw;
+    }
+}
+*/
+
+.slick-list {
+    margin: auto;
+}
+
+.slick-track {
+    display: flex;
+}
+
+#banner-roll-container {
+    margin-top: 10px;
+}
+
+.banner-roll div {
+    max-height: 150px;
+    max-width: 300px;
+}
+
+.banner-roll img {
+    max-height: 150px;
+    max-width: 300px;
+}
+
+.banner-roll .slick-list {
+    max-width: unset;
+}
+
+.banner-roll .slick-slide {
+    margin: auto 60px;
+    max-width: 95vw;
+}
+
+.banner-roll .slick-slide img {
+    margin: 0 auto;
+    object-fit: contain;
+    max-height: 150px;
+    border-radius: 10px;
+}
+
+/* Champions Carousel */
+.champ-roll {
+    /* background-color: #fff; */
+    margin-top: 10px;
+}
+
+.champ-roll div {
+    max-height: 600px;
+    max-width: 600px;
+}
+
+.champ-roll img {
+    max-height: 600px;
+    max-width: 600px;
+}
+
+.champ-roll .slick-slide {
+    margin: auto 60px;
+    max-width: 95vw;
+}
+
+.champ-roll .slick-slide img {
+    margin: 0 auto;
+    object-fit: contain;
+    max-height: 600px;
+    border-radius: 50px;
+}
+
+@media only screen and (max-width: 992px) {
+    .champ-roll div {
+        max-height: 80vh;
+        max-width: 80vw;
+    }
+
+    .champ-roll img {
+        max-height: 80vh;
+        max-width: 80vw;
+    }
+}
+@media only screen and (min-width: 992px) { 
+    .champ-roll .slick-slide {
+        margin: auto;
+    }
+}

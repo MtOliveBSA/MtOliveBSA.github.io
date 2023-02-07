@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Mt Olive Baseball & Softball Association - Newsletter Redirect</title>
+		<link rel="icon" type="image/png" href="/images/mobsa-logo.png" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+        <script src="../assets/js/jquery.min.js"></script>
+        <script>
+            $().ready(function (){
+                $.ajax({
+                    url: "../assets/data/archive.json?_=" + new Date().getTime()
+                }).done(function(data){
+                    window.location = data[0].months[0].articles[0].path.substr(3);
+                });
+            });
+        </script>
+	</head>
+	<body>
+        You will be redirected to the latest newsletter momentarily...
+    </body>
+</html>
