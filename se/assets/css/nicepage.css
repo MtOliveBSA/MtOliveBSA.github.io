@@ -3984,6 +3984,7 @@ span.fr-img-caption.fr-view {
   }
 }
 /*end-commonstyles animate*//*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
+/*
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -4168,7 +4169,7 @@ textarea {
 ul,
 ol {
   padding-left: 20px;
-}
+}*/
 /* Fade effect */
 /* Over effect */
 /* Slide effect */
