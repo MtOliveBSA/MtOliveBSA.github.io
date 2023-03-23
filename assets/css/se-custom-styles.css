@@ -427,10 +427,11 @@
 }
 .sponsor_roll .slick-slide {
     margin: auto 60px;
-    max-width: 90vw;
+    max-width: 95vw;
 }
 .sponsor_roll .slick-slide img {
     margin: 0 auto;
     object-fit: contain;
+    max-width: 85vw;
 }
 /********** END Sponsor Carousel **********/
