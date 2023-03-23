@@ -4663,8 +4663,7 @@ ol {
 .u-text:not(ul):not(ol):not(p):not(.u-post-content):not(.u-block-content):not(.u-product-desc):not(.u-cart-block-content) a:hover {
   text-decoration: none;
 }
-.u-link,
-a {
+.u-link/*, a*/ {
   border-top-width: 0;
   border-left-width: 0;
   border-right-width: 0;
@@ -16085,6 +16084,7 @@ html {
 .u-body h6 {
   padding: 0;
 }
+/*
 h1,
 h2,
 h3,
@@ -16120,6 +16120,7 @@ p {
   padding: 0;
   margin-bottom: 0.5rem;
 }
+*/
 .u-uppercase {
   text-transform: uppercase;
 }
@@ -18888,6 +18889,7 @@ a.u-button-style.u-border-20 {
 .u-body {
   font-family: 'Open Sans',sans-serif;
 }
+/*
 h1,
 h2,
 h3,
@@ -18896,6 +18898,7 @@ h5,
 h6 {
   font-family: Roboto,sans-serif;
 }
+*/
 /*end-variables font-family*/
 /*begin-variables color*/
 .u-overlap.u-overlap-transparent .u-header,
