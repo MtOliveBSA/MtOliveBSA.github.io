@@ -5538,6 +5538,7 @@ a {
 .u-form-select-wrapper select[size] ~ .u-caret {
   display: none;
 }
+/*
 *,
 *:before,
 *:after {
@@ -5581,6 +5582,7 @@ a:focus {
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
+*/
 .u-sheet-left {
   left: calc((100% - 1140px) / 2);
 }
@@ -30935,6 +30937,7 @@ a.u-link.u-text-hover-grey-90:hover {
         margin-top: 20px;
         margin-bottom: 20px;
         }
+        /*
         h1:not(.u-title)
         {
         font-weight: 400;
@@ -30983,6 +30986,7 @@ a.u-link.u-text-hover-grey-90:hover {
         margin-top: 20px;
         margin-bottom: 20px;
         }
+        */
         p.u-large-text
         {
         font-size: 1.25rem;
@@ -30995,16 +30999,19 @@ a.u-link.u-text-hover-grey-90:hover {
         margin-top: 20px;
         margin-bottom: 20px;
         }
+        /*
         p:not(.u-text-variant)
         {
         margin-top: 20px;
         margin-bottom: 20px;
         }
+        */
         .u-btn
         {
         margin-top: 20px;
         margin-bottom: 20px;
         }
+        /*
         blockquote
         {
         font-style: italic;
@@ -31013,11 +31020,13 @@ a.u-link.u-text-hover-grey-90:hover {
         margin-top: 20px;
         margin-bottom: 20px;
         }
+        */
         .u-metadata
         {
         margin-top: 20px;
         margin-bottom: 20px;
         }
+        /*
         ul:not(.u-unstyled)
         {
         margin-top: 20px;
@@ -31028,6 +31037,7 @@ a.u-link.u-text-hover-grey-90:hover {
         margin-top: 20px;
         margin-bottom: 20px;
         }
+        */
         .u-post-content
         {
         margin-top: 20px;
