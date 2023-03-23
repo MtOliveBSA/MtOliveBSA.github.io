@@ -31054,6 +31054,7 @@ a.u-link.u-text-hover-grey-90:hover {
         font-size: 1.5rem;
         }
         }
+        /*
         @media (max-width: 575px) {
         h1:not(.u-title)
         {
@@ -31072,6 +31073,7 @@ a.u-link.u-text-hover-grey-90:hover {
         font-size: 1.5rem;
         }
         }
+        */
         /*end-media rules*/
         /** publish-rules **/
 
@@ -31109,15 +31111,13 @@ a.u-link.u-text-hover-grey-90:hover {
         /** color-rules **/
         .u-overlap.u-overlap-transparent:not(.u-overlap-contrast) .u-header :not(.u-nav-item) > a,
         .u-gradient > .u-container-layout > a,
-        .u-image:not(.u-shading) > .u-container-layout > a,
-        a
+        .u-image:not(.u-shading) > .u-container-layout > a
         {
         color: #478ac9;
         }
         .u-overlap.u-overlap-transparent:not(.u-overlap-contrast) .u-header :not(.u-nav-item) > a:hover,
         .u-gradient > .u-container-layout > a:hover,
-        .u-image:not(.u-shading) > .u-container-layout > a:hover,
-        a:hover
+        .u-image:not(.u-shading) > .u-container-layout > a:hover
         {
         color: #387cbd;
         }
