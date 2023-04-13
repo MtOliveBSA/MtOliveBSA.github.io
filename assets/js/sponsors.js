@@ -4,7 +4,8 @@ $.ajax({
 }).done(function(sponsors){
 	//Add sponsor carousel
 	$("<div class=\"sponsor_roll\"></div>").appendTo($("#sponsor_roll_container"));
-	$(sponsors).each(function(i, r){
+	
+	$($.grep(sponsors, function(n, i){ return n.active == true; })).each(function(i, r){
 		$("<div><a href=\"" + r.href + "\" target=\"_blank\"><img src=\"" + r.img + "\" alt=\"" + r.name + "\" /></a></div>").appendTo($(".sponsor_roll"));
 	});
 
