@@ -392,10 +392,11 @@ a:hover {
 }
 
 #header .logo {
-    background: #9c0000 url(../../images/mobsa-profile-badge-square.png) no-repeat;
+    /*background: #9c0000 url(../../images/mobsa-profile-badge-square.png) no-repeat;*/
+    background: #000 url(../../images/MOBSA-Expanded-Logo.png) no-repeat;
     background-size: contain;
-    width: 6em;
-    height: 6em;
+    width: 8em;
+    height: 8em;
     margin: 0;
 }
 
@@ -1069,4 +1070,97 @@ ul.accordian li a.toggle {
 }
 ul.accordian li a.toggle:hover {
     background: rgba(0, 0, 0, 0.9);
+}
+
+
+/**** Fancy Effects ****/
+.btn--shockwave.is-active {
+    -webkit-animation: shockwaveJump 2s ease-out infinite;
+    animation: shockwaveJump 2s ease-out infinite;
+}
+.btn--shockwave.is-active:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+    -webkit-animation: shockwave 1s 0.65s ease-out infinite;
+    animation: shockwave 1s 0.65s ease-out infinite;
+}
+.btn--shockwave.is-active:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+    -webkit-animation: shockwave 1s 0.5s ease-out infinite;
+    animation: shockwave 1s 0.5s ease-out infinite;
+}
+@-webkit-keyframes shockwaveJump {
+    0% {
+        transform: scale(1);
+   }
+    40% {
+        transform: scale(1.08);
+   }
+    50% {
+        transform: scale(0.98);
+   }
+    55% {
+        transform: scale(1.02);
+   }
+    60% {
+        transform: scale(0.98);
+   }
+    100% {
+        transform: scale(1);
+   }
+}
+@keyframes shockwaveJump {
+    0% {
+        transform: scale(1);
+   }
+    40% {
+        transform: scale(1.08);
+   }
+    50% {
+        transform: scale(0.98);
+   }
+    55% {
+        transform: scale(1.02);
+   }
+    60% {
+        transform: scale(0.98);
+   }
+    100% {
+        transform: scale(1);
+   }
+}
+@-webkit-keyframes shockwave {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.15), inset 0 0 1px rgba(0, 0, 0, 0.15);
+   }
+    95% {
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0), inset 0 0 30px rgba(0, 0, 0, 0);
+   }
+    100% {
+        transform: scale(2.25);
+   }
+}
+@keyframes shockwave {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.15), inset 0 0 1px rgba(0, 0, 0, 0.15);
+   }
+    95% {
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0), inset 0 0 30px rgba(0, 0, 0, 0);
+   }
+    100% {
+        transform: scale(2.25);
+   }
 }
