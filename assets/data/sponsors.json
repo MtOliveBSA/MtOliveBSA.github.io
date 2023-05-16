@@ -298,6 +298,19 @@
 		}
 	},
 	{
+		"href": "//www.motionchevrolet.com",
+		"name": "Motion Chevrolet",
+		"img": "//mtolivebsa.github.io/images/sponsors/Motion-Chevrolet.png",
+		"active": true,
+		"phone": "SALES (833) 913-0248  SERVICE (833) 913-0249  PARTS (833) 913-0251",
+		"email": "",
+		"address": {
+			"line1": "412 RTE 46 W",
+			"line2": "Budd Lake, NJ 07828",
+			"line3": ""
+		}
+	},
+	{
 		"href": "//www.flandersdentist.com/",
 		"name": "Mount Olive Family Dental",
 		"img": "//mtolivebsa.github.io/images/sponsors/mt_olive_dental_209x62_whitebg.png",
