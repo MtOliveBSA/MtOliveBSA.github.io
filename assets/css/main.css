@@ -3046,7 +3046,8 @@ input, select, textarea {
 			}
 
 				.feature .content {
-					padding: 2.5em;
+					/* padding: 2.5em; */
+					padding: 0 2.5em;
 				}
 
 		/* Header */
