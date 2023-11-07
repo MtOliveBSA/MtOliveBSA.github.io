@@ -5,33 +5,33 @@
             { 
                 "month": "6",
                 "articles": [
-                    { "date" : "2022-07-05", "path":"../20230705/", "title": "", "active": true }
+                    { "date" : "2022-07-05", "path":"../2023/20230705/", "title": "", "active": true }
                 ]
             },
             { 
                 "month": "6",
                 "articles": [
-                    { "date" : "2022-06-28", "path":"../20230628/", "title": "", "active": true },
-                    { "date" : "2022-06-22", "path":"../20230622/", "title": "", "active": true },
-                    { "date" : "2022-06-14", "path":"../20230614/", "title": "", "active": true },
-                    { "date" : "2022-06-07", "path":"../20230607/", "title": "", "active": true },
-                    { "date" : "2022-06-03", "path":"../20230603/", "title": "", "active": true }
+                    { "date" : "2022-06-28", "path":"../2023/20230628/", "title": "", "active": true },
+                    { "date" : "2022-06-22", "path":"../2023/20230622/", "title": "", "active": true },
+                    { "date" : "2022-06-14", "path":"../2023/20230614/", "title": "", "active": true },
+                    { "date" : "2022-06-07", "path":"../2023/20230607/", "title": "", "active": true },
+                    { "date" : "2022-06-03", "path":"../2023/20230603/", "title": "", "active": true }
                 ]
             },
             { 
                 "month": "5",
                 "articles": [
-                    { "date" : "2022-05-25", "path":"../20230525/", "title": "", "active": true },
-                    { "date" : "2022-05-17", "path":"../20230517/", "title": "", "active": true },
-                    { "date" : "2022-05-11", "path":"../20230511/", "title": "", "active": true },
-                    { "date" : "2022-05-04", "path":"../20230504/", "title": "", "active": true }
+                    { "date" : "2022-05-25", "path":"../2023/20230525/", "title": "", "active": true },
+                    { "date" : "2022-05-17", "path":"../2023/20230517/", "title": "", "active": true },
+                    { "date" : "2022-05-11", "path":"../2023/20230511/", "title": "", "active": true },
+                    { "date" : "2022-05-04", "path":"../2023/20230504/", "title": "", "active": true }
                 ]
             },
             { 
                 "month": "4",
                 "articles": [
-                    { "date" : "2022-04-26", "path":"../20230426/", "title": "", "active": true },
-                    { "date" : "2022-04-19", "path":"../20230419/", "title": "", "active": true }
+                    { "date" : "2022-04-26", "path":"../2023/20230426/", "title": "", "active": true },
+                    { "date" : "2022-04-19", "path":"../2023/20230419/", "title": "", "active": true }
                 ]
             }
         ]
@@ -42,114 +42,114 @@
             { 
                 "month": "11",
                 "articles": [
-                    { "date" : "2022-11-02", "path":"../20221102/", "title": "", "active": true }
+                    { "date" : "2022-11-02", "path":"../2022/20221102/", "title": "", "active": true }
                 ]
             },
             { 
                 "month": "10",
                 "articles": [
-                    { "date" : "2022-10-06", "path":"../20221006/", "title": "", "active": true }
+                    { "date" : "2022-10-06", "path":"../2022/20221006/", "title": "", "active": true }
                 ]
             },
             { 
                 "month": "9",
                 "articles": [
-                    { "date" : "2022-09-27", "path":"../20220927/", "title": "", "active": true },
-                    { "date" : "2022-09-12", "path":"../20220912/", "title": "", "active": true }
+                    { "date" : "2022-09-27", "path":"../2022/20220927/", "title": "", "active": true },
+                    { "date" : "2022-09-12", "path":"../2022/20220912/", "title": "", "active": true }
                 ]
             },
             { 
                 "month": "7",
                 "articles": [
-                    { "date" : "2022-07-28", "path":"../20220728/", "title": "", "active": true },
-                    { "date" : "2022-07-20", "path":"../20220720/", "title": "", "active": true },
-                    { "date" : "2022-07-08", "path":"../20220708/", "title": "", "active": true },
-                    { "date" : "2022-07-01", "path":"../20220701/", "title": "", "active": true }
+                    { "date" : "2022-07-28", "path":"../2022/20220728/", "title": "", "active": true },
+                    { "date" : "2022-07-20", "path":"../2022/20220720/", "title": "", "active": true },
+                    { "date" : "2022-07-08", "path":"../2022/20220708/", "title": "", "active": true },
+                    { "date" : "2022-07-01", "path":"../2022/20220701/", "title": "", "active": true }
                 ]
             },
             { 
                 "month": "6",
                 "articles": [
-                    { "date" : "2022-06-24", "path":"../20220624/", "title": "", "active": true },
-                    { "date" : "2022-06-17", "path":"../20220617/", "title": "", "active": true },
-                    { "date" : "2022-06-10", "path":"../20220610/", "title": "", "active": true },
-                    { "date" : "2022-06-03", "path":"../20220603/", "title": "", "active": true }
+                    { "date" : "2022-06-24", "path":"../2022/20220624/", "title": "", "active": true },
+                    { "date" : "2022-06-17", "path":"../2022/20220617/", "title": "", "active": true },
+                    { "date" : "2022-06-10", "path":"../2022/20220610/", "title": "", "active": true },
+                    { "date" : "2022-06-03", "path":"../2022/20220603/", "title": "", "active": true }
                 ]
             },
             { 
                 "month": "5",
                 "articles": [
-                    { "date" : "2022-05-27", "path":"../20220527/", "title": "", "active": true },
-                    { "date" : "2022-05-20", "path":"../20220520/", "title": "", "active": true },
-                    { "date" : "2022-05-13", "path":"../20220513/", "title": "", "active": true },
-                    { "date" : "2022-05-06", "path":"../20220506/", "title": "", "active": true }
+                    { "date" : "2022-05-27", "path":"../2022/20220527/", "title": "", "active": true },
+                    { "date" : "2022-05-20", "path":"../2022/20220520/", "title": "", "active": true },
+                    { "date" : "2022-05-13", "path":"../2022/20220513/", "title": "", "active": true },
+                    { "date" : "2022-05-06", "path":"../2022/20220506/", "title": "", "active": true }
                 ]
             },
             { 
                 "month": "4",
                 "articles": [
-                    { "date" : "2022-04-22", "path":"../20220422/", "title": "", "active": true },
-                    { "date" : "2022-04-15", "path":"../20220415/", "title": "", "active": true }
+                    { "date" : "2022-04-22", "path":"../2022/20220422/", "title": "", "active": true },
+                    { "date" : "2022-04-15", "path":"../2022/20220415/", "title": "", "active": true }
                 ]
             },
             { 
                 "month": "3",
                 "articles": [
-                    { "date" : "2022-03-15", "path":"../20220315/", "title": "", "active": true },
-                    { "date" : "2022-03-07", "path":"../20220307/", "title": "", "active": true }
+                    { "date" : "2022-03-15", "path":"../2022/20220315/", "title": "", "active": true },
+                    { "date" : "2022-03-07", "path":"../2022/20220307/", "title": "", "active": true }
                 ]
             },
             { 
                 "month": "2",
                 "articles": [
-                    { "date" : "2022-02-11", "path":"../20220211/", "title": "", "active": true },
-                    { "date" : "2022-02-04", "path":"../20220204/", "title": "", "active": true }
+                    { "date" : "2022-02-11", "path":"../2022/20220211/", "title": "", "active": true },
+                    { "date" : "2022-02-04", "path":"../2022/20220204/", "title": "", "active": true }
                 ]
             }
         ]
     },
     {
-    "year": "2021",
-    "months": [
-        { 
-            "month": "11",
-            "articles": [
-                { "date" : "2021-11-19", "path":"../20211119/", "title": "", "active": true },
-                { "date" : "2021-11-12", "path":"../20211112/", "title": "", "active": true },
-                { "date" : "2021-11-05", "path":"../20211105/", "title": "", "active": true }
-            ]
-        },
-        { 
-            "month": "10",
-            "articles": [
-                { "date" : "2021-10-29", "path":"../20211029/", "title": "", "active": true },
-                { "date" : "2021-10-22", "path":"../20211022/", "title": "", "active": true },
-                { "date" : "2021-10-15", "path":"../20211015/", "title": "", "active": true },
-                { "date" : "2021-10-08", "path":"../20211008/", "title": "", "active": true },
-                { "date" : "2021-10-01", "path":"../20211001/", "title": "", "active": true }
-            ]
-        },        
-        { 
-            "month": "9",
-            "articles": [
-                { "date" : "2021-09-24", "path":"../20210924/", "title": "", "active": true },
-                { "date" : "2021-09-17", "path":"../20210917/", "title": "", "active": true },
-                { "date" : "2021-09-03", "path":"../20210903/", "title": "", "active": true }
-            ]
-        },
-        { 
-            "month": "8",
-            "articles": [
-                { "date" : "2021-08-13", "path":"../20210813/", "title": "", "active": true }
-            ]
-        },
-        { 
-            "month": "7",
-            "articles": [
-                { "date" : "2021-07-30", "path":"../20210730/", "title": "", "active": true },
-                { "date" : "2021-07-21", "path":"../20210721/", "title": "", "active": true }
-            ]
-        }
-    ]
-}
+        "year": "2021",
+        "months": [
+            { 
+                "month": "11",
+                "articles": [
+                    { "date" : "2021-11-19", "path":"../2021/20211119/", "title": "", "active": true },
+                    { "date" : "2021-11-12", "path":"../2021/20211112/", "title": "", "active": true },
+                    { "date" : "2021-11-05", "path":"../2021/20211105/", "title": "", "active": true }
+                ]
+            },
+            { 
+                "month": "10",
+                "articles": [
+                    { "date" : "2021-10-29", "path":"../2021/20211029/", "title": "", "active": true },
+                    { "date" : "2021-10-22", "path":"../2021/20211022/", "title": "", "active": true },
+                    { "date" : "2021-10-15", "path":"../2021/20211015/", "title": "", "active": true },
+                    { "date" : "2021-10-08", "path":"../2021/20211008/", "title": "", "active": true },
+                    { "date" : "2021-10-01", "path":"../2021/20211001/", "title": "", "active": true }
+                ]
+            },        
+            { 
+                "month": "9",
+                "articles": [
+                    { "date" : "2021-09-24", "path":"../2021/20210924/", "title": "", "active": true },
+                    { "date" : "2021-09-17", "path":"../2021/20210917/", "title": "", "active": true },
+                    { "date" : "2021-09-03", "path":"../2021/20210903/", "title": "", "active": true }
+                ]
+            },
+            { 
+                "month": "8",
+                "articles": [
+                    { "date" : "2021-08-13", "path":"../2021/20210813/", "title": "", "active": true }
+                ]
+            },
+            { 
+                "month": "7",
+                "articles": [
+                    { "date" : "2021-07-30", "path":"../2021/20210730/", "title": "", "active": true },
+                    { "date" : "2021-07-21", "path":"../2021/20210721/", "title": "", "active": true }
+                ]
+            }
+        ]
+    }
 ]
