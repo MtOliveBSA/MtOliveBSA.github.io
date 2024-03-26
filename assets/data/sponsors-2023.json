@@ -40,7 +40,7 @@
 		"href": "//www.arkadiapest.com/",
 		"name": "Arkadia Pest Control",
 		"img": "//mtolivebsa.github.io/images/sponsors/arkadia-badge-logo-blue.png",
-		"active": false,
+		"active": true,
 		"phone": "(973) 891-1220",
 		"email": "",
 		"address": {
@@ -66,7 +66,7 @@
 		"href": "//thebbqpitcatering.com/",
 		"name": "The BBQ Pit Catering",
 		"img": "//mtolivebsa.github.io/images/sponsors/bbq_pit_catering_300x270.png",
-		"active": false,
+		"active": true,
 		"phone": "(908) 638-6811",
 		"email": "",
 		"address": {
@@ -115,23 +115,10 @@
 		}
 	},
 	{
-		"href": "//dam-rental.com/",
-		"name": "DAM Event Rental",
-		"img": "//mtolivebsa.github.io/images/sponsors/DAM-Logo-new-white_320x170.png",
-		"active": true,
-		"phone": "(973) 362-2133",
-		"email": "info@dam-rental.com",
-		"address": {
-			"line1": "Mount Olive, NJ",
-			"line2": "",
-			"line3": ""
-		}
-	},
-	{
 		"href": "//www.dezineline.com/",
 		"name": "Dezline Line",
 		"img": "//mtolivebsa.github.io/images/sponsors/Dezine_Line_504x168.jpg",
-		"active": true,
+		"active": false,
 		"phone": "(973) 989-1009",
 		"email": "tees@dezineline.com",
 		"address": {
@@ -219,24 +206,11 @@
 		}
 	},
 	{
-		"href": "//www.fsorthodontics.com/",
-		"name": "Freda and Suriano Orthodontics",
-		"img": "//mtolivebsa.github.io/images/sponsors/freda_suriano_320x43.png",
-		"active": true,
-		"phone": "(908) 879-0987",
-		"email": "fredaandsuriano@gmail.com",
-		"address": {
-			"line1": "191 Main Street",
-			"line2": "Chester, NJ 07930",
-			"line3": ""
-		}
-	},
-	{
 		"href": "//gjkeller.com/",
 		"name": "George J Keller & Sons",
 		"img-long": "//mtolivebsa.github.io/images/sponsors/george_j_kelller_banner_679x60.jpg",
 		"img": "//mtolivebsa.github.io/images/sponsors/george_j_kelller_180x150.jpg",
-		"active": false,
+		"active": true,
 		"phone": "(973) 927-0963",
 		"email": "info@gjkeller.com",
 		"address": {
@@ -298,19 +272,6 @@
 		}
 	},
 	{
-		"href": "//www.krausrestoration.com/",
-		"name": "Kraus Restoration",
-		"img": "//mtolivebsa.github.io/images/sponsors/Kraus-Restoration-badge_320x320",
-		"active": true,
-		"phone": "(973) 886 2021",
-		"email": "info@krausrestoration.com",
-		"address": {
-			"line1": "85 Blue Grass Boulevard",
-			"line2": "Branchburg, NJ 08876",
-			"line3": ""
-		}
-	},
-	{
 		"href": "//www.mcdonalds.com/us/en-us/location/nj/mount-olive/30-international-dr-south/27786.html",
 		"name": "McDonald's of Mt. Olive ITC",
 		"img": "//mtolivebsa.github.io/images/sponsors/McDonalds_logo.svg_325x150.png",
@@ -326,8 +287,8 @@
 	{
 		"href": "//millenniumtextileinc.com/",
 		"name": "Millennium International Textile, Inc.",
-		"img": "//mtolivebsa.github.io/images/sponsors/Millennium_320x57.png",
-		"active": true,
+		"img": "//mtolivebsa.github.io/images/sponsors/millennium_textile_278x80.png",
+		"active": false,
 		"phone": "(973) 598-8880",
 		"email": "",
 		"address": {
@@ -340,7 +301,7 @@
 		"href": "//www.motionchevrolet.com",
 		"name": "Motion Chevrolet",
 		"img": "//mtolivebsa.github.io/images/sponsors/Motion-Chevrolet.png",
-		"active": false,
+		"active": true,
 		"phone": "SALES (833) 913-0248  SERVICE (833) 913-0249  PARTS (833) 913-0251",
 		"email": "",
 		"address": {
@@ -353,7 +314,7 @@
 		"href": "//www.flandersdentist.com/",
 		"name": "Mount Olive Family Dental",
 		"img": "//mtolivebsa.github.io/images/sponsors/mt_olive_dental_209x62_whitebg.png",
-		"active": false,
+		"active": true,
 		"phone": "(973) 584-5550",
 		"email": "mountolivedental@yahoo.com",
 		"address": {
@@ -431,7 +392,7 @@
 		"href": "//www.robertet.com/en/robertet-usa/",
 		"name": "Robertet USA",
 		"img": "//mtolivebsa.github.io/images/sponsors/Robertet-USA_300x218.jpg",
-		"active": false,
+		"active": true,
 		"phone": "(201) 337-7100",
 		"email": "",
 		"address": {
@@ -463,32 +424,6 @@
 		"address": {
 			"line1": "3010 Route 10 West",
 			"line2": "Denville, NJ 07834",
-			"line3": ""
-		}
-	},
-	{
-		"href": "",
-		"name": "Triple A Electrical",
-		"img": "//mtolivebsa.github.io/images/sponsors/Triple-A-logo_320x325.jpg",
-		"active": true,
-		"phone": "(201)321-4426",
-		"email": "tripleaelectricalllc@gmail.com",
-		"address": {
-			"line1": "Flanders, NJ",
-			"line2": "",
-			"line3": ""
-		}
-	},
-	{
-		"href": "//www.tutordoctor.com/morris-county/",
-		"name": "Tutor Doctor of Morris County",
-		"img": "//mtolivebsa.github.io/images/sponsors/Tutor-Doctor-badge_320x320.png",
-		"active": true,
-		"phone": "(973) 791-5238",
-		"email": "",
-		"address": {
-			"line1": "",
-			"line2": "",
 			"line3": ""
 		}
 	},
