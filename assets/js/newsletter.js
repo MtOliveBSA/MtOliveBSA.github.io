@@ -1,16 +1,17 @@
+var root_path = document_root_path ? document_root_path : "../..";
 $(document).ready(function () {
-	//$("#navbar-menu").load("../../assets/templates/newsletter-menu.html");
-	$("#article-footer").load("../../assets/templates/newsletter-article-footer.html");
-	$("#footer").load("../../assets/templates/newsletter-footer.html", function(){
-		$("#account-links").load("../../assets/templates/newsletter-account-links.html");
+	//$("#navbar-menu").load(root_path + "/assets/templates/newsletter-menu.html");
+	$("#article-footer").load(root_path + "/assets/templates/newsletter-article-footer.html");
+	$("#footer").load(root_path + "/assets/templates/newsletter-footer.html", function(){
+		$("#account-links").load(root_path + "/assets/templates/newsletter-account-links.html");
 	});
 
 	if(!$.inFrame()){
-		$("#navbar-menu").load("../../assets/templates/newsletter-menu.html");
+		$("#navbar-menu").load(root_path + "/assets/templates/newsletter-menu.html");
 	} else {
 		//$(".account-links").remove();  //destroy duplicate account/unsubscribe links
 		$.ajax({ type: "GET",   
-			url: "../../assets/templates/newsletter-menu.html",   
+			url: root_path + "/assets/templates/newsletter-menu.html",   
 			success : function(menu){
 				$('#navbar-menu').append(menu);
 				$("ul.sidebar-nav a").attr("target", "_parent");
@@ -22,7 +23,7 @@ $(document).ready(function () {
 		|| document.location.host === "mtolivebsa.github.io" 
 		|| document.location.host === "mobasa.sportssignup.com")
 		$.ajax({ type: "GET",   
-			url: "../../assets/templates/facebook-messenger.html",   
+			url: root_path + "/assets/templates/facebook-messenger.html",   
 			success : function(fbPlugin){
 				$('body').append(fbPlugin);
 			}
@@ -30,7 +31,7 @@ $(document).ready(function () {
 	
 	//populate archive
 	$.ajax({
-		url: "../../assets/data/archive.json"
+		url: root_path + "/assets/data/archive.json"
 	}).done(function(data){
 		var num2month = ["","January","February","March","April","May","June","July","August","September","October","November","December"];
 		var root = $("ul.archive");

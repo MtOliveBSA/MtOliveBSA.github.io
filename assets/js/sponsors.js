@@ -1,6 +1,7 @@
 //last updated 2021-07-28
+var root_path = document_root_path ? document_root_path : "../..";
 $.ajax({
-	url: "../../assets/data/sponsors.json"
+	url: root_path + "/assets/data/sponsors.json"
 }).done(function(sponsors){
 	//Add sponsor carousel
 	$("<div class=\"sponsor_roll\"></div>").appendTo($("#sponsor_roll_container"));
