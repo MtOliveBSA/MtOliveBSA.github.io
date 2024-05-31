@@ -363,6 +363,19 @@
 		}
 	},
 	{
+		"href": "//paintingbythebest.com",
+		"name": "Painting by the Best",
+		"img": "//mtolivebsa.github.io/images/sponsors/Painting-by-the-Best_300x157.png",
+		"active": true,
+		"phone": "(973) 796-7341",
+		"email": "paintingbythebestnj@gmail.com",
+		"address": {
+			"line1": "",
+			"line2": "",
+			"line3": ""
+		}
+	},
+	{
 		"href": "//permakillexterminating.com/",
 		"name": "Permakill Exterminating",
 		"img": "//mtolivebsa.github.io/images/sponsors/PermaKill-logo_274x89.jpg",
