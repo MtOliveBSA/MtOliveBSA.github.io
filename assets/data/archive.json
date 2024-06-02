@@ -3,12 +3,11 @@
         "year": "2024",
         "months": [
             { 
-                "month": "5",
+                "month": "6",
                 "articles": [
-                    { "date" : "2024-05-23", "path":"../../2024/20240523/", "title": "", "active": true },
-                    { "date" : "2024-05-10", "path":"../../2024/20240510/", "title": "", "active": true }
+                    { "date" : "2024-06-02", "path":"../../2024/20240602/", "title": "", "active": true }
                 ]
-            },
+            },            
             { 
                 "month": "4",
                 "articles": [
