@@ -1,2 +1,9 @@
 /* https://mtolivebsa.github.io/se/assets/css/tourney.css */
-body { background-color: red !important; }
+
+@import url("https://fonts.googleapis.com/css?family=Sofia");
+
+.tournamentHeaderAdSpot, .ad-spot { display: none; }
+
+#tournamentHeader1_ui_Tournament_HyperLink {
+    font-family: "Sofia", sans-serif;
+}
