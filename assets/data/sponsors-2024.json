@@ -13,30 +13,6 @@
 		}
 	},
 	{
-		"href": "//www.accuratepestmanagement.com",
-		"name": "Accurate Pest Control, Inc.",
-		"img": "//mtolivebsa.github.io/images/sponsors/Accurate-Pest-Control.png",
-		"active": true,
-		"phone": "973-398-8798",
-		"email": "",
-		"address": {
-			"line1": "143 Landing Road",
-			"line2": "Landing, NJ 07850"
-		}
-	},
-	{
-		"href": "//www.addsys.com",
-		"name": "ADD Systems",
-		"img": "//mtolivebsa.github.io/images/sponsors/ADD-Systems.jpg",
-		"active": true,
-		"phone": "973-584-4026",
-		"email": "",
-		"address": {
-			"line1": "6 Laurel Drive",
-			"line2": "Flanders, NJ 07836-4700"
-		}
-	},
-	{
 		"href": "//www.alstedefarms.com",
 		"name": "Alstede Farms",
 		"img": "//mtolivebsa.github.io/images/sponsors/alstede_farms_284x100.png",
@@ -139,19 +115,6 @@
 		}
 	},
 	{
-		"href": "//chefscornernj.com",
-		"name": "Chef's Corner",
-		"img": "//mtolivebsa.github.io/images/sponsors/chefs-corner.png",
-		"active": true,
-		"phone": " (973) 691-1500",
-		"email": "",
-		"address": {
-			"line1": "178 US Highway 206",
-			"line2": "Flanders, NJ 07836",
-			"line3": ""
-		}
-	},
-	{
 		"href": "//dam-rental.com/",
 		"name": "DAM Event Rental",
 		"img": "//mtolivebsa.github.io/images/sponsors/DAM-Logo-new-white_320x170.png",
@@ -165,23 +128,10 @@
 		}
 	},
 	{
-		"href": "//www.dfsattorneys.com",
-		"name": "DeFilippis Law, LLC",
-		"img": "//mtolivebsa.github.io/images/sponsors/DeFilippis-Law.png",
-		"active": true,
-		"phone": "(973) 527-7400",
-		"email": "",
-		"address": {
-			"line1": "92 Main Street",
-			"line2": "Chester, NJ 07930",
-			"line3": ""
-		}
-	},
-	{
 		"href": "//www.dezineline.com/",
 		"name": "Dezline Line",
 		"img": "//mtolivebsa.github.io/images/sponsors/Dezine_Line_504x168.jpg",
-		"active": false,
+		"active": true,
 		"phone": "(973) 989-1009",
 		"email": "tees@dezineline.com",
 		"address": {
@@ -194,7 +144,7 @@
 		"href": "//DTA-Auto.com",
 		"name": "D.T.A. Automotive",
 		"img": "//mtolivebsa.github.io/images/sponsors/dta_auto_192x150_whitebg.png",
-		"active": false,
+		"active": true,
 		"phone": "(973) 691-1953",
 		"email": "dtaauto@aol.com",
 		"address": {
@@ -259,7 +209,7 @@
 		"href": "//www.flandersbagelstogo.com/ShowMenu.tpl",
 		"name": "Flanders Bagel",
 		"img": "//mtolivebsa.github.io/images/sponsors/Flanders_Bagel_259x85.png",
-		"active": false,
+		"active": true,
 		"phone": "(973) 584-4933",
 		"email": "",
 		"address": {
@@ -272,7 +222,7 @@
 		"href": "//www.fsorthodontics.com/",
 		"name": "Freda and Suriano Orthodontics",
 		"img": "//mtolivebsa.github.io/images/sponsors/freda_suriano_320x43.png",
-		"active": false,
+		"active": true,
 		"phone": "(908) 879-0987",
 		"email": "fredaandsuriano@gmail.com",
 		"address": {
@@ -377,7 +327,7 @@
 		"href": "//millenniumtextileinc.com/",
 		"name": "Millennium International Textile, Inc.",
 		"img": "//mtolivebsa.github.io/images/sponsors/Millennium_320x57.png",
-		"active": false,
+		"active": true,
 		"phone": "(973) 598-8880",
 		"email": "",
 		"address": {
@@ -416,7 +366,7 @@
 		"href": "//paintingbythebest.com",
 		"name": "Painting by the Best",
 		"img": "//mtolivebsa.github.io/images/sponsors/Painting-by-the-Best_300x157.png",
-		"active": false,
+		"active": true,
 		"phone": "(973) 796-7341",
 		"email": "paintingbythebestnj@gmail.com",
 		"address": {
@@ -507,25 +457,12 @@
 		"href": "//www.royallawns.net/",
 		"name": "Royal Lawns",
 		"img": "//mtolivebsa.github.io/images/sponsors/RoyalLawnsLogo_537x125.jpg",
-		"active": false,
+		"active": true,
 		"phone": "(973) 927-4974",
 		"email": "royallawns@optonline.net",
 		"address": {
 			"line1": "PO Box 650",
 			"line2": "Flanders, NJ 07836",
-			"line3": ""
-		}
-	},
-	{
-		"href": "//www.facebook.com/swagqueensnj/",
-		"name": "Swag Queens",
-		"img": "//mtolivebsa.github.io/images/sponsors/Swag-Queens.jpg",
-		"active": true,
-		"phone": "",
-		"email": "swagqueensnj@gmail.com",
-		"address": {
-			"line1": "",
-			"line2": "",
 			"line3": ""
 		}
 	},
@@ -559,7 +496,7 @@
 		"href": "//www.tutordoctor.com/morris-county/",
 		"name": "Tutor Doctor of Morris County",
 		"img": "//mtolivebsa.github.io/images/sponsors/Tutor-Doctor-badge_200x200.png",
-		"active": false,
+		"active": true,
 		"phone": "(973) 791-5238",
 		"email": "",
 		"address": {
