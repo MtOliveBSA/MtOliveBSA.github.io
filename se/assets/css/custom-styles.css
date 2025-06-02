@@ -1,1 +1,67 @@
 /* custom styles for new premire layout */
+
+/* Fonts */
+@font-face {
+    font-family: 'Back to Black Bold';
+    src:  
+        url('../fonts/Back%20to%20Black%20Bold.woff2') format('woff2'), 
+        url('../fonts/Back%20to%20Black%20Bold.woff') format('woff'),
+        url('../fonts/Back%20to%20Black%20Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Black Flag Regular';
+    src: url('../fonts/Black%20Flag%20Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PirateGrunge';
+    src: url('../fonts/Pirate%20Grunge.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Freebooter';
+    src: url('../fonts/Freebooter.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pirates Blue';
+    src: url('../fonts/Pirates%20Blue.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.fonts {
+    font-family: 'Lobster', cursive;
+    font-family: 'Metal Mania', cursive;
+    font-family: 'Norican', cursive;
+    font-family: 'Pirata One', cursive;
+    font-family: 'Trade Winds', cursive;
+}
+
+/******** END Fonts ********/
+
+strong.slide-title,
+span.slide-description {
+    font-family: PirateGrunge;
+    text-transform: capitalize;
+}
+
+/* Homepage CallToAction Style Adjustments */
+.homeCallToActions.layout-2 {
+    width: calc(100% - 65% - 50px);
+}
+.homeCallToActions.layout-2 .sn-variation-default {
+    height: 75px !important;
+}
+.homeCallToActions .sn-variation-default .sn-call-to-action-overlay .sn-call-to-action-title {
+    font-size: 18px;
+}
