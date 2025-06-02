@@ -49,8 +49,8 @@
 
 /******** END Fonts ********/
 
-strong.slide-title,
-span.slide-description {
+.homeMediaSlider .mediaSlider .flexslider .slide-title,
+.homeMediaSlider .mediaSlider .flexslider .slide-description {
     font-family: PirateGrunge;
     text-transform: capitalize;
 }
