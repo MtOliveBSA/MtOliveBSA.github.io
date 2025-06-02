@@ -56,14 +56,19 @@
     font-family: PirateGrunge;
     text-transform: capitalize;
 }
+.homeMediaSlider .mediaSlider .flexslider .slide-description {
+    font-size: 36px;
+}
 
 /* Homepage CallToAction Style Adjustments */
-.homeCallToActions.layout-2 {
-    width: calc(100% - 65% - 50px);
-}
-.homeCallToActions.layout-2 .sn-variation-default {
-    height: 75px !important;
-}
-.homeCallToActions .sn-variation-default .sn-call-to-action-overlay .sn-call-to-action-title {
-    font-size: 18px;
+@media screen and (min-width: 690px) {
+    .homeCallToActions.layout-2 {
+        width: calc(100% - 65% - 50px);
+    }
+    .homeCallToActions.layout-2 .sn-variation-default {
+        height: 75px !important;
+    }
+    .homeCallToActions .sn-variation-default .sn-call-to-action-overlay .sn-call-to-action-title {
+        font-size: 18px;
+    }
 }
