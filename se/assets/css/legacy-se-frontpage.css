@@ -1,0 +1,180 @@
+<style>
+.front-page-hide { display: none; }
+
+.front-page-center { text-align: center;
+}
+
+.column-1 > .pageEl > .pageElement {
+  margin-top: 0;
+}
+
+.welcome-registration > .surveyLinkElement {
+    margin-bottom: 0;
+}
+
+.pageElement.surveyLinkElement {
+  margin: 0;
+}
+
+.registration-link > .linkElement {
+    display: block;
+    width: 100%;
+    padding: 1.5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    background: #000000;
+    border-bottom: 3px solid #000000;
+    margin-top: 0;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-family: "Titillium Web", sans-serif;
+    transition: background 0.2s ease-in;
+	text-align: center;
+}
+.registration-link > .linkElement > h4 > a.goToLink {
+	font-size: 16px;
+    font-weight: 600;
+}
+.registration-link > .linkElement > h4 > a.goToLink::after {
+	font-size: 14px;
+    font-weight: 700;
+}
+
+.welcome-social-center {
+    text-align: center;
+}
+
+.welcome-subscribe {
+    text-align: center;
+}
+.welcome-subscribe > .mailSubscribeElement {
+    border: none;
+}
+.welcome-subscribe table {
+    margin: auto;
+}
+.welcome-subscribe tr {
+    display: inline-flex;
+    flex-direction: column;
+}
+.welcome-subscribe th {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: larger;
+}
+.welcome-subscribe td>input {
+    width: 200px !important;
+    font-size: larger !important;
+}
+.welcome-subscribe a {
+  align-items: center;
+  appearance: none;
+  background-color: #fff;
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: .25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform,opacity;
+  z-index: 0;
+}
+
+.welcome-subscribe a:hover {
+  background: #F6F9FE;
+  color: #174ea6;
+}
+
+.welcome-subscribe a:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+}
+
+.welcome-subscribe a:focus {
+  outline: none;
+  border: 2px solid #4285f4;
+}
+
+.welcome-subscribe a:not(:disabled) {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.welcome-subscribe a:not(:disabled):hover {
+  box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+}
+
+.welcome-subscribe a:not(:disabled):focus {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.welcome-subscribe a:not(:disabled):active {
+  box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+}
+
+.welcome-subscribe a:disabled {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.eventAggregatorElement > .vevent > .details > .description {
+    display: none;
+}
+
+.sn-social-media-list .fa-tshirt {
+    background-color: #2c2c2c;
+}
+
+.fa-tshirt-baseball:after {
+    position: absolute;
+    content: '';
+    left: 50%;
+    top: 50%;
+    width: 75%;
+    height: 75%;
+    background-image: url(https://mtolivebsa.github.io/images/mobsa-logo.png);
+    background-size: 15px;
+    background-repeat: no-repeat;
+    transform: translate(-20%,-25%);
+}
+
+.fa-tshirt-softball:after {
+    position: absolute;
+    content: '';
+    left: 50%;
+    top: 50%;
+    width: 75%;
+    height: 75%;
+    background-image: url(https://mtolivebsa.github.io/images/mobsa-softball-logo.png);
+    background-size: 15px;
+    background-repeat: no-repeat;
+    transform: translate(-20%,-25%);
+}
+</style>
+
+<script>
+jQuery(".sn-social-media-list a[href='http://#']").remove();
+jQuery(".sn-social-media-list").append('<a href="https://teamlocker.squadlocker.com/#/lockers/marauders-baseball-softball" title="Squadlocker" class="sn-social-media-icon fas fa-tshirt fa-tshirt-baseball" target="_blank"></a>');
+jQuery(".sn-social-media-list").append('<a href="https://marauder.myspreadshop.com/" title="Marauder Spreadshop" class="sn-social-media-icon fas fa-tshirt fa-tshirt-softball" target="_blank"></a>');
+</script>
