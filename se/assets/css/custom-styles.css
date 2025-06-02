@@ -72,8 +72,15 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
+    .sn-media-slider .slider .slide-text.middle-left {
+        vertical-align: bottom;
+    }
 
-    .homeMediaSlider .mediaSlider .flexslider .slide-title,
+    .homeMediaSlider .mediaSlider .flexslider .slide-title {
+        text-align: center;
+        font-size: 60px;
+    }
+
     .homeMediaSlider .mediaSlider .flexslider .slide-description {
         text-align: center;
         font-size: 26px;
