@@ -49,6 +49,8 @@
 
 /******** END Fonts ********/
 
+.HIDE-ME { display: none; }
+
 .homeMediaSlider .mediaSlider .flexslider .slide-title,
 .homeMediaSlider .mediaSlider .flexslider .slide-description {
     font-family: PirateGrunge;
