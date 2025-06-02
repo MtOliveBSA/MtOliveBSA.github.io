@@ -62,7 +62,25 @@
 
 @media screen and (max-width: 690px) {
     .homeMediaSlider .mediaSlider .flexslider {
-        /*height: 87vh !important;*/
+        height: 65vh !important;
+    }
+
+    .homeMediaSlider .mediaSlider .flexslider .slide.flex-active-slide {
+        background-image: url(https://cdn1.sportngin.com/attachments/photo/93d1-211316342/marauder-main-graphic-enhanced.png);
+        background-position: center center;
+        background-position-x: 45%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .homeMediaSlider .mediaSlider .flexslider .slide-title,
+    .homeMediaSlider .mediaSlider .flexslider .slide-description {
+        text-align: center;
+        font-size: 26px;
+    }
+
+    .sn-media-slider .slides .slide .media-wrapper {
+        display: none;
     }
 }
 
