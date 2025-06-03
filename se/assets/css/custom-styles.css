@@ -59,6 +59,16 @@
 .homeMediaSlider .mediaSlider .flexslider .slide-description {
     font-size: 36px;
 }
+
+@media screen and (max-width: 1600px) {
+    .homeMediaSlider .mediaSlider .flexslider .slide-title {
+        font-size: 40px;
+    }
+
+    .homeMediaSlider .mediaSlider .flexslider .slide-description {
+        font-size: 30px;
+    }
+}
 @media screen and (max-width: 900px) {
     .homeMediaSlider .mediaSlider .flexslider .slide-title {
         font-size: 30px;
@@ -74,7 +84,8 @@
     }
 
     .homeMediaSlider .mediaSlider .flexslider .slide.flex-active-slide {
-        background-image: url(https://cdn1.sportngin.com/attachments/photo/93d1-211316342/marauder-main-graphic-enhanced.png);
+        /*background-image: url(https://cdn1.sportngin.com/attachments/photo/93d1-211316342/marauder-main-graphic-enhanced.png);*/
+        background-image: url(https://mtolivebsa.github.io/se/assets/images/marauder-main-graphic-enhanced.png);
         background-position: center center;
         background-position-x: 45%;
         background-repeat: no-repeat;
