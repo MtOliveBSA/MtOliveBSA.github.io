@@ -123,6 +123,8 @@
     }
 }
 
+.front-page-center { text-align: center; }
+
 .eventAggregatorElement > .vevent > .details > .description {
     display: none;
 }
