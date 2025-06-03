@@ -122,3 +122,37 @@
         font-size: 18px;
     }
 }
+
+.eventAggregatorElement > .vevent > .details > .description {
+    display: none;
+}
+
+.sn-social-media-list .fa-tshirt {
+    background-color: #2c2c2c;
+}
+
+.fa-tshirt-baseball:after {
+    position: absolute;
+    content: '';
+    left: 50%;
+    top: 50%;
+    width: 75%;
+    height: 75%;
+    background-image: url(https://mtolivebsa.github.io/images/mobsa-logo.png);
+    background-size: 15px;
+    background-repeat: no-repeat;
+    transform: translate(-20%,-25%);
+}
+
+.fa-tshirt-softball:after {
+    position: absolute;
+    content: '';
+    left: 50%;
+    top: 50%;
+    width: 75%;
+    height: 75%;
+    background-image: url(https://mtolivebsa.github.io/images/mobsa-softball-logo.png);
+    background-size: 15px;
+    background-repeat: no-repeat;
+    transform: translate(-20%,-25%);
+}
