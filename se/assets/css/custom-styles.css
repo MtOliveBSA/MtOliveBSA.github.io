@@ -59,7 +59,15 @@
 .homeMediaSlider .mediaSlider .flexslider .slide-description {
     font-size: 36px;
 }
+@media screen and (max-width: 900px) {
+    .homeMediaSlider .mediaSlider .flexslider .slide-title {
+        font-size: 30px;
+    }
 
+    .homeMediaSlider .mediaSlider .flexslider .slide-description {
+        font-size: 20px;
+    }
+}
 @media screen and (max-width: 690px) {
     .homeMediaSlider .mediaSlider .flexslider {
         height: 65vh !important;
