@@ -49,6 +49,8 @@
 
 /******** END Fonts ********/
 
+#siteFooter { display: none; }
+
 .HIDE-ME { display: none; }
 
 .homeMediaSlider .mediaSlider .flexslider .slide-title,
