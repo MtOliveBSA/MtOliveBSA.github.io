@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Mt Olive Baseball & Softball Association - Heart of the Babe 2024</title>
+		<link rel="icon" type="image/png" href="/images/mobsa-logo.png" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y5R07DXNMM"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-196216889-4');
+			gtag('config', 'G-Y5R07DXNMM');
+            gtag('config', 'G-93CPQEFQRR'); //Global Aggr GitHub
+		</script>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" /> 
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Metal+Mania&family=Norican&family=Pirata+One&family=Trade+Winds&display=swap" rel="stylesheet"/>
+
+        <link rel="stylesheet" href="../assets/lib/bootstrap-4.6.0/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/css/tether.min.css"/>
+
+        <link rel="stylesheet" href="../assets/css/board.css" />
+        <link rel="stylesheet" href="../assets/css/sidebar-nav.css" />
+        <link rel="stylesheet" href="./assets/css/HOTB.css" />
+        <link rel="stylesheet" href="../assets/css/footer.css" />
+    </head>
+    <body class="is-preload">
+        <div id="page-wrapper">
+            <!-- Sidebar -->
+			<div id="navbar-menu"></div>
+
+			<div id="page-content-wrapper">
+				<button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+					<span class="hamb-top"></span>
+					<span class="hamb-middle"></span>
+					<span class="hamb-bottom"></span>
+				</button>
+
+				<div class="content-container">
+                    <!--- HEADER CONTENT --->
+                    <div id="hero">
+                        <div class="row align-items-center">
+                            <div class="col-lg-4">
+                                <a href="https://www.baberuthleague.org"><img class="img-responsive center-block d-block mx-auto logo-2" src="images/BRLJ70THANNIVLOGO.png" alt="Babe Ruth Home"></a>
+                            </div>
+                            <div class="col-lg-4">
+                                <img class="img-responsive center-block d-block mx-auto logo-1" src="images/HOTBLOGOKO.png" alt="heart of the babe">
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="about-text">
+                                <p>Heart of the Babe is a national program that provides an opportunity to recognize and celebrate special players who embody the values and qualities of the legendary Babe Ruth and of the Babe Ruth League Organization.  The criteria for choosing winning players focuses on one stand-out characteristic representing the essence of the Heart of the Babe: </p>
+                                <p class="emphasis">Determination and Never Giving Up!</p>
+                                <p>The HOTB recognition program is not a popularity contest nor a platform to showcase the best athlete on a team, nor even the season MVP…unless of course, he or she demonstrates by their actions and attitude, that very special characteristic of</p>
+                                <p class="emphasis">“Never Giving Up.”</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="custom-content"></div>
+                    <!-- Footer -->
+                    <div id="footer"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scripts -->
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../assets/lib/bootstrap-4.6.0/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.min.js"></script>
+
+        <script src="../assets/js/browser.min.js"></script>
+        <script src="../assets/js/breakpoints.min.js"></script>
+        <script src="../assets/js/util.js"></script>
+        <script src="../assets/js/main.js"></script>
+        <script src="../assets/js/hotb.js"></script>
+        <script src="../assets/js/resizeObserver.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                //Clear custom-content element
+                $("#custom-content").html("");
+
+                var result = {
+                "const": {
+                    "defaultContactPhoto": "images/nophoto.gif"
+                },
+                    "members": [
+                        //{ 'name': '', 'teamName': '', 'team': '', 'number': '', 'description': '', 'photo': '' },
+                        
+                          { 'name': 'Seerat Sabharwal', 'teamName': 'Travel Softball 10U', 'team': '', 'number': '2', 'description': 'Seerat really has upped her game to next level this year.  From diving for catches in the outfield, to hustling for balls at the backstop, to sliding hard into the bases - we can always count on her to give everything she\'s got out on the field.  What sets her apart is not only her drive on the diamond, but her attitude and actions in the dugout. She\'s constantly cheering on her teammates, elevating them when they achieve something great and picking them up when they\'re down. A true advocate for her team and a perfect embodiment of the Heart & Soul of the Babe!', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Seerat-Sabharwal.jpg' }
+                        , { 'name': 'Ethan Endriga', 'teamName': 'Minors4 - Petillo - CRUISE', 'team': '', 'number': '', 'description': 'Ethan is a true student of the game. He strives to be the best player he can be and is a great role model for his teammates. ', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Ethan-Endriga.jpg' }
+                        , { 'name': 'Farrah Flood', 'teamName': 'Travel Softball 12U Gold', 'team': '', 'number': '8', 'description': 'Farrah\'s first full year on 12u has been nothing short, pun intended, of awesome.  She plays hard everyday does whatever is asked of her and always has a smile on her face.  She\'s a great teammate too.  She may be small but she is mighty.   I\'m proud of the player she\'s become and wish her all the success in the world.  ', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Farrah-Flood.jpg' }
+                        , { 'name': 'Zachary Haas', 'teamName': 'Farms3 - Triple A Electric - ZIELINSKI', 'team': '', 'number': '33', 'description': 'Zach has been nominated for this award for his commitment to the sport on and off the field. At home he is constantly in his backyard practicing and has to be forced by his parents to call it quits for the night. On the field, during games and practice he shows up everyday ready to play. He consistently is the first to show up and last to leave, having to be dragged away from the field. As most kids his age who can at times have short attention spans for the game, he is constantly zoned in and focused on whatever they are being coached on.  He is always eager to play and always looking to improve. ', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Zachary-Haas.jpg' }
+                        , { 'name': 'Jaxx Cerdas', 'teamName': 'Farms1 - DAM Event Rental - MALONE', 'team': '', 'number': '11', 'description': 'Jaxx is a team player who always helps his team mates and makes sure everyone gets a chance to participate. He has made huge improvements in his skills this season and takes his learning very seriously. He is a pleasure to have as a team member and a great friend to everyone on the team.', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Jaxx-Cerdas.jpg' }
+                        , { 'name': 'Isabella Morales', 'teamName': 'SB Majors - AMR Fence - RODRIGUES/FLOOD', 'team': '', 'number': '12', 'description': 'Bella has made great improvements this season! She always has a positive attitude, and  is dedicated to her team. Bella is a wonderful kid, and it\'s been a pleasure coaching her.', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Isabella-Morales.jpg' }
+                        , { 'name': 'PJ Struening', 'teamName': 'Travel Baseball 12U', 'team': '', 'number': '24', 'description': 'PJ is a hard worker in practice.   He take it seriously and always has his head in it.  He is the first one to help out his teammates & coaches and eagerly does whatever is asked.   He is a good ballplayer, has a great attitude,  and is a fantastic kid.  ', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-PJ-Struening.jpg' }
+                        , { 'name': 'Levi Weeks', 'teamName': 'Minors3 - Royal Lawns - MORALES', 'team': '', 'number': '31', 'description': 'Levi represents a player that always swings for the fences no matter what the score is. He gives his best effort and never gives up at all times both offensively and defensively. ', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Levi-Weeks.jpg' }
+                        , { 'name': 'Brody Nettles', 'teamName': 'Travel Baseball 9U', 'team': '', 'number': '34', 'description': 'Brody is our catcher and one of the hardest workers on the team. He always demonstrates a positive attitude and a "lead by example" approach with his teammates. Brody represents our team and town exceptionally well. I am very excited to nominate Brody Nettles as this year\'s recipient. ', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Brody-Nettles.jpg' }
+                        , { 'name': 'Michael Villanueva', 'teamName': 'Majors2 - Kraus Restoration - ASBATY', 'team': '', 'number': '', 'description': 'Michael always has a positive attitude, and a smile on his face. He always cheers on his teammates regardless of the situation. He always listens to his coaches, and brings a positive vibe to the whole team.', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Michael-Villanueva.jpg' }
+                        , { 'name': 'Valerie Rodriguez', 'teamName': 'SB Rookies1 - Flanders Bagels - MARTINO', 'team': '', 'number': '', 'description': 'Valerie always plays with a smile and good attitude. She puts forth great effort both in practice and at games. Valerie has made much improvement this year and is always on the field attempting to make the play! ', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Valerie-Rodriguez.jpg' }
+                        , { 'name': 'Lucas Heyman', 'teamName': 'Rookies5 - Power Place - KOCH', 'team': '', 'number': '58', 'description': 'Lucas is a pleasure to coach. He is the quintessential teammate. He always comes to games and practices with a positive attitude and gives his best effort in every aspect of the game. ', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Lucas-Heyman.jpg' }
+                        , { 'name': 'Kieran Rachel', 'teamName': 'Rookies2 - Flanders Bagels - SICA', 'team': '', 'number': '', 'description': 'Kieran continued to show interest in baseball from the start of the year and improved on a regular basis.  He has a great attitude towards getting better each practice and took well to his coaches instructions. He epitomizes what it means to be a Heart of the Babe recipient. ', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Kieran-Rachel.jpg' }
+                        , { 'name': 'Veronica Kay', 'teamName': 'SB Farms2 - Volpe - SARRUDA', 'team': '', 'number': '12', 'description': 'Veronica has been a pleasure to coach and has been an exceptional teammate throughout the season. She comes ready to play, full of enthusiasm, focus and determination. Always ready to take one more swing, never gets bothered by a swing and miss. Her eyes light up when she\'s challenged with a ground ball to field. Her ‘never give up attitude\' will enable her to grow not only into an amazing athlete, but a true leader.', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Veronica-Kay.jpg' }
+                        , { 'name': 'Mason Griner', 'teamName': 'Minors1 - Tutor Doctor - SARRUDA', 'team': '', 'number': '7', 'description': 'Mason taught me this season that "never giving up" goes beyond the final out.  Mason battles every pitch, hustles on every play, and is always smiling.  Mason\'s grit and determination reminds us coaches that it only takes a single swing or a single play to change a game and we trust that Mason will never stop fighting until the game is over.', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Mason-Griner.jpg' }
+                        , { 'name': 'Rowan Stone', 'teamName': 'Majors1 - Volpe - FENN', 'team': '', 'number': '13', 'description': 'Rowan showed incredible determination this year. Major improvement with his work as a catcher and one of our top hitters. He always knew the right time to go out and talk to his pitcher to give them a boost. ', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Rowan-Stone.jpg' }
+                        , { 'name': 'Julia Krutisia', 'teamName': 'SB Farms3 - PermaKill Exterminating - WESNER', 'team': '', 'number': '', 'description': 'Julia is a hard worker and never gives less than 100% effort.  She\'s a good role model for other players.', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Julia-Krutisia.jpg' }
+                        , { 'name': 'Madeline Wallace', 'teamName': 'SB Minors - Tutor Doctor - HILL', 'team': '', 'number': '', 'description': 'Madeline\'s love for the game was visible from day one. She gave 100% to every play no matter what the situation, weather or score. Her perseverance through an early hitting slump into now one of our most consistent hitters set a great example for the team!', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Madeline-Wallace.jpg' }
+                        , { 'name': 'Elise Halm', 'teamName': 'SB Farms1 - Kraus Restoration - HALM', 'team': '', 'number': '4', 'description': 'All season long Elise has stayed focused in both practice and games. This focus has helped her get better in every area, especially in the field. Force outs on her own have become common. Her never give up attitude will lead to continued success on and off the softball field.', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Elise-Halm.jpg' }
+                        , { 'name': 'Jude Moy', 'teamName': 'Rookies3 - United Rentals - CHAMBERLAND', 'team': '', 'number': '', 'description': 'Jude gives it his all every game and practice. He listens well and takes what coaches say to him and applies it. He never complains and seems to always enjoy being around teammates and on the ball field. Always respectful and courteous to all. Jude is always one of the first to cheer on this teammates and is a great example of sportsmanship. We are proud and honored to be his coaches and wish him luck!! - Coaches: Travis Chamberland (T$), Gary Bielicka & Nick Kacmarcik', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Jude-Moy.jpg' }
+                        , { 'name': 'Ethan Zayas', 'teamName': 'Travel Baseball 8U', 'team': '', 'number': '23', 'description': 'From a coaches perspective, Ethan is a dream. He shows up everyday with a hello, and leaves everyday with a thank you. He\'s just discovering his abilities and works at getting better everyday. His never give up attitude is going to lead Ethan to great things, both on the diamond and in life.', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Ethan-Zayas.jpg' }
+                        , { 'name': 'Charlie Petzinger', 'teamName': 'Travel Softball 8U', 'team': '', 'number': '7', 'description': 'Charlie comes to every practice and game with a positive attitude. She follows directions well and will do any job asked of her with a smile on her face. She never gives up and is determined to succeed. ', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Charlie-Petzinger.jpg' }
+                        , { 'name': 'Landon Haycook', 'teamName': 'Majors3 - Todd Leonard - RUBIN', 'team': '', 'number': '', 'description': 'Landon shows up to practice and games eager to learn and improve every day. He always has a smile on his face and works hard both on and off the field. His positive attitude and great teamwork make him an outstanding teammate.', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Landon-Haycook.jpg' }
+                        , { 'name': 'Cassidy Dwyer', 'teamName': 'SB Rookies2 - Keypoint Mortgage - LAROSE', 'team': '', 'number': '8', 'description': 'Coach Dawn and I have had the pleasure of coaching Cassidy for the last few years.  Cassidy is a great role model and a terrific player.  She is always cheering on her teammates and always has a smile on her face.  She has developed into a great player this year and was like a "brick wall" on third base towards the end of the season.  She never stopped smiling and never quit.  No matter how tired or, cold or wet from the rain she was, she never complained and kept on playing.  Her never quit attitude, her dedication to the team and her mental and physical toughness was infectious and positively impacted this team on and off the field.  It is with great honor that Coach Dawn and I nominate Cassidy Dwyer for this years 2024 Heart of the Babe Award for Softball Rookies - Team Keypoint Mortgage!  Congratulations Cassidy!!!!!', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Cassidy-Dwyer.jpg' }
+                        , { 'name': 'Nick Healing', 'teamName': 'Minors2 - Triple A Electric - NICHOLL', 'team': '', 'number': '16', 'description': 'Nick always what he is asks and never complains. He is a great teammate. ', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Nick-Healing.jpg' }
+                        , { 'name': 'Roman Velez', 'teamName': 'Farms5 - Keypoint Mortgage - SOSA', 'team': '', 'number': '', 'description': 'Roman is a very smart respectful kid. He shows up to practice everyday eager to learn the game and very disciplined. Roman is always willing to  guide his teammates when needed which has helped  them to become better players. ', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Roman-Velez.jpg' }
+                        , { 'name': 'Nathan Coulote', 'teamName': 'Travel Baseball 10U', 'team': '', 'number': '10', 'description': 'Nate is not a man of many words, but his passion and on-field performance speaks volumes. As a quiet leader, he is a stabilizing presence in the dugout and between the lines. No matter how stressful the situation, Nate keeps his emotions in check and remains as cool as the other side of the pillow. He gives 110% effort at all times and is well-deserving of the Heart of the Babe award!', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Nathan-Coulote.jpg' }
+                        , { 'name': 'Chris Rampone', 'teamName': 'BabeRuth - Todd Leonard - ARRIGHI', 'team': '', 'number': '', 'description': 'Chris rampone is a team player full of energy that boosts our morale.  Very coachable and self centered and always wanting to learn more to make himself better!! Great kid and respectable!', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Chris-Rampone.jpg' }
+                        , { 'name': 'Mason Apwah', 'teamName': 'Farms2 - PermaKill Exterminating - MILLER', 'team': '', 'number': '', 'description': 'Mason has made huge strides in his on field performance as well as his willingness to learn the game.  He has put effort into every aspect of the game in order to learn and better himself.', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Mason-Apwah.jpg' }
+                        , { 'name': 'Brandon Montalto', 'teamName': 'Rookies6 - Freda & Suriano Orthodontics - MILLER', 'team': '', 'number': '', 'description': 'Brandon loves the game.  He is very eager to learn and is always trying new positions and putting effort to be successful at each spot.  He listens, tries, and executes.', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Brandon-Montalto.jpg' }
+                        , { 'name': 'Colin Fischer', 'teamName': 'Rookies4 - Honest Heating & Cooling - MADDISON', 'team': '', 'number': '43', 'description': 'Colin is always so excited to get out there and play baseball, his energy and his love for the game is tremendous!!! His improvement is something new players should strive for! ', 'photo': 'images/player-profiles/HOTB/2024/HOTB-2024-Colin-Fischer.jpg' }
+                    ]
+                };
+
+                var _shuffleArray = function (array) {
+                    for (var i = array.length - 1; i > 0; i--) {
+                        var j = Math.floor(Math.random() * (i + 1));
+                        var temp = array[i];
+                        array[i] = array[j];
+                        array[j] = temp;
+                    }
+                }
+                _shuffleArray(result.members);
+
+                var wrapper = $("#custom-content");
+                $( result.members ).each(function(i, c){
+                    var spotlight = $("<section class='wrapper spotlight'/>").appendTo(wrapper);
+                    if (i % 2 === 1) spotlight.addClass("alt");
+                    spotlight.addClass((i % 2 === 0) ? "style1" : "style2");
+
+                    var inner = $("<div class='inner'/>").appendTo(spotlight);
+                    $("<img src='" + ( c.photo ? c.photo : result.const.defaultContactPhoto ) + "' onerror='this.onerror=null; this.src=\"images/nophoto.gif\"'/>").appendTo(inner);
+                    
+                    var content = $("<div class='content'/>").appendTo(inner);
+                    $("<h2 class='major'>" + c.name + "</h2>").appendTo(content);
+
+                    $("<p>" + (c.number? ("#" + c.number + " - ") : "") + ( c.team ? (c.team + " - ") : "") + (c.teamName ? c.teamName : "") + "</p>").appendTo(content);
+                    if(c.description) $("<p>" + c.description + "</p>").appendTo(content);
+                });
+            });
+        </script>
+    </body>
+</html>
