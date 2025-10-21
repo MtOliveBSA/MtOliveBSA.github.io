@@ -210,6 +210,10 @@
   <script>
     (function(){ const imgs=[...document.querySelectorAll('.slides img')]; let i=0; setInterval(()=>{ imgs[i].classList.remove('active'); i=(i+1)%imgs.length; imgs[i].classList.add('active'); },5000); })();
   </script>
+  
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/util.js"></script>
+  <script src="../assets/js/resizeObserver.js"></script>
   <script>
     $("a").each(function(i,o){ 
       if(o.href.indexOf("#") != -1){
@@ -217,8 +221,5 @@
       } 
     });
   </script>
-  <script src="../assets/js/jquery.min.js"></script>
-  <script src="../assets/js/util.js"></script>
-  <script src="../assets/js/resizeObserver.js"></script>
 </body>
 </html>
