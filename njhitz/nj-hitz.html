@@ -146,6 +146,13 @@
           <div class="coach">
             <div class="avatar"><img src="https://mtolivebsa.github.io/njhitz/images/IMG_7017_Original.JPG" alt="Coach headshot placeholder"></div>
             <div>
+              <h4>Coach Name <span class="gold">— 16U/18U</span></h4>
+              <small>Former collegiate player • Pitching/Defense • Team culture & leadership</small>
+            </div>
+          </div>
+          <div class="coach">
+            <div class="avatar"><img src="https://mtolivebsa.github.io/njhitz/images/IMG_7017_Original.JPG" alt="Coach headshot placeholder"></div>
+            <div>
               <h4>Coach Name <span class="gold">— 14U</span></h4>
               <small>Former collegiate player • Pitching/Defense • Team culture & leadership</small>
             </div>
@@ -155,13 +162,6 @@
             <div>
               <h4>Coach Name <span class="gold">— 12U</span></h4>
               <small>Hitting & baserunning • Player development • Recruiting guidance</small>
-            </div>
-          </div>
-          <div class="coach">
-            <div class="avatar"><img src="https://mtolivebsa.github.io/njhitz/images/7F0A3505.jpg" alt="Coach headshot placeholder"></div>
-            <div>
-              <h4>Coach Name <span class="gold">— Futures</span></h4>
-              <small>Fundamentals & confidence for rising athletes</small>
             </div>
           </div>
         </div>
@@ -193,10 +193,10 @@
       <div class="container">
         <span class="eyebrow">Join NJ HITZ</span>
         <h2>Ready to Compete?</h2>
-        <p class="lead">Add a simple contact link, Google Form, or email here for tryout interest and general inquiries.</p>
+        <!--- <p class="lead">Add a simple contact link, Google Form, or email here for tryout interest and general inquiries.</p> --->
         <div class="cta-row">
-          <a class="btn solid" href="mailto:info@njhitzsoftball.com">Email Us</a>
-          <a class="btn" href="https://forms.gle/" target="_blank" rel="noopener">Tryout Interest Form</a>
+          <a class="btn solid" href="mailto:njhitz@mtolivebsa.com">Email Us</a>
+          <!--- <a class="btn" href="https://forms.gle/" target="_blank" rel="noopener">Tryout Interest Form</a> --->
         </div>
       </div>
     </div>
@@ -215,10 +215,13 @@
   <script src="../assets/js/util.js"></script>
   <script src="../assets/js/resizeObserver.js"></script>
   <script>
-    $("a").each(function(i,o){ 
-      if(o.href.indexOf("#") != -1){
-        o.href = "javascript:window.parent.scrollTo('" + o.href.substr(o.href.indexOf("#")+1) + "')";
-      } 
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = link.getAttribute('href').substring(1);
+        // Post message to parent window with the target anchor
+        window.parent.postMessage({ type: 'scrollToSection', target }, '*');
+      });
     });
   </script>
 </body>
