@@ -66,11 +66,7 @@
     .stripe{background:linear-gradient(90deg,var(--hitz-purple),var(--hitz-gold));height:4px}
     .footer{padding:18px 0 36px;text-align:center;color:#cfcfdb;font-size:.9rem}
     .gold{color:var(--hitz-gold)}
-  </style>
-
-  <script src="../assets/js/jquery.min.js"></script>
-  <script src="../assets/js/util.js"></script>
-  <script src="../assets/js/resizeObserver.js"></script>
+  </style>  
 </head>
 <body>
   <section id="nj-hitz">
@@ -214,5 +210,9 @@
   <script>
     (function(){ const imgs=[...document.querySelectorAll('.slides img')]; let i=0; setInterval(()=>{ imgs[i].classList.remove('active'); i=(i+1)%imgs.length; imgs[i].classList.add('active'); },5000); })();
   </script>
+
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/util.js"></script>
+  <script src="../assets/js/resizeObserver.js"></script>
 </body>
 </html>
