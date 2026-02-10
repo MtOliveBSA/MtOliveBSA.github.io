@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MOBSA Sponsors</title>
+  <style>
+    :root { --gap: 14px; --radius: 14px; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; background: #f7f7f8; color: #111; }
+    header { padding: 18px 16px; background: #fff; border-bottom: 1px solid #e9e9ee; position: sticky; top: 0; z-index: 10; }
+    .wrap { max-width: 1100px; margin: 0 auto; }
+    h1 { font-size: 18px; margin: 0 0 10px; }
+    .controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    .seg { display: inline-flex; border: 1px solid #d9d9df; border-radius: 999px; overflow: hidden; background: #fff; }
+    .seg button {
+      border: 0; background: transparent; padding: 8px 12px; cursor: pointer; font-weight: 600;
+    }
+    .seg button[aria-pressed="true"] { background: #111; color: #fff; }
+    .meta { margin-left: auto; font-size: 12px; color: #555; }
+    main { padding: 18px 16px 40px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: var(--gap);
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #e9e9ee;
+      border-radius: var(--radius);
+      padding: 12px;
+      display: grid;
+      gap: 10px;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+    }
+    .logo {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 12px;
+      background: #f2f2f5;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+    .logo img { width: 100%; height: 100%; object-fit: contain; }
+    .name { font-weight: 800; letter-spacing: .2px; }
+    .details { font-size: 13px; color: #444; line-height: 1.35; }
+    .details a { color: inherit; }
+    .row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .pill {
+      font-size: 12px; padding: 5px 8px; border-radius: 999px;
+      background: #f2f2f5; color: #333; border: 1px solid #e6e6ec;
+    }
+    .error { background: #fff; border: 1px solid #ffd6d6; color: #7a0000; padding: 12px; border-radius: 12px; }
+    .muted { color: #666; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>MOBSA Sponsors</h1>
+      <div class="controls">
+        <div class="seg" role="group" aria-label="Sponsor filter">
+          <button id="btnAll" type="button" aria-pressed="true">All</button>
+          <button id="btnActive" type="button" aria-pressed="false">Active only</button>
+        </div>
+        <div class="meta" id="meta">Loading…</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div id="status" class="muted" style="margin: 0 0 12px;"></div>
+      <div id="grid" class="grid" aria-live="polite"></div>
+    </div>
+  </main>
+
+  <script>
+    const DATA_URL = "https://mtolivebsa.github.io/assets/data/sponsors.json";
+
+    const els = {
+      grid: document.getElementById("grid"),
+      status: document.getElementById("status"),
+      meta: document.getElementById("meta"),
+      btnAll: document.getElementById("btnAll"),
+      btnActive: document.getElementById("btnActive"),
+    };
+
+    let sponsors = [];
+    let filterMode = "all"; // "all" | "active"
+
+    function safeText(v) {
+      return (v ?? "").toString().trim();
+    }
+
+    function normalizeHref(href) {
+      const h = safeText(href);
+      if (!h) return "";
+      // allow protocol-relative (//example.com) or absolute/relative
+      return h;
+    }
+
+    function formatAddress(addr) {
+      if (!addr || typeof addr !== "object") return "";
+      const parts = [addr.line1, addr.line2, addr.line3].map(safeText).filter(Boolean);
+      return parts.join("<br>");
+    }
+
+    function render() {
+      const filtered = (filterMode === "active")
+        ? sponsors.filter(s => s && s.active === true)
+        : sponsors;
+
+      const activeCount = sponsors.filter(s => s && s.active === true).length;
+
+      els.meta.textContent = `${filtered.length} shown • ${activeCount} active • ${sponsors.length} total`;
+      els.status.textContent = (filterMode === "active")
+        ? "Showing active sponsors only."
+        : "Showing all sponsors.";
+
+      if (!filtered.length) {
+        els.grid.innerHTML = `<div class="error">No sponsors match the current filter.</div>`;
+        return;
+      }
+
+      els.grid.innerHTML = filtered.map(s => {
+        const name = safeText(s.name) || "Unnamed Sponsor";
+        const href = normalizeHref(s.href);
+        const img = safeText(s.img);
+        const phone = safeText(s.phone);
+        const email = safeText(s.email);
+        const addressHtml = formatAddress(s.address);
+
+        const nameHtml = href
+          ? `<a href="${href}" target="_blank" rel="noopener noreferrer">${name}</a>`
+          : name;
+
+        const logoHtml = img
+          ? `<img src="${img}" alt="${name} logo" loading="lazy" />`
+          : `<span class="muted">No logo</span>`;
+
+        const contactBits = [];
+        if (phone) contactBits.push(`<span class="pill">📞 ${phone}</span>`);
+        if (email) contactBits.push(`<span class="pill">✉️ <a href="mailto:${email}">${email}</a></span>`);
+        if (addressHtml) contactBits.push(`<span class="pill">📍 ${addressHtml}</span>`);
+
+        const activePill = (s.active === true)
+          ? `<span class="pill">✅ Active</span>`
+          : `<span class="pill">⛔ Inactive</span>`;
+
+        return `
+          <article class="card">
+            <div class="logo">${logoHtml}</div>
+            <div class="name">${nameHtml}</div>
+            <div class="row">${activePill}</div>
+            ${contactBits.length ? `<div class="details"><div class="row">${contactBits.join("")}</div></div>` : ""}
+          </article>
+        `;
+      }).join("");
+    }
+
+    function setFilter(mode) {
+      filterMode = mode;
+      els.btnAll.setAttribute("aria-pressed", mode === "all" ? "true" : "false");
+      els.btnActive.setAttribute("aria-pressed", mode === "active" ? "true" : "false");
+      render();
+    }
+
+    async function init() {
+      try {
+        els.status.textContent = "Fetching sponsors…";
+        const res = await fetch(DATA_URL, { cache: "no-store" });
+        if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
+        const data = await res.json();
+        if (!Array.isArray(data)) throw new Error("JSON root is not an array.");
+
+        // Keep only objects; do minimal validation.
+        sponsors = data.filter(x => x && typeof x === "object");
+
+        els.status.textContent = "";
+        render();
+      } catch (err) {
+        console.error(err);
+        els.meta.textContent = "Load failed";
+        els.grid.innerHTML = `
+          <div class="error">
+            <div style="font-weight:800; margin-bottom:6px;">Couldn’t load sponsors.</div>
+            <div class="muted">URL: ${DATA_URL}</div>
+            <div class="muted">Error: ${safeText(err.message || err)}</div>
+          </div>
+        `;
+      }
+    }
+
+    els.btnAll.addEventListener("click", () => setFilter("all"));
+    els.btnActive.addEventListener("click", () => setFilter("active"));
+
+    init();
+  </script>
+</body>
+</html>

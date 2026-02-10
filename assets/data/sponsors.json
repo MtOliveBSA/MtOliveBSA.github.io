@@ -4,11 +4,11 @@
 		"name": "SAMPLE COMPANY",
 		"img": "//mtolivebsa.github.io/images/sponsors/image.png",
 		"active": false,
-		"phone": "",
-		"email": "",
+		"phone": "999-999-9999",
+		"email": "email@company.com",
 		"address": {
-			"line1": "",
-			"line2": "",
+			"line1": "999 Something Road",
+			"line2": "Mt Olive, NJ 07828",
 			"line3": ""
 		}
 	},
