@@ -288,7 +288,7 @@
   panel.innerHTML = `
     <div id="mobsabot-head">
       <div class="mobsabot-head-title">
-        <img src="bones/bones-static.png" alt="Bones logo">
+        <img src="https://mtolivebsa.github.io/bones/bones-static.png" alt="Bones logo">
         <span>Ask Bones - the MOBSA Assistant</span>
       </div>
       <button id="mobsabot-close" aria-label="Close">X</button>
