@@ -272,7 +272,7 @@
   btn.setAttribute("aria-label", "Ask Bones");
 
   const btnIcon = document.createElement("img");
-  btnIcon.src = "bones/gif-pack/bones_bounce.gif"; // animated GIF path
+  btnIcon.src = "https://mtolivebsa.github.io/bones/gif-pack/bones_bounce.gif"; // animated GIF path
   btnIcon.alt = "Bones logo";
 
   const btnLabel = document.createElement("span");
