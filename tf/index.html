@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tournament Central</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <div class="brand-row">
+        <img id="tournamentLogo" class="tournament-logo hidden" alt="Tournament logo" />
+        <div><p class="eyebrow">Tournament Central</p><h1 id="tournamentName">Loading Tournament...</h1><p id="tournamentMeta" class="muted"></p></div>
+      </div>
+      <div class="header-actions"><select id="divisionSelect"></select><button id="refreshBtn" class="btn">Refresh</button></div>
+    </div>
+  </header>
+  <main class="container">
+    <section id="statusBanner" class="status-banner hidden"></section>
+    <nav class="tabs"><button class="tab active" data-tab="teams">Teams</button><button class="tab" data-tab="standings">Standings</button><button class="tab" data-tab="bracket">Bracket</button><button class="tab" data-tab="games">Games</button></nav>
+    <section id="teamsPanel" class="panel active"><div class="section-head"><div><h2>Teams</h2><p class="muted">Teams by division with logos and approval status.</p></div></div><div id="teamsGrid" class="team-grid"></div></section>
+    <section id="standingsPanel" class="panel"><div class="section-head"><div><h2>Pool Standings</h2><p class="muted">Sorted by record, runs allowed, then runs scored.</p></div></div><div class="table-wrap"><table><thead><tr><th>Seed</th><th>Team</th><th>W</th><th>L</th><th>T</th><th>RS</th><th>RA</th><th>RD</th></tr></thead><tbody id="standingsBody"></tbody></table></div></section>
+    <section id="bracketPanel" class="panel"><div class="section-head"><div><h2>Bracket</h2><p class="muted">Bracket display updates as games are generated and completed.</p></div></div><div id="bracketWrap" class="bracket-wrap"></div></section>
+    <section id="gamesPanel" class="panel"><div class="section-head"><div><h2>Games</h2><p class="muted">Schedule and results.</p></div></div><div id="gamesList" class="games-list"></div></section>
+  </main>
+  <footer class="site-footer"><div class="container"><p>Powered by Google Sheets, Apps Script, and GitHub Pages.</p></div></footer>
+  <script src="config.js"></script><script src="app.js"></script>
+</body>
+</html>
