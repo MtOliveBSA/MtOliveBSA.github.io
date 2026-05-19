@@ -1,4 +1,16 @@
-const state = { raw: null, divisionId: "ALL" };
+const VALID_TABS = ["teams", "standings", "bracket", "games"];
+
+const state = {
+  raw: null,
+  divisionId: "ALL",
+  activeTab: getRequestedActiveTab()
+};
+
+function getRequestedActiveTab() {
+  const params = new URLSearchParams(window.location.search);
+  const active = (params.get("active") || "teams").toLowerCase();
+  return VALID_TABS.includes(active) ? active : "teams";
+}
 
 const els = {
   tournamentLogo: document.getElementById("tournamentLogo"),
@@ -16,8 +28,17 @@ const els = {
 document.addEventListener("DOMContentLoaded", init);
 window.addEventListener("resize", debounce(drawBracketConnectors, 150));
 
+const urlParams = new URLSearchParams(window.location.search);
+const requestedTab = (urlParams.get("active") || "").toLowerCase();
+
+if (requestedTab) {
+  state.activeTab = requestedTab;
+}
+
 function init() {
   setupTabs();
+  activateTab(state.activeTab, false);
+
   els.refreshBtn.addEventListener("click", loadData);
   els.divisionSelect.addEventListener("change", () => {
     state.divisionId = els.divisionSelect.value;
@@ -122,7 +143,7 @@ function renderTeams() {
         <div class="team-meta">
           <p class="team-name">${escapeHtml(team.TeamName)}</p>
           <div class="team-subline">
-            Coach: ${escapeHtml(team.HeadCoachName || "TBD")}
+            Coach: ${escapeHtml(team.HeadCoachName || "-")}
           </div>
           <div class="team-seed">
             Seed ${seedText(team)}
@@ -224,21 +245,39 @@ function applyResultToSlot(slot, real, side, winnerId) {
   const score = side === "A" ? real.TeamAScore : real.TeamBScore;
   const teamId = side === "A" ? real.TeamAID : real.TeamBID;
 
-  let out = { ...slot, score };
-
-  if (slot.type === "placeholder") {
-    const sourceLabel = String(slot.label || "");
-    const sourceGame = Number((sourceLabel.match(/Game (\\d+)/) || [])[1] || 0);
-    const sourceReal = getRealGameForVirtual(sourceGame);
-    if (sourceReal && sourceReal.WinnerTeamID) {
-      const winner = getTeam(sourceReal.WinnerTeamID);
-      if (winner) out = teamSlot(winner);
+  // Most important fix:
+  // If the backend game row already has TeamAID/TeamBID, use it immediately,
+  // even if the UI slot started as a placeholder like "Winner of Game 1".
+  if (teamId) {
+    const team = getTeam(teamId);
+    if (team) {
+      return {
+        ...teamSlot(team),
+        score,
+        isWinner: winnerId && String(team.TeamID) === String(winnerId)
+      };
     }
   }
 
-  if (teamId && out.type === "team" && !out.team?.TeamID) {
-    const team = getTeam(teamId);
-    if (team) out = teamSlot(team);
+  let out = { ...slot, score };
+
+  // Fallback only: if the current game slot is still empty, try resolving from
+  // the source game winner.
+  if (slot.type === "placeholder") {
+    const sourceLabel = String(slot.label || "");
+    const sourceGame = Number((sourceLabel.match(/Game (\d+)/) || [])[1] || 0);
+    const sourceReal = getRealGameForVirtual(sourceGame);
+
+    if (sourceReal && sourceReal.WinnerTeamID) {
+      const winner = getTeam(sourceReal.WinnerTeamID);
+      if (winner) {
+        return {
+          ...teamSlot(winner),
+          score,
+          isWinner: winnerId && String(winner.TeamID) === String(winnerId)
+        };
+      }
+    }
   }
 
   if (winnerId && out.type === "team" && String(out.team?.TeamID) === String(winnerId)) {
@@ -246,25 +285,6 @@ function applyResultToSlot(slot, real, side, winnerId) {
   }
 
   return out;
-}
-
-function getRealGameForVirtual(displayGameNumber) {
-  const rows = getFilteredBracketGames();
-  const map = {
-    1: ["BRKT_8U_R1_G2", 2],
-    2: ["BRKT_8U_R2_G1", 9],
-    3: ["BRKT_8U_R2_G2", 10],
-    4: ["BRKT_8U_R2_G4", 12],
-    5: ["BRKT_8U_R2_G3", 11],
-    6: ["BRKT_8U_R3_G1", 13],
-    7: ["BRKT_8U_R3_G2", 14],
-    8: ["BRKT_8U_R4_G1", 15]
-  };
-
-  const [id, gameNum] = map[displayGameNumber] || [];
-  return rows.find(r => String(r.BracketGameID || r.GameID) === id)
-      || rows.find(r => Number(r.GameNumber) === Number(gameNum))
-      || null;
 }
 
 function drawBracketConnectors() {
@@ -376,7 +396,7 @@ function renderSlot(slot, slotId) {
       <div>
         <div class="seed-line">
           <span class="seed-num">${seedText(team)}</span>
-          <strong>${escapeHtml(team?.TeamName || "TBD")}</strong>
+          <strong>${escapeHtml(team?.TeamName || "-")}</strong>
         </div>
         <div class="team-subline">Seed ${seedText(team)}</div>
       </div>
@@ -386,7 +406,7 @@ function renderSlot(slot, slotId) {
 }
 
 function teamSlot(team) {
-  return { type:"team", team, label:team?.TeamName || "TBD", sub:"Seed " + seedText(team), score:"", isWinner:false };
+  return { type:"team", team, label:team?.TeamName || "-", sub:"Seed " + seedText(team), score:"", isWinner:false };
 }
 
 function placeholderSlot(label, sub) {
@@ -408,17 +428,6 @@ function renderGenericDisplayBracket(teams) {
       </div>
     </div>
   `;
-}
-
-function metaFromGame(game) {
-  if (!game) return "";
-  const date = game.StartDate || game.Date || "";
-  const time = game.StartTime || game.Time || "";
-  const field = game.Field || game.Location || game.Venue || "";
-  const parts = [];
-  if (date || time) parts.push(escapeHtml([date, time].filter(Boolean).join(" • ")));
-  if (field) parts.push(escapeHtml(field));
-  return parts.length ? parts.join("<br>") : escapeHtml(game.Status || "Scheduled");
 }
 
 function renderGames() {
@@ -462,7 +471,7 @@ function gameTeam(slot) {
     return `
       <div class="inline-team placeholder">
         <span class="inline-logo"></span>
-        <strong>${escapeHtml(slot?.label || "TBD")}</strong>
+        <strong>${escapeHtml(slot?.label || "-")}</strong>
       </div>
     `;
   }
@@ -472,7 +481,7 @@ function gameTeam(slot) {
   return `
     <div class="inline-team ${slot.isWinner ? "winner" : ""}">
       <img class="inline-logo" src="${safeLogo(team?.LogoURL)}" alt="" />
-      <strong>${escapeHtml(team?.TeamName || "TBD")}</strong>
+      <strong>${escapeHtml(team?.TeamName || "-")}</strong>
       ${slot.score !== "" && slot.score !== undefined && slot.score !== null ? `<span class="bracket-score">${escapeHtml(slot.score)}</span>` : ""}
     </div>
   `;
@@ -481,13 +490,36 @@ function gameTeam(slot) {
 function setupTabs() {
   document.querySelectorAll(".tab").forEach(tab => {
     tab.addEventListener("click", () => {
-      document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
-      document.querySelectorAll(".panel").forEach(p => p.classList.remove("active"));
-      tab.classList.add("active");
-      document.getElementById(tab.dataset.tab + "Panel").classList.add("active");
-      if (tab.dataset.tab === "bracket") requestAnimationFrame(drawBracketConnectors);
+      activateTab(tab.dataset.tab, true);
     });
   });
+}
+
+function activateTab(tabName, updateUrl = true) {
+  const safeTab = VALID_TABS.includes(tabName) ? tabName : "teams";
+
+  state.activeTab = safeTab;
+
+  document.querySelectorAll(".tab").forEach(t => {
+    t.classList.toggle("active", t.dataset.tab === safeTab);
+  });
+
+  document.querySelectorAll(".panel").forEach(p => {
+    p.classList.remove("active");
+  });
+
+  const panel = document.getElementById(`${safeTab}Panel`);
+  if (panel) panel.classList.add("active");
+
+  if (safeTab === "bracket") {
+    requestAnimationFrame(drawBracketConnectors);
+  }
+
+  if (updateUrl) {
+    const url = new URL(window.location);
+    url.searchParams.set("active", safeTab);
+    window.history.replaceState({}, "", url);
+  }
 }
 
 function getFilteredTeams() {
@@ -638,6 +670,7 @@ function renderNineTeamGamesList(teams) {
   }
 
   els.gamesList.innerHTML = visibleGames.map(g => renderGameCard({
+    gameId: g.real?.BracketGameID || g.real?.GameID || realGameIdForVirtual(g.gameNumber),
     label: `Game ${g.gameNumber}`,
     status: g.real?.Status || "Scheduled",
     meta: metaFromGame(g.real) || "Scheduled",
@@ -663,10 +696,15 @@ function applyRealResultToGameSlot(slot, real, side, winnerId) {
   const teamId = side === "A" ? real.TeamAID : real.TeamBID;
   const score = side === "A" ? real.TeamAScore : real.TeamBScore;
 
+  if (teamId) {
+    const team = getTeam(teamId);
+    if (team) {
+      return teamGameSlot(team, score, String(team.TeamID) === String(winnerId));
+    }
+  }
+
   let out = { ...slot, score };
 
-  // If this slot is "Winner of Game N" and that source game now has a winner,
-  // replace the placeholder with the actual winning team.
   if (slot.type === "placeholder") {
     const sourceGameNumber = Number((String(slot.label).match(/Game (\d+)/) || [])[1] || 0);
     const sourceReal = getRealGameForVirtual(sourceGameNumber);
@@ -677,11 +715,6 @@ function applyRealResultToGameSlot(slot, real, side, winnerId) {
         out = teamGameSlot(winner, score, String(winner.TeamID) === String(winnerId));
       }
     }
-  }
-
-  if (teamId && out.type === "team" && !out.team?.TeamID) {
-    const team = getTeam(teamId);
-    if (team) out = teamGameSlot(team, score, String(team.TeamID) === String(winnerId));
   }
 
   if (winnerId && out.type === "team" && String(out.team?.TeamID) === String(winnerId)) {
@@ -711,7 +744,7 @@ function teamGameSlot(team, score = "", isWinner = false) {
   return {
     type: "team",
     team,
-    label: team?.TeamName || "TBD",
+    label: team?.TeamName || "-",
     score,
     isWinner
   };
@@ -751,4 +784,429 @@ function isGameListItemVisible(game) {
 
 function hasScoreValue(value) {
   return value !== "" && value !== null && value !== undefined;
+}
+
+
+
+
+/**
+ * v1.2 Score Submission Helper
+ * Ensures score entries POST to Apps Script and refresh from persisted sheet data.
+ */
+async function submitOfficialScoreToBackendV12(gameId, teamAScore, teamBScore, pin) {
+  const payload = {
+    action: 'recordOfficialScore',
+    gameId: gameId,
+    teamAScore: teamAScore,
+    teamBScore: teamBScore,
+    pin: pin || '',
+    source: 'Web app official score entry'
+  };
+
+  const res = await fetch(API_URL, {
+    method: 'POST',
+    mode: 'cors',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify(payload)
+  });
+
+  const result = await res.json();
+
+  if (!result.ok) {
+    throw new Error(result.error || 'Score could not be recorded.');
+  }
+
+  await loadData();
+  return result;
+}
+
+
+
+
+/* ============================================================
+   v1.2.1 Score Entry UI Restore
+   These override/extend prior functions without removing bracket rendering.
+   ============================================================ */
+
+let scoreEntryContext = null;
+
+document.addEventListener("click", function(e) {
+  const btn = e.target.closest("[data-score-game-id]");
+  if (btn) {
+    const gameId = btn.getAttribute("data-score-game-id");
+    const ctx = getScorableContextByGameId(gameId);
+    if (ctx) openScoreModal(ctx);
+  }
+
+  if (e.target.closest("[data-close-score-modal]")) {
+    closeScoreModal();
+  }
+});
+
+let scoreSubmitInProgressV123 = false;
+
+document.addEventListener("submit", async function(e) {
+  if (!e.target || e.target.id !== "scoreEntryForm") return;
+
+  e.preventDefault();
+
+  if (scoreSubmitInProgressV123) return;
+
+  const form = e.target;
+  const errorEl = document.getElementById("scoreModalError");
+
+  errorEl.classList.add("hidden");
+  errorEl.textContent = "";
+
+  const gameId = document.getElementById("scoreGameId").value;
+  const teamAScore = document.getElementById("scoreTeamAScore").value;
+  const teamBScore = document.getElementById("scoreTeamBScore").value;
+  const pin = document.getElementById("scoreAdminPin").value;
+
+  try {
+    scoreSubmitInProgressV123 = true;
+    setScoreModalBusyV123(true, "Recording score…");
+
+    await submitOfficialScoreToBackendV12(gameId, teamAScore, teamBScore, pin);
+
+    setScoreModalBusyV123(true, "Score recorded. Refreshing bracket…");
+    await loadData();
+
+    closeScoreModal();
+  } catch (err) {
+    errorEl.textContent = err.message || "Score could not be recorded.";
+    errorEl.classList.remove("hidden");
+  } finally {
+    scoreSubmitInProgressV123 = false;
+    setScoreModalBusyV123(false);
+  }
+});
+
+function setScoreModalBusyV123(isBusy, message) {
+  const modal = document.getElementById("scoreModal");
+  const form = document.getElementById("scoreEntryForm");
+  if (!modal || !form) return;
+
+  let busyEl = document.getElementById("scoreModalBusy");
+
+  if (!busyEl) {
+    busyEl = document.createElement("div");
+    busyEl.id = "scoreModalBusy";
+    busyEl.className = "score-modal-busy hidden";
+    busyEl.innerHTML = `
+      <div class="score-spinner"></div>
+      <div class="score-busy-text">Recording score…</div>
+    `;
+    form.prepend(busyEl);
+  }
+
+  const textEl = busyEl.querySelector(".score-busy-text");
+  if (textEl) textEl.textContent = message || "Recording score…";
+
+  busyEl.classList.toggle("hidden", !isBusy);
+  modal.classList.toggle("is-busy", isBusy);
+
+  form.querySelectorAll("input, button").forEach(el => {
+    el.disabled = isBusy;
+  });
+}
+
+function openScoreModal(ctx) {
+  scoreEntryContext = ctx;
+
+  document.getElementById("scoreGameId").value = ctx.gameId;
+  document.getElementById("scoreTeamALabel").textContent = ctx.teamA?.TeamName || "Team A";
+  document.getElementById("scoreTeamBLabel").textContent = ctx.teamB?.TeamName || "Team B";
+  document.getElementById("scoreTeamAScore").value = "";
+  document.getElementById("scoreTeamBScore").value = "";
+  document.getElementById("scoreAdminPin").value = "";
+  document.getElementById("scoreModalMatchup").textContent =
+    `${ctx.teamA?.TeamName || "Team A"} vs ${ctx.teamB?.TeamName || "Team B"}`;
+
+  document.getElementById("scoreModalError").classList.add("hidden");
+  document.getElementById("scoreModal").classList.remove("hidden");
+}
+
+function closeScoreModal() {
+  const modal = document.getElementById("scoreModal");
+  if (modal) modal.classList.add("hidden");
+  scoreEntryContext = null;
+}
+
+async function submitOfficialScoreToBackendV12(gameId, teamAScore, teamBScore, pin) {
+  const payload = {
+    action: "recordOfficialScore",
+    gameId: gameId,
+    teamAScore: teamAScore,
+    teamBScore: teamBScore,
+    pin: pin || "",
+    source: "Web app official score entry"
+  };
+
+  const res = await fetch(API_URL, {
+    method: "POST",
+    mode: "cors",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify(payload)
+  });
+
+  const result = await res.json();
+
+  if (!result.ok) {
+    throw new Error(result.error || "Score could not be recorded.");
+  }
+
+  await loadData();
+  return result;
+}
+
+function getScorableContextByGameId(gameId) {
+  const ctxs = getScorableGameContexts();
+  return ctxs.find(g => String(g.gameId) === String(gameId)) || null;
+}
+
+function getScorableGameContexts() {
+  const teams = getFilteredTeams()
+    .filter(t => String(t.ApprovedStatus || "").toLowerCase() !== "rejected")
+    .sort((a, b) => getSeed(a) - getSeed(b));
+
+  if (teams.length === 9) {
+    return getNineTeamScorableContexts(teams);
+  }
+
+  return getFilteredGames()
+    .filter(g => String(g.Status || "").toLowerCase() === "scheduled")
+    .map(g => ({
+      gameId: g.BracketGameID || g.GameID,
+      teamA: getTeam(g.TeamAID),
+      teamB: getTeam(g.TeamBID),
+      status: g.Status
+    }))
+    .filter(ctx => ctx.gameId && ctx.teamA && ctx.teamB);
+}
+
+function getNineTeamScorableContexts(teams) {
+  const seed = n => teams.find(t => getSeed(t) === n) || null;
+
+  const virtualGames = [
+    { n: 1, teamA: seed(8), teamB: seed(9), real: getRealGameForVirtualSafe(1) },
+    { n: 2, teamA: seed(1), teamB: getWinnerTeamFromVirtualGame(1), real: getRealGameForVirtualSafe(2) },
+    { n: 3, teamA: seed(4), teamB: seed(5), real: getRealGameForVirtualSafe(3) },
+    { n: 4, teamA: seed(3), teamB: seed(6), real: getRealGameForVirtualSafe(4) },
+    { n: 5, teamA: seed(2), teamB: seed(7), real: getRealGameForVirtualSafe(5) },
+    { n: 6, teamA: getWinnerTeamFromVirtualGame(2), teamB: getWinnerTeamFromVirtualGame(3), real: getRealGameForVirtualSafe(6) },
+    { n: 7, teamA: getWinnerTeamFromVirtualGame(4), teamB: getWinnerTeamFromVirtualGame(5), real: getRealGameForVirtualSafe(7) },
+    { n: 8, teamA: getWinnerTeamFromVirtualGame(6), teamB: getWinnerTeamFromVirtualGame(7), real: getRealGameForVirtualSafe(8) }
+  ];
+
+  return virtualGames
+    .map(g => ({
+      gameId: g.real?.BracketGameID || g.real?.GameID || realGameIdForVirtual(g.n),
+      virtualGameNumber: g.n,
+      teamA: g.teamA,
+      teamB: g.teamB,
+      status: g.real?.Status || "Scheduled"
+    }))
+    .filter(ctx =>
+      ctx.gameId &&
+      ctx.teamA &&
+      ctx.teamB &&
+      String(ctx.status || "").toLowerCase() === "scheduled"
+    );
+}
+
+function getWinnerTeamFromVirtualGame(n) {
+  const real = getRealGameForVirtualSafe(n);
+  if (!real || !real.WinnerTeamID) return null;
+  return getTeam(real.WinnerTeamID);
+}
+
+function getRealGameForVirtualSafe(n) {
+  if (typeof getRealGameForVirtual === "function") return getRealGameForVirtual(n);
+
+  const rows = getFilteredBracketGames();
+  const id = realGameIdForVirtual(n);
+  const gameNumMap = { 1:2, 2:9, 3:10, 4:12, 5:11, 6:13, 7:14, 8:15 };
+
+  return rows.find(r => String(r.BracketGameID || r.GameID) === id)
+      || rows.find(r => Number(r.GameNumber) === Number(gameNumMap[n]))
+      || null;
+}
+
+function realGameIdForVirtual(n) {
+  const map = {
+    1: "BRKT_8U_R1_G2",
+    2: "BRKT_8U_R2_G1",
+    3: "BRKT_8U_R2_G2",
+    4: "BRKT_8U_R2_G4",
+    5: "BRKT_8U_R2_G3",
+    6: "BRKT_8U_R3_G1",
+    7: "BRKT_8U_R3_G2",
+    8: "BRKT_8U_R4_G1"
+  };
+  return map[n] || "";
+}
+
+function scoreButtonHtmlForGameId(gameId) {
+  if (!gameId) return "";
+  const ctx = getScorableContextByGameId(gameId);
+  if (!ctx) return "";
+  return `<div class="score-action-row"><button class="score-entry-button" type="button" data-score-game-id="${escapeHtml(gameId)}">Enter Score</button></div>`;
+}
+
+/* Override renderDisplayGame from the bracket UI so scheduled/scorable games get a button. */
+if (typeof renderDisplayGame === "function") {
+  const renderDisplayGameOriginal_v121 = renderDisplayGame;
+  renderDisplayGame = function(game) {
+    const html = renderDisplayGameOriginal_v121(game);
+    const real = getRealGameForVirtualSafe(game.gameNumber);
+    const gameId = real?.BracketGameID || real?.GameID || realGameIdForVirtual(game.gameNumber);
+    const btn = scoreButtonHtmlForGameId(gameId);
+
+    if (!btn) return html;
+
+    return html.replace("</div>\n    </article>", `${btn}</div>\n    </article>`);
+  };
+}
+
+/* Override renderGameCard so Games tab cards can also get score buttons. */
+if (typeof renderGameCard === "function") {
+  const renderGameCardOriginal_v121 = renderGameCard;
+  renderGameCard = function(game) {
+    const html = renderGameCardOriginal_v121(game);
+    const gameId = game.gameId || game.GameID || game.BracketGameID || "";
+
+    if (!gameId) return html;
+
+    const btn = scoreButtonHtmlForGameId(gameId);
+    if (!btn) return html;
+
+    return html.replace("</article>", `${btn}</article>`);
+  };
+}
+
+function getGameScheduleMetaById(gameId) {
+  if (!gameId) return null;
+
+  const games = state.raw?.games || [];
+  const bracketGames = state.raw?.bracketGames || [];
+
+  // Prefer Games sheet because this is where StartDate / StartTime / Field are maintained.
+  return games.find(g =>
+    String(g.GameID || g.BracketGameID || "") === String(gameId)
+  ) || bracketGames.find(g =>
+    String(g.BracketGameID || g.GameID || "") === String(gameId)
+  ) || null;
+}
+
+function getGameScheduleMetaForVirtualGame(displayGameNumber) {
+  const real = getRealGameForVirtual(displayGameNumber);
+  const realId = real?.BracketGameID || real?.GameID || realGameIdForVirtual?.(displayGameNumber) || "";
+
+  return getGameScheduleMetaById(realId) || real || null;
+}
+
+function getRealGameForVirtual(displayGameNumber) {
+  const bracketRows = getFilteredBracketGames();
+  const gameRows = state.raw?.games || [];
+
+  const map = {
+    1: ["BRKT_8U_R1_G2", 2],
+    2: ["BRKT_8U_R2_G1", 9],
+    3: ["BRKT_8U_R2_G2", 10],
+    4: ["BRKT_8U_R2_G4", 12],
+    5: ["BRKT_8U_R2_G3", 11],
+    6: ["BRKT_8U_R3_G1", 13],
+    7: ["BRKT_8U_R3_G2", 14],
+    8: ["BRKT_8U_R4_G1", 15]
+  };
+
+  const [id, gameNum] = map[displayGameNumber] || [];
+
+  // Use Bracket_Games as the result/status source, but merge in schedule fields from Games.
+  const bracket =
+    bracketRows.find(r => String(r.BracketGameID || r.GameID) === id) ||
+    bracketRows.find(r => Number(r.GameNumber) === Number(gameNum)) ||
+    null;
+
+  const game =
+    gameRows.find(r => String(r.GameID || r.BracketGameID) === id) ||
+    gameRows.find(r =>
+      String(r.DivisionID || "") === String(state.divisionId === "ALL" ? r.DivisionID : state.divisionId) &&
+      Number(r.GameNumber) === Number(gameNum)
+    ) ||
+    null;
+
+  if (bracket && game) {
+    return {
+      ...bracket,
+      StartDate: game.StartDate || bracket.StartDate || "",
+      StartTime: game.StartTime || bracket.StartTime || "",
+      Field: game.Field || bracket.Field || "",
+      Location: game.Location || bracket.Location || "",
+      Venue: game.Venue || bracket.Venue || "",
+      Date: game.Date || bracket.Date || "",
+      Time: game.Time || bracket.Time || ""
+    };
+  }
+
+  return bracket || game || null;
+}
+
+function metaFromGame(game) {
+  if (!game) return "";
+
+  const gameId = game.BracketGameID || game.GameID || "";
+  const scheduleMeta = getGameScheduleMetaById(gameId) || game;
+
+  const date = scheduleMeta.StartDate || scheduleMeta.Date || "";
+  const time = scheduleMeta.StartTime || scheduleMeta.Time || "";
+  const field = scheduleMeta.Field || scheduleMeta.Location || scheduleMeta.Venue || "";
+
+  const parts = [];
+
+  if (date || time) {
+    parts.push(escapeHtml([formatShortGameDate(date), formatShortGameTime(time)].filter(Boolean).join(" • ")));
+  }
+
+  if (field) {
+    parts.push(escapeHtml(field));
+  }
+
+  return parts.length ? parts.join("<br>") : escapeHtml(game.Status || "Scheduled");
+}
+
+function formatShortGameDate(value) {
+  if (!value) return "";
+
+  // Preserve simple sheet-entered text like "Sat 6/7" or "6/7/2026"
+  const raw = String(value).trim();
+
+  const d = new Date(raw);
+  if (Number.isNaN(d.getTime())) return raw;
+
+  return d.toLocaleDateString(undefined, {
+    month: "short",
+    day: "numeric"
+  });
+}
+
+function formatShortGameTime(value) {
+  if (!value) return "";
+
+  const raw = String(value).trim();
+
+  // Preserve already-formatted time like "9:00 AM"
+  if (/[ap]m/i.test(raw)) return raw;
+
+  // Handle Sheets Date object serialized to string if needed
+  const d = new Date(raw);
+  if (!Number.isNaN(d.getTime())) {
+    return d.toLocaleTimeString(undefined, {
+      hour: "numeric",
+      minute: "2-digit"
+    });
+  }
+
+  return raw;
 }

@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Tournament Foundations</title>
-  <link rel="stylesheet" href="styles.css?v=0.8.0" />
+  <link rel="stylesheet" href="styles.css?v=1.2.1" />
 </head>
 <body>
   <header class="site-header">
@@ -84,11 +84,44 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>Powered by <a href="https://pwrupp.com/" target="_blank"><img style="vertical-align:middle;" src="https://pwrupp.com/assets/img/powerupp_solutions.png" width="150px"/></a></p>
+      <p>Running on <a href="https://pwrupp.com/" target="_blank"><img style="vertical-align:middle;" src="https://pwrupp.com/assets/img/powerupp_solutions.png" width="150px"/></a></p>
     </div>
   </footer>
 
-  <script src="config.js?v=0.8.0"></script>
-  <script src="app.js?v=0.8.0"></script>
+  <script src="config.js?v=1.2.1"></script>
+  <script src="app.js?v=1.2.1"></script>
+
+  <div id="scoreModal" class="score-modal hidden" role="dialog" aria-modal="true" aria-labelledby="scoreModalTitle">
+    <div class="score-modal-backdrop" data-close-score-modal="1"></div>
+    <div class="score-modal-card">
+      <button class="score-modal-close" type="button" data-close-score-modal="1">×</button>
+      <h2 id="scoreModalTitle">Enter Official Score</h2>
+      <p id="scoreModalMatchup" class="score-modal-matchup muted"></p>
+
+      <form id="scoreEntryForm" class="score-entry-form">
+        <input type="hidden" id="scoreGameId" />
+
+        <label>
+          <span id="scoreTeamALabel">Team A</span>
+          <input id="scoreTeamAScore" type="number" min="0" step="1" required />
+        </label>
+
+        <label>
+          <span id="scoreTeamBLabel">Team B</span>
+          <input id="scoreTeamBScore" type="number" min="0" step="1" required />
+        </label>
+
+        <label>
+          <span>Admin PIN</span>
+          <input id="scoreAdminPin" type="password" autocomplete="off" required />
+        </label>
+
+        <div id="scoreModalError" class="score-modal-error hidden"></div>
+
+        <button class="score-submit-btn" type="submit">Record Official Score</button>
+      </form>
+    </div>
+  </div>
+
 </body>
 </html>

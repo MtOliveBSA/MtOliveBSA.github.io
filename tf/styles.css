@@ -32,7 +32,16 @@ body {
 }
 
 .header-content { display: flex; align-items: center; justify-content: space-between; gap: 22px; }
-.brand-row { display: flex; align-items: center; gap: 18px; }
+.brand-row { display: flex; align-items: center; gap: 28px; }
+.brand-row img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+}
+.brand-row h1 {
+  font-size: clamp(2.5rem, 3vw, 4.8rem);
+  line-height: 0.95;
+}
 
 .tournament-logo {
     width: 86px;
@@ -484,4 +493,165 @@ select { background: #fff; color: var(--text); max-width: 260px; }
 .inline-team.placeholder .inline-logo {
     border: 1.5px dashed rgba(90,4,126,.28);
     background: transparent;
+}
+
+
+/* v1.2.1 Score Entry UI Restore */
+.score-action-row {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 13px 12px;
+    border-top: 1px solid var(--line);
+    background: rgba(255,255,255,.76);
+}
+
+.score-entry-button,
+.score-submit-btn {
+    appearance: none;
+    border: 0;
+    border-radius: 999px;
+    background: var(--primary);
+    color: #fff;
+    font-weight: 950;
+    padding: 10px 16px;
+    cursor: pointer;
+    box-shadow: 0 10px 22px rgba(32,20,48,.12);
+}
+
+.score-entry-button:hover,
+.score-submit-btn:hover {
+    filter: brightness(.98);
+    transform: translateY(-1px);
+}
+
+.game-card .score-entry-button {
+    margin-top: 14px;
+}
+
+.score-modal.hidden {
+    display: none !important;
+}
+
+.score-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: grid;
+    place-items: center;
+    padding: 18px;
+}
+
+.score-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 14, 28, .46);
+    backdrop-filter: blur(4px);
+}
+
+.score-modal-card {
+    position: relative;
+    z-index: 1;
+    width: min(440px, 100%);
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    box-shadow: 0 24px 90px rgba(0,0,0,.25);
+    padding: 24px;
+}
+
+.score-modal-card h2 {
+    margin-bottom: 8px;
+}
+
+.score-modal-matchup {
+    margin-bottom: 18px;
+}
+
+.score-modal-close {
+    position: absolute;
+    right: 14px;
+    top: 12px;
+    border: 0;
+    background: transparent;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--muted);
+}
+
+.score-entry-form {
+    display: grid;
+    gap: 14px;
+}
+
+.score-entry-form label {
+    display: grid;
+    gap: 6px;
+    font-weight: 900;
+}
+
+.score-entry-form input {
+    min-height: 44px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 8px 12px;
+    font: inherit;
+}
+
+.score-modal-error {
+    border-radius: 12px;
+    background: #fce8e6;
+    color: var(--bad);
+    font-weight: 800;
+    padding: 10px 12px;
+}
+
+.inline-team.placeholder {
+    color: var(--primary);
+    font-weight: 900;
+}
+
+.inline-team.placeholder .inline-logo,
+.bracket-team-row.placeholder .inline-logo {
+    border: 1.5px dashed rgba(90,4,126,.28);
+    background: transparent;
+}
+
+.score-modal.is-busy .score-entry-form label {
+    opacity: .55;
+}
+
+.score-modal-busy {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid var(--line);
+    background: rgba(197,179,88,.12);
+    border-radius: 14px;
+    padding: 12px 14px;
+    font-weight: 900;
+    color: var(--text);
+}
+
+.score-modal-busy.hidden {
+    display: none !important;
+}
+
+.score-spinner {
+    width: 22px;
+    height: 22px;
+    border: 3px solid rgba(90,4,126,.18);
+    border-top-color: var(--primary);
+    border-radius: 999px;
+    animation: scoreSpin .8s linear infinite;
+}
+
+@keyframes scoreSpin {
+    to { transform: rotate(360deg); }
+}
+
+.score-submit-btn:disabled,
+.score-entry-form input:disabled {
+    cursor: wait;
+    opacity: .7;
 }
