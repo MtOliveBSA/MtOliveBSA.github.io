@@ -1,3 +1,4 @@
+let bracketZoom = 1;
 const VALID_TABS = ["teams", "standings", "bracket", "games"];
 
 const state = {
@@ -44,6 +45,22 @@ function init() {
     state.divisionId = els.divisionSelect.value;
     renderAll();
   });
+
+    document.getElementById("zoomInBtn")?.addEventListener("click", () => {
+        bracketZoom = Math.min(bracketZoom + 0.1, 2);
+        applyBracketZoom();
+    });
+
+    document.getElementById("zoomOutBtn")?.addEventListener("click", () => {
+        bracketZoom = Math.max(bracketZoom - 0.1, 0.5);
+        applyBracketZoom();
+    });
+
+    document.getElementById("zoomResetBtn")?.addEventListener("click", () => {
+        bracketZoom = 1;
+        applyBracketZoom();
+    });
+
   loadData();
 }
 
@@ -1215,4 +1232,17 @@ function formatShortGameTime(value) {
   }
 
   return raw;
+}
+
+function applyBracketZoom() {
+  const zoomEl = document.getElementById("bracketZoom");
+  const label = document.getElementById("zoomLabel");
+
+  if (!zoomEl) return;
+
+  zoomEl.style.transform = `scale(${bracketZoom})`;
+
+  if (label) {
+    label.textContent = `${Math.round(bracketZoom * 100)}%`;
+  }
 }

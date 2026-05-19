@@ -61,9 +61,19 @@
         <div>
           <h2>Bracket</h2>
         </div>
+        <div class="bracket-toolbar">
+          <button id="zoomOutBtn" class="zoom-btn">−</button>
+          <span id="zoomLabel">100%</span>
+          <button id="zoomInBtn" class="zoom-btn">+</button>
+          <button id="zoomResetBtn" class="zoom-btn">Reset</button>
+        </div>
       </div>
       <div class="bracket-note">Higher seed is home team and listed on top.</div>
-      <div id="bracketWrap" class="bracket-board"></div>
+      <div class="bracket-scroll">
+        <div id="bracketZoom">
+          <div id="bracketWrap" class="bracket-board"></div>
+        </div>
+      </div>
       <div class="bracket-legend" style="display:none;">
         <span><i class="legend-line"></i> Advancement Path</span>
         <span><i class="legend-dot"></i> To Be Determined</span>
