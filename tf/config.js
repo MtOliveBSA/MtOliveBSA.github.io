@@ -6,3 +6,5 @@ const TOURNAMENT_SLUG = "spring2026-8u-championship";
 
 // Fallback logo used when a team has no LogoURL.
 const DEFAULT_TEAM_LOGO = "images/TF-Logo.png";
+
+const LEAGUE_STANDINGS_URL = "https://season-microsites.ui.sportsengine.com/seasons/69b1db2074509e019ce61147/standings";
