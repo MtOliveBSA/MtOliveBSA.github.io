@@ -17,7 +17,7 @@
           <p id="tournamentMeta" class="muted"></p>
         </div>
       </div>
-      <div class="header-actions">
+      <div class="header-actions" style="display:none;">
         <select id="divisionSelect"></select>
         <button id="refreshBtn" class="btn">Refresh</button>
       </div>
@@ -28,7 +28,7 @@
     <section id="statusBanner" class="status-banner hidden"></section>
 
     <nav class="tabs">
-      <button class="tab active" data-tab="teams">Teams</button>
+      <button class="tab active" data-tab="teams" style="display:none;">Teams</button>
       <button class="tab" data-tab="standings">Standings</button>
       <button class="tab" data-tab="bracket">Bracket</button>
       <button class="tab" data-tab="games">Games</button>
@@ -48,7 +48,7 @@
       <div class="section-head">
         <div>
           <h2>League Standings</h2>
-          <p class="muted">League standings are provided by SportsEngine.</p>
+          <p class="muted">League standings, provided by SportsEngine.</p>
         </div>
       </div>
       <div class="iframe-wrap">
@@ -60,15 +60,14 @@
       <div class="section-head">
         <div>
           <h2>Bracket</h2>
-          <p class="muted">Bracket updates automatically as games are played and results are confirmed.</p>
         </div>
       </div>
+      <div class="bracket-note">Higher seed is home team and listed on top.</div>
       <div id="bracketWrap" class="bracket-board"></div>
       <div class="bracket-legend" style="display:none;">
         <span><i class="legend-line"></i> Advancement Path</span>
         <span><i class="legend-dot"></i> To Be Determined</span>
       </div>
-      <div class="bracket-note">Higher seed is home team and listed on top.</div>
     </section>
 
     <section id="gamesPanel" class="panel">

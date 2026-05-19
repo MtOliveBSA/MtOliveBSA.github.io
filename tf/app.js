@@ -469,20 +469,26 @@ function renderGames() {
 function gameTeam(slot) {
   if (!slot || slot.type === "placeholder") {
     return `
-      <div class="inline-team placeholder">
-        <span class="inline-logo"></span>
-        <strong>${escapeHtml(slot?.label || "-")}</strong>
+      <div class="game-team-row placeholder">
+        <div class="game-team-info">
+          <span class="inline-logo"></span>
+          <strong class="game-team-name">${escapeHtml(slot?.label || "-")}</strong>
+        </div>
+        <span class="game-score"></span>
       </div>
     `;
   }
 
   const team = slot.team;
+  const hasScore = slot.score !== "" && slot.score !== undefined && slot.score !== null;
 
   return `
-    <div class="inline-team ${slot.isWinner ? "winner" : ""}">
-      <img class="inline-logo" src="${safeLogo(team?.LogoURL)}" alt="" />
-      <strong>${escapeHtml(team?.TeamName || "-")}</strong>
-      ${slot.score !== "" && slot.score !== undefined && slot.score !== null ? `<span class="bracket-score">${escapeHtml(slot.score)}</span>` : ""}
+    <div class="game-team-row ${slot.isWinner ? "winner" : ""}">
+      <div class="game-team-info">
+        <img class="inline-logo" src="${safeLogo(team?.LogoURL)}" alt="" />
+        <strong class="game-team-name">${escapeHtml(team?.TeamName || "-")}</strong>
+      </div>
+      <span class="game-score">${hasScore ? escapeHtml(slot.score) : ""}</span>
     </div>
   `;
 }
@@ -731,9 +737,9 @@ function renderGameCard(game) {
         <span>${game.label}</span>
         <span>${escapeHtml(game.meta || game.status || "Scheduled")}</span>
       </div>
-      <div class="matchup">
+
+      <div class="game-matchup">
         ${gameTeam(game.top)}
-        <div class="vs">vs</div>
         ${gameTeam(game.bottom)}
       </div>
     </article>

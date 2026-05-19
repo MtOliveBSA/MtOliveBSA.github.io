@@ -39,7 +39,7 @@ body {
   object-fit: contain;
 }
 .brand-row h1 {
-  font-size: clamp(2.5rem, 3vw, 4.8rem);
+  font-size: clamp(1.5rem, 3vw, 4.8rem);
   line-height: 0.95;
 }
 
@@ -654,4 +654,170 @@ select { background: #fff; color: var(--text); max-width: 260px; }
 .score-entry-form input:disabled {
     cursor: wait;
     opacity: .7;
+}
+
+.btn {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    border-radius: 999px;
+    padding: 0 18px;
+    min-height: 44px;
+    font-weight: 850;
+    letter-spacing: .02em;
+    backdrop-filter: blur(8px);
+    transition: background .18s ease, transform .18s ease, border-color .18s ease;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: rgba(255, 255, 255, 0.48);
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Mobile game score alignment */
+@media (max-width: 768px) {
+
+    .game-card .game-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .game-card .game-team {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .game-card .game-score {
+        min-width: 42px;
+        text-align: right;
+        font-size: 1.05rem;
+        font-weight: 900;
+    }
+
+    /* Winning team accent */
+    .game-card .game-row.winner {
+        background: rgba(76, 42, 133, 0.10);
+        border-left: 4px solid var(--primary);
+        border-radius: 12px;
+        padding-left: 10px;
+    }
+
+    .game-card .game-row.winner .game-team-name {
+        font-weight: 900;
+        color: var(--primary);
+    }
+
+    .game-card .game-row.winner .game-score {
+        color: var(--primary);
+    }
+}
+
+/* Games tab mobile scoring layout */
+.game-matchup {
+    display: grid;
+    gap: 8px;
+}
+
+.game-team-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 10px;
+    border-radius: 12px;
+}
+
+.game-team-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.game-team-name {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.game-score {
+    min-width: 42px;
+    text-align: right;
+    font-size: 1.1rem;
+    font-weight: 950;
+}
+
+.game-team-row.winner {
+    background: rgba(19,115,51,.08);
+    border-left: 4px solid rgba(19, 115, 51, 0.51);
+}
+
+.game-team-row.winner .game-team-name,
+.game-team-row.winner .game-score {
+    font-weight: 950;
+}
+
+.game-team-row.placeholder {
+    color: var(--primary);
+    font-weight: 900;
+}
+
+.game-team-row.placeholder .inline-logo {
+    border: 1.5px dashed rgba(90, 4, 126, .28);
+    background: transparent;
+}
+
+@media (min-width: 769px) {
+    .game-matchup {
+        gap: 10px;
+    }
+}
+
+/* Mobile-friendly SportsEngine standings iframe */
+.iframe-wrap {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.iframe-wrap iframe {
+    display: block;
+    width: 100%;
+    min-height: 1200px;
+    border: 0;
+}
+
+@media (max-width: 768px) {
+    .iframe-wrap {
+        border-radius: 18px;
+        overflow-x: auto;
+    }
+
+    .iframe-wrap iframe {
+        width: 980px;          /* gives SportsEngine room to render desktop table */
+        max-width: none;
+        min-height: 1400px;
+        transform: scale(0.82);
+        transform-origin: top left;
+    }
+
+    .iframe-wrap::after {
+        content: "Swipe sideways to view full standings";
+        display: block;
+        padding: 10px 14px;
+        font-size: 12px;
+        font-weight: 800;
+        color: var(--muted);
+        background: rgba(255,255,255,.75);
+    }
 }
