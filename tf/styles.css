@@ -211,7 +211,7 @@ select { background: #fff; color: var(--text); max-width: 260px; }
 .bracket-board {
     width: calc(100vw - 28px);
     margin-left: calc((1180px - min(1180px, calc(100vw - 28px))) / -2);
-    /* overflow-x: auto; */
+    overflow-x: auto;
     overflow-y: visible;
     padding: 8px 0 64px;
 }
@@ -852,5 +852,33 @@ select { background: #fff; color: var(--text); max-width: 260px; }
 @media (max-width: 768px) {
   .bracket-toolbar {
     display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .bracket-toolbar {
+    display: none !important;
+  }
+
+  .bracket-scroll {
+    height: 75vh;
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: contain;
+    position: relative;
+  }
+
+  #bracketZoom {
+    transform-origin: 0 0;
+    will-change: transform;
+    width: max-content;
+  }
+
+  .bracket-board {
+    overflow: visible !important;
+  }
+
+  .connector-svg {
+    pointer-events: none;
   }
 }

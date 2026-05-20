@@ -329,7 +329,6 @@ function drawBracketConnectors() {
     ["game-7", "game-8-slot-b"]
   ];
 
-  const box = inner.getBoundingClientRect();
   const w = inner.scrollWidth;
   const h = inner.scrollHeight;
 
@@ -350,23 +349,44 @@ function drawBracketConnectors() {
     const to = document.querySelector(`[data-slot-id="${toId}"]`);
     if (!from || !to) return "";
 
-    const a = from.getBoundingClientRect();
-    const b = to.getBoundingClientRect();
+    const a = getElementPointInBracket(from, inner, "right-center");
+    const b = getElementPointInBracket(to, inner, "left-center");
 
-    const x1 = a.right - box.left + inner.scrollLeft;
-    const y1 = a.top + a.height / 2 - box.top;
-    const x2 = b.left - box.left + inner.scrollLeft - 4;
-    const y2 = b.top + b.height / 2 - box.top;
+    const x1 = a.x;
+    const y1 = a.y;
+    const x2 = b.x - 4;
+    const y2 = b.y;
 
     const mid = x1 + Math.max(42, (x2 - x1) * 0.52);
-    const r = 10;
-
-    const d = roundedConnectorPath(x1, y1, mid, y2, x2, r);
+    const d = roundedConnectorPath(x1, y1, mid, y2, x2, 10);
 
     return `<path d="${d}" fill="none" stroke="rgba(64,49,113,.68)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowhead)"/>`;
   }).join("");
 
   svg.innerHTML = defs + paths;
+}
+
+function getElementPointInBracket(el, bracketInner, position) {
+  let x = 0;
+  let y = 0;
+  let node = el;
+
+  while (node && node !== bracketInner) {
+    x += node.offsetLeft || 0;
+    y += node.offsetTop || 0;
+    node = node.offsetParent;
+  }
+
+  if (position === "right-center") {
+    x += el.offsetWidth;
+    y += el.offsetHeight / 2;
+  }
+
+  if (position === "left-center") {
+    y += el.offsetHeight / 2;
+  }
+
+  return { x, y };
 }
 
 function roundedConnectorPath(x1, y1, mid, y2, x2, r) {
@@ -1304,8 +1324,10 @@ function initMobileBracketGestures() {
     if (activePointers.size === 1 && lastPanPoint) {
       const p = [...activePointers.values()][0];
 
-      mobileBracketX += p.x - lastPanPoint.x;
-      mobileBracketY += p.y - lastPanPoint.y;
+      const panSpeed = 1.6;
+
+      mobileBracketX += (p.x - lastPanPoint.x) * panSpeed;
+      mobileBracketY += (p.y - lastPanPoint.y) * panSpeed;
 
       lastPanPoint = { x: p.x, y: p.y };
       applyMobileBracketTransform();
@@ -1346,7 +1368,7 @@ function applyMobileBracketTransform() {
 
   if (window.innerWidth <= 768) {
     zoomEl.style.transform =
-      `translate(${mobileBracketX}px, ${mobileBracketY}px) scale(${mobileBracketZoom})`;
+      `translate3d(${mobileBracketX}px, ${mobileBracketY}px, 0) scale(${mobileBracketZoom})`;
   }
 }
 
