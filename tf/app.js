@@ -1,4 +1,12 @@
 let bracketZoom = 1;
+let mobileBracketZoom = 1;
+let mobileBracketX = 0;
+let mobileBracketY = 0;
+
+let activePointers = new Map();
+let lastPinchDistance = null;
+let lastPanPoint = null;
+
 const VALID_TABS = ["teams", "standings", "bracket", "games"];
 
 const state = {
@@ -39,6 +47,8 @@ if (requestedTab) {
 function init() {
   setupTabs();
   activateTab(state.activeTab, false);
+  
+  initMobileBracketGestures();
 
   els.refreshBtn.addEventListener("click", loadData);
   els.divisionSelect.addEventListener("change", () => {
@@ -1240,9 +1250,106 @@ function applyBracketZoom() {
 
   if (!zoomEl) return;
 
+  if (window.innerWidth <= 768) {
+    applyMobileBracketTransform();
+    return;
+  }
+
   zoomEl.style.transform = `scale(${bracketZoom})`;
 
   if (label) {
     label.textContent = `${Math.round(bracketZoom * 100)}%`;
   }
+}
+
+function initMobileBracketGestures() {
+  const scrollEl = document.querySelector(".bracket-scroll");
+  const zoomEl = document.getElementById("bracketZoom");
+
+  if (!scrollEl || !zoomEl) return;
+
+  scrollEl.addEventListener("pointerdown", e => {
+    if (window.innerWidth > 768) return;
+
+    scrollEl.setPointerCapture(e.pointerId);
+    activePointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+
+    if (activePointers.size === 1) {
+      lastPanPoint = { x: e.clientX, y: e.clientY };
+    }
+
+    if (activePointers.size === 2) {
+      lastPinchDistance = getPointerDistance();
+      lastPanPoint = null;
+    }
+  });
+
+  scrollEl.addEventListener("pointermove", e => {
+    if (window.innerWidth > 768) return;
+    if (!activePointers.has(e.pointerId)) return;
+
+    activePointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+
+    if (activePointers.size === 2) {
+      const newDistance = getPointerDistance();
+      if (lastPinchDistance) {
+        const delta = newDistance / lastPinchDistance;
+        mobileBracketZoom = clamp(mobileBracketZoom * delta, 0.45, 2.2);
+        applyMobileBracketTransform();
+      }
+      lastPinchDistance = newDistance;
+      return;
+    }
+
+    if (activePointers.size === 1 && lastPanPoint) {
+      const p = [...activePointers.values()][0];
+
+      mobileBracketX += p.x - lastPanPoint.x;
+      mobileBracketY += p.y - lastPanPoint.y;
+
+      lastPanPoint = { x: p.x, y: p.y };
+      applyMobileBracketTransform();
+    }
+  });
+
+  ["pointerup", "pointercancel", "pointerleave"].forEach(evt => {
+    scrollEl.addEventListener(evt, e => {
+      activePointers.delete(e.pointerId);
+
+      if (activePointers.size < 2) {
+        lastPinchDistance = null;
+      }
+
+      if (activePointers.size === 1) {
+        const p = [...activePointers.values()][0];
+        lastPanPoint = { x: p.x, y: p.y };
+      } else {
+        lastPanPoint = null;
+      }
+    });
+  });
+}
+
+function getPointerDistance() {
+  const points = [...activePointers.values()];
+  if (points.length < 2) return 0;
+
+  const dx = points[0].x - points[1].x;
+  const dy = points[0].y - points[1].y;
+
+  return Math.sqrt(dx * dx + dy * dy);
+}
+
+function applyMobileBracketTransform() {
+  const zoomEl = document.getElementById("bracketZoom");
+  if (!zoomEl) return;
+
+  if (window.innerWidth <= 768) {
+    zoomEl.style.transform =
+      `translate(${mobileBracketX}px, ${mobileBracketY}px) scale(${mobileBracketZoom})`;
+  }
+}
+
+function clamp(value, min, max) {
+  return Math.min(Math.max(value, min), max);
 }

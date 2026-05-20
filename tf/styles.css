@@ -824,43 +824,33 @@ select { background: #fff; color: var(--text); max-width: 260px; }
 
 
 /* Bracket zoom controls */
-.bracket-toolbar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 18px;
-}
-
-.zoom-btn {
-    border: 0;
-    border-radius: 999px;
-    padding: 8px 14px;
-    background: var(--primary);
-    color: #fff;
-    font-weight: 900;
-    cursor: pointer;
-}
-
-#zoomLabel {
-    font-weight: 800;
-    min-width: 58px;
-    text-align: center;
-}
-
 .bracket-scroll {
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 20px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x pan-y;
 }
 
 #bracketZoom {
-    transform-origin: top left;
-    transition: transform .18s ease;
-    width: max-content;
+  transform-origin: 0 0;
+  width: max-content;
 }
 
 @media (max-width: 768px) {
-    .bracket-scroll {
-        overflow-x: auto;
-    }
+  .bracket-scroll {
+    overflow: hidden;
+    touch-action: none;
+    position: relative;
+    height: 75vh;
+  }
+
+  #bracketZoom {
+    transform-origin: 0 0;
+    will-change: transform;
+  }
+}
+
+@media (max-width: 768px) {
+  .bracket-toolbar {
+    display: none;
+  }
 }
